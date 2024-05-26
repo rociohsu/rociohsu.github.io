@@ -1,0 +1,55 @@
+@charset "UTF-8";
+/* CSS Document */
+
+.sbHolder {
+	position: relative;
+	width: 223px; height: 28px; padding: 0 5px;
+	background: #f2f2f2; border: 1px solid #d8d3d3; outline: none;
+}
+
+.sbHolder:focus .sbSelector {
+	width: 223px; left: -1px; top: -1px; padding: 0 5px;
+	border: 1px solid #231815;
+}
+
+.sbSelector {
+	position: absolute;
+	width: 99%; height: 28px;
+	color: #231815; font-size: 15px; font-family: "新細明體"; line-height: 28px; text-decoration: none;
+	border: none; cursor: pointer;
+}
+
+.sbToggle {
+	position: absolute;
+	width: 28px; height: 28px; right: 0; top: 0;
+	background: url("../images/select.png") no-repeat;
+}
+
+.sbToggle:hover { background-position: 0 -28px; }
+.sbToggleOpen { background-position: 0 -28px; }
+.sbToggleOpen:hover { background-position: 0 -28px; }
+.sbHolderDisabled {}
+.sbHolderDisabled .sbHolder {}
+.sbHolderDisabled .sbToggle {}
+
+.sbOptions {
+	position: absolute;
+	width: 223px;
+	left: -1px; top: 28px; margin: 0; padding: 5px;
+	background: #f2f2f2; border: 1px solid #231815;
+	z-index: 1; overflow-y: auto; overflow-x: hidden;
+}
+
+.sbOptions li { margin: 0 !important; padding: 0 !important; }
+
+.sbOptions a {
+	display: block;
+	width: 100%; *margin-top: -10px;/*IE7-*/
+	color: #ee6c20; font-size: 15px; font-family: "微軟正黑體"; line-height: 20px; text-decoration: none;
+}
+
+.sbOptions a:hover , .sbOptions a:focus , .sbOptions a.sbFocus { color: #231815; }
+.sbOptions li.last a {}
+.sbOptions .sbDisabled {}
+.sbOptions .sbGroup {}
+.sbOptions .sbSub {}

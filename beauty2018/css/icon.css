@@ -1,0 +1,90 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot?ycq7h6');
+  src:  url('../fonts/icomoon.eot?ycq7h6#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?ycq7h6') format('truetype'),
+    url('../fonts/icomoon.woff?ycq7h6') format('woff'),
+    url('../fonts/icomoon.svg?ycq7h6#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class*="fa-"], [class*=" fa-"]  {
+  /* use !important to prevent issues with browser extensions that change fonts */
+	display: inline-block;
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+	text-indent: -1px;
+	letter-spacing: -1px;
+	vertical-align: bottom;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.fa-plus::before {
+  content: "\e901";
+}
+.fa-gem::before {
+  content: "\e902";
+}
+.fa-gift::before {
+  content: "\e90b";
+}
+.fa-user-circle::before {
+  content: "\e907";
+}
+.fa-user::before {
+  content: "\e90a";
+}
+.fa-user-edit::before, .fa-edit::before {
+  content: "\e906";
+}
+.fa-facebook::before {
+  content: "\e903";
+}
+.fa-facebook-f::before {
+  content: "\e904";
+}
+.fa-sign-in-alt::before {
+  content: "\e905";
+}
+.fa-times::before {
+  content: "\e908";
+}
+.fa-bars::before {
+  content: "\e909";
+}
+.fa-hand-pointer::before {
+  content: "\e900";
+}
+.fa-stopwatch::before {
+  content: "\e90c";
+}
+.fa-user-tie::before {
+  content: "\e976";
+}
+.fa-trophy::before {
+  content: "\e99e";
+}
+.fa-arrow-left::before {
+  content: "\ea40";
+}
+.fa-arrow-right::before {
+  content: "\ea3c";
+}
+.fa-arrow-down::before {
+  content: "\ea3e";
+}
+.fa-check-square::before {
+  content: "\ea52";
+}
+.fa-square::before {
+  content: "\ea53";
+}
+

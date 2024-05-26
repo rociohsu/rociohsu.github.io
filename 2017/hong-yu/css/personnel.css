@@ -1,0 +1,140 @@
+@charset "UTF-8";
+/* CSS Document */
+
+@import url(style.css);
+@import url(jquery.selectbox.css);
+
+.main { padding-top: 100px; }
+
+/******************** personnel ********************/
+.personnelContent {
+	height: 480px; padding: 20px;
+}
+
+.personnelContent .title {
+	height: 40px; margin-bottom: 5px;
+	background: url("../images/titleS.png") no-repeat;
+}
+
+.personnelContent label {
+	display: block; position: relative;
+	width: 340px; margin-bottom: 10px;
+	color: #987328; font-size: 15px;
+}
+
+.personnelContent label input {
+	width: 330px; height: 32px; padding-left: 5px;
+	color: #987328; font-size: 15px; line-height: 32px;
+	background: none; border: 1px solid #c8b272; outline: none;
+	-webkit-border-radius: 0px; -moz-border-radius: 0px; border-radius: 0px;
+}
+
+.personnelContent label input:focus { 
+	background: #FFF; border: 1px solid #c8b272;
+	-moz-box-shadow: 0px #000;
+	-webkit-box-shadow: 0px 0px 0px #000;
+	box-shadow: 0px 0px 0px #000;
+}
+
+.personnelContent label input[type="text"]:disabled, .personnelContent label input:disabled, .personnelContent label input[disabled] {
+	color: #987328;
+	background: #FFF; border: 1px solid #FFF;
+}
+
+.personnelContent label .note {
+	position: absolute;
+	left: 0; top: 0; padding-left: 5px;
+	color: #987328; font-size: 15px; line-height: 32px;
+	cursor: pointer;
+}
+
+.personnelContent input.btn {
+	width: 93px; height: 36px;
+	background: url("../images/btn.jpg") no-repeat; border: none;
+	cursor: pointer;
+}
+
+.personnelContent .ps { float: left; color: #b71b2a; font-size: 13px; *font-size: 12px;/*IE7*/ line-height: 32px; }
+.personnelContent br { clear: both; }
+
+/******************** personnel login ********************/
+.login { margin-bottom: 50px; }
+.login .title { background-position: 0 -160px; }
+.login .password { float: left; width: 227px; margin-right: 18px; }
+@media screen and (-webkit-min-device-pixel-ratio:0){ .login .password { margin-right: 17px; } }  /*chrome and safari*/
+.login .password input { width: 227px; }
+.login input.btn { background-position: 0 0; }
+.login input.btn:hover { background-position: -93px 0; }
+
+/******************** personnel forget password ********************/
+.forgetPW .title { background-position: 0 -40px; }
+.forgetPW input.btn { margin-left: 34px; *margin-left: 50px;/*IE7*/ background-position: 0 -36px; }
+@media screen and (-webkit-min-device-pixel-ratio:0){ .forgetPW input.btn { margin-left: 35px; } }  /*chrome and safari*/
+.forgetPW input.btn:hover { background-position: -93px -36px; }
+
+/******************** pay list ********************/
+.payList .title { position: relative; margin-bottom: 10px; background-position: 0 -200px; }
+.payList .title .selectBar {
+	position: absolute;
+	width: 200px; height: 34px; right: 0; top: 0;
+}
+
+.payList .title .selectBar .year { float: left; width: 110px; margin-right: 10px; }
+.payList .title .selectBar .month { float: left; width: 80px; }
+
+/******************** pay list left ********************/
+.payList .left { float: left; width: 317px; font-size: 15px; }
+
+.payList .left .tag {
+	height: 32px;
+	background: #3b1606 url("../images/personnel/tag.png") no-repeat center 0;
+}
+
+.payList .left .name {
+	float: left;
+	width: 80px; height: 30px; padding: 0 10px;
+	color: #3b1606; text-align: left; line-height: 30px;
+	border: 1px solid #3b1606; border-top: none;
+}
+.payList .left .price {
+	height: 30px; padding: 0 10px;
+	color: #3b1606; font-family: Verdana; text-align: right; line-height: 30px;
+	border: 1px solid #3b1606; border-top: none; border-left: none;
+}
+
+/******************** pay list right ********************/
+.payList .right { float: right; width: 317px; font-size: 15px; }
+
+.payList .right .tag {
+	height: 32px;
+	background: #4a350c url("../images/personnel/tag.png") no-repeat center -32px;
+}
+
+.payList .right .name {
+	float: left;
+	width: 80px; height: 30px; padding: 0 10px;
+	color: #3b1606; text-align: left; line-height: 30px;
+	border: 1px solid #4a350c; border-top: none;
+}
+.payList .right .price {
+	height: 30px; padding: 0 10px;
+	color: #3b1606; font-family: Verdana; text-align: right; line-height: 30px;
+	border: 1px solid #4a350c; border-top: none; border-left: none;
+}
+
+/******************** pay list total ********************/
+.total {
+	width: 640px; height: 36px; margin-top: 6px;
+	border: 1px solid #c3000b;
+}
+
+.total th {
+	width: 80px; padding: 0 10px;
+	background: url("../images/personnel/tag.png") no-repeat center -64px;
+	border-right: 1px solid #c3000b;
+}
+
+.total td {
+	padding: 0 10px;
+	color: #c3000b; font-size: 20px; font-family: Verdana; font-weight: bold; line-height: 36px; text-align: right;
+}

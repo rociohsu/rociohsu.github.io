@@ -1,0 +1,78 @@
+@charset "UTF-8";
+/* CSS Document */
+
+@import url(style.css);
+@import url(jquery.selectbox.css);
+
+.main { padding-top: 100px; }
+
+/******************** contact ********************/
+.contactContent { margin-bottom: 50px; }
+
+.contactContent .msg {
+	padding: 15px 20px;
+	color: #FFF; line-height: 20px;
+	background: #a07924;
+}
+
+.contactContent .pic {
+	display: block; float: left;
+	width: 260px; height: 380px; margin-right: 20px;
+}
+
+.contactContent .form {
+	float: left; position: relative;
+	width: 390px; margin-top: 20px;
+}
+
+.contactContent label {
+	display: block; position: relative;
+	width: 340px; margin-bottom: 10px;
+	color: #987328; font-size: 15px;
+}
+
+.contactContent label input, .contactContent label textarea {
+	width: 330px; height: 32px; padding-left: 5px;
+	color: #987328; font-size: 15px; line-height: 32px;
+	background: none; border: none; border-bottom: 1px solid #c8b272; outline: none;
+	-webkit-border-radius: 0px; -moz-border-radius: 0px; border-radius: 0px;
+}
+
+.contactContent label textarea { width: 325px; height: 140px; border: 1px solid #c8b272; overflow: auto; }
+
+.contactContent label input:focus, .contactContent label textarea:focus { 
+	border-bottom: 1px solid #cf0012;
+	-moz-box-shadow: 0px #000;
+	-webkit-box-shadow: 0px 0px 0px #000;
+	box-shadow: 0px 0px 0px #000;
+}
+
+.contactContent label textarea:focus { border: 1px solid #cf0012; }
+
+.contactContent label input[type="text"]:disabled, .contactContent label input:disabled, .contactContent label input[disabled] {
+	color: #987328;
+	background: #FFF; border: 1px solid #FFF;
+}
+
+.contactContent label .note {
+	position: absolute;
+	left: 0; top: 0; padding-left: 5px;
+	color: #987328; font-size: 15px; line-height: 32px;
+	cursor: pointer;
+}
+
+.contactContent .name, .contactContent .phone, .contactContent .name input, .contactContent .phone input { width: 235px; }
+
+.contactContent .store { float: left; width: 110px; margin-right: 10px; }
+.contactContent .subject { float: left; width: 80px; }
+
+.contactContent .content { margin-top: 10px; *margin-top: 0;/*IE7*/ }
+
+.sendBtn {
+	display: block; position: absolute;
+	width: 175px; height: 175px; right: -120px; bottom: -80px; *bottom: -70px;/*IE7*/
+	background: url("../images/contact/sendBtn.png") no-repeat; border: none;
+	cursor: pointer;
+}
+
+.sendBtn:hover { background-position: -175px 0; }

@@ -1,0 +1,379 @@
+@charset "UTF-8";
+/* CSS Document */
+
+@import url(reset.css);
+@import url(jquery.selectbox.css);
+@import url(isotope.css);
+@import url(shadowbox.css);
+
+html , body {
+	height: 100%;
+}
+
+html {
+	overflow-x: hidden;
+}
+
+body {
+	-webkit-text-size-adjust: none;
+	color: #231815; font-family: "新細明體", sans-serif; font-size: 15px; line-height: 30px;
+	background: #f2f2f2 url("../images/bg.gif") repeat-x top center;
+}
+
+.clearfix {
+	clear: both !important;
+	width: 0 !important; height: 0 !important; padding: 0 !important; margin: 0 !important;
+}
+
+#wrap {
+	position: relative;
+	width: 1000px; height: auto; min-height: 100%; margin: 0 auto -45px auto;
+}
+
+/******************** header ********************/
+#header {
+	position: relative;
+	width: 1000px; height: 90px;
+	z-index: 1;
+}
+
+#header a.logo {
+	display: block; position: absolute;
+	width: 190px; height: 180px; left: 0; top: 0;
+	background: url("../images/logo.png") no-repeat;
+}
+
+#lavaMenu {
+	position: absolute;
+	width: 410px; height: 40px; right: 0; top: 50px;
+}
+
+#lavaMenu ul { position: absolute; z-index: 2; }
+#lavaMenu ul li { float: left; }
+
+#lavaMenu ul li a {
+	display: block;
+	height: 40px;
+	background: url("../images/lavaMenu.png") no-repeat -364px 0;
+}
+
+#lavaMenu ul li a.news { width: 94px; background-position: 0 0; }
+#lavaMenu ul li a.news:hover { background-position: 0 -40px; }
+#lavaMenu ul li a.service { width: 90px; background-position: -94px 0; }
+#lavaMenu ul li a.service:hover { background-position: -94px -40px; }
+#lavaMenu ul li a.portfolio { width: 90px; background-position: -184px 0; }
+#lavaMenu ul li a.portfolio:hover { background-position: -184px -40px; }
+#lavaMenu ul li a.contact { width: 90px; background-position: -274px 0; }
+#lavaMenu ul li a.contact:hover { background-position: -274px -40px; }
+#lavaMenu ul li a.home { width: 46px; background-position: -364px 0; }
+#lavaMenu ul li a.home:hover { background-position: -364px -40px; }
+
+#lavaMenu #lavaMenuHover {
+	position: absolute; 
+	height: 45px; left: 0; top: -5px;
+	z-index: 1;
+}
+	
+#lavaMenu #lavaMenuHover .bg {
+	height: 45px;
+	background: #f1a113;
+}
+
+/******************** footer ********************/
+.footerFix { height: 45px; }
+
+#footer {
+	position: relative;
+	width: 100%; height: 45px;
+	background: #231815;
+	z-index: 0;
+}
+
+#footer .inner {
+	position: relative;
+	width: 1000px; height: 45px; margin: 0 auto;
+	background: #231815 url("../images/footer.png") no-repeat top center;
+}
+
+#footer .inner a.mail {
+	display: block; position: absolute;
+	width: 200px; height: 45px; left: 382px; top: 0;
+}
+
+#footer .inner a.home {
+	display: block; position: absolute;
+	width: 180px; height: 45px; left: 50%; top: 0; margin: 0 0 0 300px;
+}
+
+/******************** banner ********************/
+#banner {
+	position: relative;
+	width: 1172px; height: 390px; left: -86px;
+	background: url("../images/banner.gif") no-repeat top center;
+	z-index: 0;
+}
+
+#banner .images {
+	width: 1000px; height: 380px; margin: 0 auto;
+	overflow: hidden;
+}
+
+#banner .images img {
+	width: 1000px; height: 380px;
+}
+
+#banner > a {
+	display: block; position: absolute;
+	width: 75px; height: 75px; left: 48px; top: 43%;
+	background: url("../images/arrow.png") no-repeat;
+	z-index: 10;
+}
+
+#banner > a.arrowPrev { background-position: 0 0; }
+#banner > a.arrowPrev:hover { background-position: 0 -75px; }
+#banner > a.arrowNext { left: auto; right: 48px; background-position: -75px 0; }
+#banner > a.arrowNext:hover { background-position: -75px -75px; }
+
+/******************** index content ********************/
+#container {
+	position: relative;
+	width: 960px; margin-top: 10px; padding: 0 20px 50px 20px;
+	background: #FFF; border-top: 10px solid #d8d3d3;
+}
+
+#container > a.arrowPrev, #container > a.arrowNext {
+	display: block; position: absolute;
+	width: 75px; height: 75px; left: -38px; top: 46%;
+	background: url("../images/arrow.png") no-repeat;
+	z-index: 10;
+}
+
+#container > a.arrowPrev { background-position: 0 0; }
+#container > a.arrowPrev:hover { background-position: 0 -75px; }
+#container > a.arrowNext { left: auto; right: -38px; background-position: -75px 0; }
+#container > a.arrowNext:hover { background-position: -75px -75px; }
+
+.floatLeft { float: left; }
+.floatRight { float: right; }
+
+.title {
+	position: relative;
+	height: 40px; padding-bottom: 3px;
+	color: #231815; font-size: 18px; font-weight: bold; line-height: 40px; vertical-align: middle;
+	border-bottom: 1px solid #6c6c6c;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	-o-text-overflow: ellipsis;
+	-icab-text-overflow: ellipsis;
+	-khtml-text-overflow: ellipsis;
+	-moz-text-overflow: ellipsis;
+	-webkit-text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+.title img { vertical-align: middle; }
+.title .date { position: absolute; right: 0; top: 0; color: #f1a113; font-size: 18px; }
+
+/******************** service ********************/
+.serviceBanner {
+	width: 1000px; height: 380px; margin: 0 auto;
+	overflow: hidden;
+}
+
+.serviceBanner > h2 {
+	height: 125px;
+	background: url("../images/serviceBanner.png") no-repeat top center;
+}
+
+.serviceBanner ul li { float: left; }
+
+.serviceBanner ul li a {
+	display: block;
+	height: 265px;
+	background: url("../images/serviceBanner.png") no-repeat 0 -125px;
+}
+
+.serviceBanner ul li a.dataWeb { width: 226px; background-position: 0 -125px; }
+.serviceBanner ul li a.dataWeb:hover, .serviceBanner ul li.selected a.dataWeb { background-position: 0 -515px; }
+.serviceBanner ul li a.cloudPos { width: 192px; background-position: -226px -125px; }
+.serviceBanner ul li a.cloudPos:hover, .serviceBanner ul li.selected a.cloudPos { background-position: -226px -515px; }
+.serviceBanner ul li a.lbsWeb { width: 160px; background-position: -418px -125px; }
+.serviceBanner ul li a.lbsWeb:hover, .serviceBanner ul li.selected a.lbsWeb { background-position: -418px -515px; }
+.serviceBanner ul li a.marketing { width: 200px; background-position: -578px -125px; }
+.serviceBanner ul li a.marketing:hover, .serviceBanner ul li.selected a.marketing { background-position: -578px -515px; }
+.serviceBanner ul li a.shopWeb { width: 222px; background-position: -778px -125px; }
+.serviceBanner ul li a.shopWeb:hover, .serviceBanner ul li.selected a.shopWeb { background-position: -778px -515px; }
+
+.serviceLeft {
+	width: 156px; min-height: 280px; padding-top: 20px;
+	background: #f2f2f2;
+}
+
+.serviceLeft > div {
+	height: 168px;
+	background: url("../images/serviceBanner.png") no-repeat;
+}
+.serviceLeft > div.dataWeb { background-position: -48px -522px; }
+.serviceLeft > div.cloudPos { background-position: -245px -523px; }
+.serviceLeft > div.lbsWeb { background-position: -419px -578px; }
+.serviceLeft > div.marketing { background-position: -600px -546px; }
+.serviceLeft > div.shopWeb { background-position: -797px -552px; }
+
+.serviceMain {
+	width: 780px; padding-left: 24px;
+}
+
+/******************** news ********************/
+.newsDetail { padding: 20px 80px 0 80px; }
+
+.newsBox {
+	width: 455px; height: 200px; margin: 0 auto; padding: 125px 440px 55px 105px;
+	background: url("../images/newsBox.png") no-repeat top center;
+	overflow: hidden;
+}
+
+.newsBox .inner { position: relative; width: 450px; height: 200px; }
+
+#tabs { height: 11px; padding: 0 10px; line-height: 11px; text-align: right; }
+
+#tabs a {
+	display: inline-block;
+	width: 11px; height: 11px; *margin-left: 5px;/*IE7-*/
+	background: url("../images/nav.png") no-repeat;
+	overflow: hidden;
+}
+
+#tabs a:hover , #tabs a.current { background-position: -17px 0; }
+
+#listGroup { width: 455px; height: 200px; }
+
+#listGroup > div {
+    display: none; float: left;
+	width: 455px; height: 200px;
+	border-top: 1px solid #6c6c6c;
+}
+
+.newsList {
+	display: block;
+	height: 36px; padding: 0 10px;
+	color: #231815; font-size: 15px; line-height: 36px; text-decoration: none;
+	border-bottom: 1px solid #6c6c6c;
+}
+
+.newsList .name { 
+	float: left; display: block;
+	width: 355px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	-o-text-overflow: ellipsis;
+	-icab-text-overflow: ellipsis;
+	-khtml-text-overflow: ellipsis;
+	-moz-text-overflow: ellipsis;
+	-webkit-text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+.newsList .date { 
+	float: left; display: block;
+	width: 80px; 
+	color: #f1a113; text-align: right;
+}
+
+.newsList:hover { background: #231815; }
+.newsList:hover .name { color: #FFF; }
+
+/******************** contact ********************/
+#contact label {
+	display: block; position: relative;
+	margin-top: 6px;
+	z-index: 0;
+}
+
+#contact label input , #contact label .note {
+	width: 99%; height: 28px;
+	color: #231815; font-size: 15px; line-height: 28px;
+	background: #f2f2f2; border: 1px solid #d8d3d3; outline: none;
+}
+
+#contact label .note {
+	position: absolute;
+	left: 6px; top: 2px;
+	background: none; border: none;	cursor: text;
+}
+
+#contact label textarea {
+	width: 99%; height: 80px;
+	color: #231815; font-size: 15px; line-height: 28px;
+	background: #f2f2f2; border: 1px solid #d8d3d3; outline: none;
+}
+
+#contact label input:focus, #contact label textarea:focus { border: 1px solid #231815; }
+
+#contact .sendBtn {
+	display: inline-block;
+	width: 80px; height: 80px;
+	background: url("../images/sendBtn.png") no-repeat;
+	border: none; cursor: pointer;
+}
+
+/******************** portfolio ********************/
+.portfolioBanner {
+	width: 1000px; height: 125px; margin: 0 auto;
+	background: url("../images/portfolioBanner.png") no-repeat top center;
+	overflow: hidden;
+}
+
+#portfolio { position: relative; }
+
+.element {
+	float: left; position: relative;
+	width: 230px; margin: 10px 5px;
+	overflow: hidden;
+}
+
+.element img {
+	display: block;
+	width: 230px;
+	border: 2px solid #e9e9e9;
+	opacity: 0; -moz-opacity: 0; filter: alpha(opacity=0);
+}
+
+.element h2 { padding: 0 5px; color: #231815; font-size: 12px; font-weight: normal; line-height: 24px; }
+
+.element .mask {
+	position: absolute;
+	width: 100%; height: 100%; left: 0; top: 0;
+	background: #231815;
+	opacity: 0; -moz-opacity: 0; filter: alpha(opacity=0);
+	z-index: 1;
+}
+
+.element .link {
+	position: absolute;
+	width: 135px; height: 32px; left: 50%; top: 50%; margin: -16px 0 0 -67px;
+	background: url("../images/linkBtn.png") no-repeat;
+	opacity: 0; -moz-opacity: 0; filter: alpha(opacity=0);
+	z-index: 2;
+}
+
+.option-set { margin: 15px 0 5px 0; }
+
+.option-set > a {
+	display: inline-block;
+	padding: 0 10px; margin-right: 5px;
+	color: #231815; line-height: 30px; text-decoration: none;
+	background: #d8d3d3;
+}
+
+.option-set > a:hover { background: #f1a113; }
+.option-set > a.selected { color: #FFF; background: #f1a113; }
+
+/******************** 使用編輯器內容區塊 ********************/
+.editor { overflow: hidden; }
+.editor img { max-width: 100%; height: auto; }
+.editor p { margin: 15px 0; }
+.editor b { font-weight: bold; }
+.editor a { text-decoration: underline; }
+.editor ul { list-style-type: disc; margin-left: 20px; *margin-left: 25px; }
+.editor ol { list-style-type: decimal; margin-left: 25px; *margin-left: 30px; }
+.editor ul li , .editor ol li { margin: 5px 0; }

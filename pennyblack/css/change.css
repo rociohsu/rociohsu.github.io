@@ -1,0 +1,19 @@
+@charset "UTF-8";
+@import url(reset.css);
+
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+body { font-size: 16px; font-family: "Microsoft JhengHei", "黑體", sans-serif; letter-spacing: 0.5px; }
+.container { width: 100%; max-width: 640px; margin: 0 auto; }
+header { padding: 15px 0; text-align: center; }
+header .logo { display: inline-block; max-width: 80%; }
+section { padding-bottom: 50px; color: #FFF; background: #292e61; }
+section .kv { padding: 10% 15%; }
+section .kv img { max-width: 100%; margin: 0 auto; }
+article { margin-bottom: 30px; text-align: center; line-height: 24px; }
+h2 { margin-bottom: 10px; color: #c3b3a3; text-align: center; }
+ol { width: 80%; margin: 0 auto; list-style: disc; line-height: 24px; }
+ol li { display: list-item; margin: 5px 0 5px 25px; }
+footer { font-size: 12px; line-height: 50px; text-align: center; }
+.submit-btn { text-align: center; }
+.submit-btn input { display: block; width: 80%; padding: 15px 0; margin: 0 auto 30px; color: #FFF; font-size: 24px; font-weight: bold; letter-spacing: 10px; background: #ab0c3b; border: none; border-radius: 0; -webkit-border-radius: 0; -webkit-appearance: none; -moz-appearance: none; appearance: none; }
+.submit-btn input:disabled { display: none; color: #FFF; background: #dddddd; }

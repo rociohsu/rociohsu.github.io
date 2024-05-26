@@ -1,0 +1,21 @@
+@charset "UTF-8";
+/* CSS Document */
+
+@import url(style.css);
+
+/******************** about title link ********************/
+.titleLink { padding: 50px 0 0 20px; }
+
+.titleLink > a {
+	display: inline-block;
+	width: 170px; height: 42px;
+	background: url("../images/about/titleLink.png") no-repeat;
+}
+
+.titleLink > a.about1:hover, .titleLink > a.about1_current { background-position: 0 -42px; }
+.titleLink > a.about2 { width: 450px; background-position: -170px 0; }
+.titleLink > a.about2:hover { background-position: -170px -42px; }
+.titleLink > a.about2_current, .titleLink > a.about2_current:hover { background-position: -170px -84px; }
+
+/******************** about content ********************/
+.aboutContent { width: 750px; padding-top: 20px; }

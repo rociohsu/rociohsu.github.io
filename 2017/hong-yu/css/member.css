@@ -1,0 +1,168 @@
+@charset "UTF-8";
+/* CSS Document */
+
+@import url(style.css);
+@import url(jquery.ui.theme.css);
+@import url(jquery.ui.datepicker.css);
+@import url(uniform.default.css);
+
+.main { padding-top: 100px; }
+
+/******************** member ********************/
+.memberContent {
+	height: 480px; padding: 20px;
+}
+
+.memberContent .left {
+	float: left;
+	width: 340px; height: 480px;
+}
+
+.memberContent .right {
+	float: right;
+	width: 340px; height: 480px; padding-left: 15px;
+	background: url("../images/member/verLine.png") no-repeat left top;
+}
+
+.memberContent .title {
+	height: 40px; margin-bottom: 5px;
+	background: url("../images/titleS.png") no-repeat;
+}
+
+.memberContent label {
+	display: block; position: relative;
+	width: 340px; margin-bottom: 10px;
+	color: #987328; font-size: 15px;
+}
+
+.memberContent label input {
+	width: 330px; height: 32px; padding-left: 5px;
+	color: #987328; font-size: 15px; line-height: 32px;
+	background: none; border: 1px solid #c8b272; outline: none;
+	-webkit-border-radius: 0px; -moz-border-radius: 0px; border-radius: 0px;
+}
+
+.memberContent label input:focus { 
+	background: #FFF; border: 1px solid #c8b272;
+	-moz-box-shadow: 0px #000;
+	-webkit-box-shadow: 0px 0px 0px #000;
+	box-shadow: 0px 0px 0px #000;
+}
+
+.memberContent label input[type="text"]:disabled, .memberContent label input:disabled, .memberContent label input[disabled] {
+	color: #987328;
+	background: #FFF; border: 1px solid #FFF;
+}
+
+.memberContent label .note {
+	position: absolute;
+	left: 0; top: 0; padding-left: 5px;
+	color: #987328; font-size: 15px; line-height: 32px;
+	cursor: pointer;
+}
+
+.memberContent input.btn {
+	width: 93px; height: 36px;
+	background: url("../images/btn.jpg") no-repeat; border: none;
+	cursor: pointer;
+}
+
+.memberContent .ps { float: left; color: #b71b2a; font-size: 13px; *font-size: 12px;/*IE7*/ line-height: 32px; }
+.memberContent br { clear: both; }
+
+/******************** member login ********************/
+.login { margin-bottom: 50px; }
+.login .title { background-position: 0 0; }
+.login .password { float: left; width: 227px; margin-right: 18px; }
+@media screen and (-webkit-min-device-pixel-ratio:0){ .login .password { margin-right: 17px; } }  /*chrome and safari*/
+.login .password input { width: 227px; }
+.login input.btn { float: left; background-position: 0 0; *margin: -46px 0 0 245px;/*IE7*/ }
+.login input.btn:hover { background-position: -93px 0; }
+
+/******************** member forget password ********************/
+.forgetPW .title { background-position: 0 -40px; }
+.forgetPW input.btn { float: right; margin-right: 2px; background-position: 0 -36px; }
+@media screen and (-webkit-min-device-pixel-ratio:0){ .forgetPW input.btn { margin-right: 3px; } }  /*chrome and safari*/
+.forgetPW input.btn:hover { background-position: -93px -36px; }
+
+/******************** member register ********************/
+.register .title { background-position: 0 -80px; }
+.register input.btn { margin-right: 2px; background-position: 0 -72px; }
+.register input.btn:hover { background-position: -93px -72px; }
+.register .password { float: left; width: 227px; margin-right: 15px; }
+.register .password input { width: 227px; }
+.register .sex { width: 120px; }
+.register .sex input { width: 60px; }
+.register .name, .register .birthday, .register .phone { width: 227px; }
+.register .name input, .register .birthday input, .register .phone input { width: 227px; }
+
+/******************** member edit ********************/
+.memberEdit .title { background-position: 0 -120px; }
+.memberEdit input.btn { margin-right: 60px; background-position: 0 -108px; }
+.memberEdit input.btn:hover { background-position: -93px -108px; }
+.memberEdit .password { float: left; width: 227px; margin-right: 15px; }
+.memberEdit .password input { width: 227px; }
+.memberEdit .name { width: 300px; }
+.memberEdit .name input { width: 227px; margin-right: 7px; }
+.memberEdit .birthday, .memberEdit .phone { width: 227px; }
+.memberEdit .birthday input, .memberEdit .phone input { width: 227px; }
+
+/******************** member coupon ********************/
+.memberCoupon {
+	min-height: 500px; margin-top: -20px;
+}
+
+.memberCoupon .title {
+	height: 40px; margin: 0 0 15px 10px;
+	background: url("../images/member/titleM.png") no-repeat;
+}
+
+.couponList {
+	position: relative;
+	padding: 10px;
+	color: #000;
+}
+
+.couponList:hover { background: url("../images/whiteBg.png") repeat; }
+
+.couponList .pic {
+	display: block; float: left;
+	width: 180px; height: 135px;
+	border: 3px solid #FFF;
+}
+
+.couponList .inner {
+	float: left;
+	width: 440px;
+}
+
+.couponList .inner .name {
+	height: 40px; padding-left: 45px;
+	color: #5c4d15; font-size: 15px; font-weight: bold; line-height: 40px;
+	background: url("../images/member/item.png") no-repeat;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	-o-text-overflow: ellipsis;
+	-icab-text-overflow: ellipsis;
+	-khtml-text-overflow: ellipsis;
+	-moz-text-overflow: ellipsis;
+	-webkit-text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+.couponList .inner .date, .couponList .inner .store, .couponList .inner .info { margin-left: 15px; line-height: 20px; }
+.couponList .inner .store b { padding-right: 5px; color: #cc3a4f; }
+.couponList .inner .store a { color: #000; text-decoration: underline; }
+.couponList .inner .store a:hover { color: #cc3a4f;}
+
+.couponList a.addBtn, .couponList a.downloadBtn {
+	display: block; position: absolute;
+	width: 93px; height: 35px; right: 10px; bottom: 10px;
+	background: url("../images/btn.jpg") no-repeat 0 -144px;
+	cursor: pointer;
+}
+
+.couponList a.addBtn { background-position: 0 -144px; }
+.couponList a.addBtn:hover { background-position: -93px -144px; }
+.couponList a.downloadBtn { background-position: 0 -179px; }
+.couponList a.downloadBtn:hover { background-position: -93px -179px; }

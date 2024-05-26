@@ -1,0 +1,76 @@
+<html>
+  <head>
+    <title>PENNYBLACK 兌換折價卷</title>
+    <!--if lt IE9script(src='http://html5shiv.googlecode.com/svn/trunk/html5.js')
+    -->
+    <!-- metadata-->
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="description" content="請交由PENNYBLACK指定專櫃工作人員點擊兌換!"/>
+    <!-- 指定IE瀏覽器相容模式-->
+    <meta http-equiv="X-UA-Compatible" content=" IE=edge,chrome=1 "/>
+    <!-- CSS-->
+    <link rel="stylesheet" href="css/change.css"/>
+		<!-- JQ-->
+		<script src="js/jquery-3.3.1.min.js"></script>
+		<script src="js/jquery-migrate-3.0.0.min.js"></script>
+  </head>
+  <!-- 網站內容開始-->
+  <body>
+    <div class="container">
+      <header><a href="index.html"><img class="logo" src="images/logoAll.png" alt="beauty美人圈 x PENNYBLACK" /></a></header>
+			<section>
+				<div class="kv"><img src="images/testFormPic.jpg"/></div>
+				<article>
+				即日起至2018/10/10止<br />
+				憑此兌換頁至PENNYBLACK指定專櫃<br />
+				「 台北SOGO百貨忠孝館3F 」<br />
+				<b style="color: #e5265e;">消費即可折抵現金NT$ 500</b>
+				</article>
+				<h2>請於PENNYBLACK專櫃由服務人員點擊</h2>
+				<div class="submit-btn">
+        	<input type="button" id="receive" value="確認兌換"/>
+					<input type="button" id="received" value="已兌換" disabled />
+				</div>
+				<ol>注意事項：
+					<li>請交付櫃點服務人員按下兌換鈕，才算完成兌換</li>
+					<li>數量有限，每人限兌換一份，贈完為止</li>
+				</ol>
+			</section>
+			<footer>Copyright © 2018千晶文化事業（股）有限公司</footer>
+    </div>
+		
+    <script>
+		var urlpath = (location.pathname).split("/")[2],
+				getcode = urlpath.split("-")[1];			
+		
+		$(function(){	
+			$.post( "check.asp", { v: getcode, op: "check" }, function(r){
+
+				$("#countername").html(r.counter);
+				if(r.state==1){
+					$("#receive").show();$("#received").hide();
+				}else{
+					$("#receive").hide();$("#received").show();
+				}
+			} , "json");
+
+
+			$("#receive").click(function(){
+				
+				if(confirm("確定要兌換折價卷了嗎?\n請交由專櫃人員點選確認兌換")){
+					ga('send', 'event', '1809peenyblack', 'click', 'check-coupon');
+					$.post( "check.asp", { v: getcode, op: "checkget" }, function(r){
+						if(r.state==1){
+							$("#receive").show();$("#received").hide();	
+						}else{
+							$("#receive").hide();$("#received").show();
+						}	
+					});
+				}				
+			});
+		});
+    </script>
+		</body>
+  <!-- 網站內容結束-->
+</html>

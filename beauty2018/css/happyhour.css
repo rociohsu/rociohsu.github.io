@@ -1,0 +1,88 @@
+@charset "utf-8";
+@import url("icon.css");
+
+/*--------------------------Happy Hour------------------------- */
+#happyhourad { position: fixed; width: 100%; height: 205px; bottom: 0; left: 0; z-index: 2; }
+@media screen and (max-width: 991px) {
+	#happyhourad { height: 175px; }
+	.adjustment .main.awardvote { padding-bottom: 160px; }
+	.adjustment #happyhourad { bottom: 52px; }
+}
+@media screen and (max-width: 768px) { #happyhourad { height: 152px; } .adjustment .main.awardvote { padding-bottom: 150px; } }
+@media screen and (max-width: 600px) { #happyhourad { height: 100px; } .adjustment .main.awardvote { padding-bottom: 110px; } }
+
+/*--------------------------for iframe inside------------------------- */
+.happyhour { position: fixed; display: -webkit-flex; display: flex; width: 100%; height: 180px; bottom: -3px; left: 0; background: #FFF; border-top: 3px solid #e9409b; border-bottom: 3px solid #e9409b; background: #FFF linear-gradient( #FFF 50%, #fdf2d1 100% ); z-index: 2; }
+.happyhour .left { width: 47%; height: 100%; margin-left: -10%; -webkit-transform: skew(-20deg); -moz-transform: skew(-20deg); -o-transform: skew(-20deg); transform: skew(-20deg); overflow: hidden; }
+.happyhour .left .inner { width: 140%; height: 100%; text-align: right; background: url("../images/happyhour-bg1.gif") repeat; -webkit-transform: skew(20deg); -moz-transform: skew(20deg); -o-transform: skew(20deg); transform: skew(20deg); }
+.happyhour .left .inner .title { margin-right: 30%; }
+.happyhour .right { width: 38%; height: 100%; margin-right: -10%; -webkit-transform: skew(-20deg); -moz-transform: skew(-20deg); -o-transform: skew(-20deg); transform: skew(-20deg); }
+.happyhour .right .inner { width: 140%; height: 100%; background: url("../images/happyhour-bg2.gif") repeat; -webkit-transform: skew(20deg); -moz-transform: skew(20deg); -o-transform: skew(20deg); transform: skew(20deg); }
+.happyhour .right .inner .star { height: 180%; margin: -40px 0 0 -21%; }
+.happyhour .right .inner .bg { margin: -10% 0 0 -2%; }
+.happyhour .mid { display: -webkit-inline-flex; display: inline-flex; flex-wrap: wrap; width: 840px; height: 100%; -webkit-align-items: center; align-items: center; overflow: hidden; }
+.happyhour .mid .logo { width: 22%; padding: 10px; margin-left: 4%; }
+.happyhour .mid .logo > img { width: 100%; border-radius: 99em; }
+.happyhour .mid .pt-img { width: 24%; padding: 10px; }
+.happyhour .mid .pt-img > img { width: 95%; }
+.happyhour .mid .content { width: 50%; padding: 10px 50px 10px 0; }
+.happyhour .mid .content .brand { color: #f54348; font-size: 20px; line-height: 22px; font-weight: bold; }
+.happyhour .mid .content .name { line-height: 18px; }
+.happyhour .mid .content .ticket { color: #e72a90; font-size: 28px; letter-spacing: 0; }
+.happyhour .mid .content .ticket > b::before { content: "票數/"; color: #000; font-size: 12px; font-style: normal; }
+.happyhour .mid .content .vote { padding: 3px 10px; color: #FFF; text-decoration: none; background: #e72a90; border: none; border-bottom: 3px solid #937e7e; outline: none; cursor: pointer; }
+.happyhour .mid .content .vote:hover { border-bottom: none; border-top: 2px solid #937e7e; }
+
+.happyhpur-kv { position: fixed; }
+.happyhpur-kv a { position: fixed; width: 100%; bottom: 0; left: 0; text-align: center; background: #e54490; }
+.happyhpur-kv img { width: 100%; max-width: 1200px; margin-top: -20px; }
+
+.adclsbtn { display: block; position: absolute; padding: 0 8px 4px; right: 0; bottom: 0; color: #FFF !important; font-size: 20px; line-height: 20px; font-family: "Verdana"; background: #312222; z-index: 3; cursor: pointer; }
+
+@media screen and (min-width: 1920px) { .happyhour .right .inner .star { margin: -40px 0 0 -18%; } }
+@media screen and (max-width: 1440px) { 
+	.happyhour .right { margin-right: -14%; } 
+	.happyhour .right .inner .star { margin-left: -25%; } 
+	.happyhour .bg { display: none; }
+}
+@media screen and (max-width: 1100px) { .happyhour .left .inner .title { height: 15.5vw; } }
+@media screen and (max-width: 991px) { 
+	.happyhour { height: 150px; } 
+	.happyhour .left .inner .title { height: 12vw; margin-top: 2.5vw; } 
+	.happyhour .right .inner .star { height: 170%; margin-left: -32%; } 
+}
+@media screen and (max-width: 768px) {
+	.happyhour { height: 140px; }
+	.happyhour .left { width: 27%; } 
+	.happyhour .left .inner .title { display: none; }
+	.happyhour .right .inner .star { height: 160%; margin-top: -25px; }
+	.happyhour .mid .content .brand { font-size: 18px; line-height: 20px; }
+	.happyhour .mid .content .name { font-size: 14px; line-height: 16px; }
+	.happyhour .mid .content .ticket { font-size: 22px; }
+	.happyhour .mid .content .ticket > b::before { font-size: 12px; }
+	.happyhour .mid .content .vote { padding: 2px 10px; font-size: 14px; }
+}
+@media screen and (max-width: 600px) {
+	.happyhour { height: 100px; background: url("../images/happyhour-bg2.gif") repeat; }
+	.happyhour .left, .happyhour .mid .logo { display: none; }
+	.happyhour .right { width: 20%; margin-right: 0; }
+	.happyhour .right .inner { background: none; }
+	.happyhour .right .inner .star { height: 150%; margin: -10px 0 0 -18vw; }
+	.happyhour .mid .pt-img { width: 90px; height: 90px; padding: 5px; margin-left: 5px; }
+	.happyhour .mid .pt-img > img { width: auto; height: 100%; }
+	.happyhour .mid .logo { padding: 5px; margin-left: 0; }
+	.happyhour .mid .content { width: 60%; letter-spacing: 0; }
+	.happyhour .mid .content .brand { color: #fffb82; font-size: 16px; }
+	.happyhour .mid .content .name, .happyhour .mid .content .ticket > b::before { color: #FFF; }
+	.happyhour .mid .content .ticket { color: #FFF; font-size: 16px; line-height: 16px; }
+	.happyhour .mid .content .vote { padding: 2px 5px; color: #e72a90; font-size: 12px; background: #fffb82; border-width: 2px; }
+}
+@media screen and (max-width: 460px) {
+	.happyhour .mid .content .brand { font-size: 12px; line-height: 14px; }
+	.happyhour .mid .content .name { font-size: 12px; line-height: 14px; }
+	.happyhour .mid .content .ticket { font-size: 14px; }
+	.happyhour .mid .content .ticket > b::before { content: ""; }
+	.happyhour .mid .content .ticket > b::after { content: "票"; font-size: 12px; }
+	.adclsbtn { padding: 0 4px 2px; font-size: 16px; line-height: 16px; }
+}
+@media screen and (max-width: 300px) { .happyhour .right { display: none; } }

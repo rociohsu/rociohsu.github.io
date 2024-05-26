@@ -1,0 +1,215 @@
+@charset "UTF-8";
+/* CSS Document */
+
+@import url(reset.css);
+
+html , body { width: 100%; height: 100%; }
+
+body {
+	-webkit-text-size-adjust: none;
+	color: #999; font-family: Verdana, "新細明體", sans-serif; font-size: 13px; line-height: 18px;
+	background: url("../images/innerBg.jpg") repeat;
+}
+
+.line {
+	width: 100%; height: 1px;
+	background: url("../images/line.png") repeat-x;
+}
+
+/******************** topBar ********************/
+#topBar {
+	position: fixed; _position: absolute;
+	width: 100%; height: 60px; right: 0; top: 0;
+	background: url("../images/topBg.jpg") repeat;
+}
+
+#topBar .topLink {
+	padding: 30px 15px 0 0;
+	color: #75694e;	text-align: right;
+}
+
+#topBar .topLink > a {
+	margin: 0 5px;
+	color: #75694e; font-size: 15px; text-decoration: none;
+}
+
+#topBar .topLink > a:hover { color: #3f300f; }
+
+#topBar .line {
+	margin-top: 10px; *margin-top: 11px; /*IE7*/
+}
+
+/******************** left  ********************/
+#left {
+	position: fixed; _position: absolute;
+	width: 234px; height: 100%; left: 0; top: 0;
+	background: url("../images/leftBg.jpg") repeat; border-right: 2px solid #bf9f62;
+}
+
+#left .logo {
+	display: block;
+	width: 220px; margin: 50px 0 140px 9px;
+	overflow: hidden;
+}
+
+.leftMenu {
+	width: 200px; margin: 0 17px;
+	text-align: right;
+}
+
+.leftMenu .first {
+	width: 200px;
+	background: url("../images/leftMenuHover.png") no-repeat 200px 0;
+}
+
+.leftMenu .first_current { background-position: 0 0; }
+
+.leftMenu .first  > a {
+	display: block;
+	width: 200px; height: 32px;
+	background: url("../images/leftMenu.png") no-repeat;
+	cursor: pointer;
+}
+
+.leftMenu .first  > a.news { background-position: 0 0 ; }
+.leftMenu .first  > a.news:hover, .leftMenu .first_current  > a.news { background-position: -200px 0 ; }
+
+.leftMenu .first  > a.about { background-position: 0 -32px ; }
+.leftMenu .first  > a.about:hover, .leftMenu .first_current  > a.about { background-position: -200px -32px ; }
+
+.leftMenu .first  > a.stores { background-position: 0 -64px ; }
+.leftMenu .first  > a.stores:hover, .leftMenu .first_current  > a.stores { background-position: -200px -64px ; }
+
+.leftMenu .first  > a.menu { background-position: 0 -96px ; }
+.leftMenu .first  > a.menu:hover, .leftMenu .first_current  > a.menu { background-position: -200px -96px ; }
+
+.leftMenu .first  > a.member { background-position: 0 -128px ; }
+.leftMenu .first  > a.member:hover, .leftMenu .first_current  > a.member { background-position: -200px -128px ; }
+
+.leftMenu .first  > a.contact { background-position: 0 -160px ; }
+.leftMenu .first  > a.contact:hover, .leftMenu .first_current  > a.contact { background-position: -200px -160px ; }
+
+.leftMenu .second {
+	display: none;
+	width: 200px; margin-top: -2px; padding: 2px 0 15px 0;
+	background: url("../images/leftMenuHover.png") no-repeat 0 -30px;
+}
+
+.leftMenu .second  > a {
+	display: block;
+	width: 190px; height: 26px; padding-right: 10px;
+	color: #e5c873; font-size: 15px; line-height: 26px; text-decoration: none; color: #000 \0;
+	background: url("../images/leftSecMenuBg.png") no-repeat 0 -26px;
+	overflow: hidden;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0){ .leftMenu .second  > a { line-height: 22px; } }  /*chrome and safari*/
+
+.leftMenu .second  > a:link, .leftMenu .second  > a:visited { color: #e5c873; }
+.leftMenu .second  > a:hover, .leftMenu .second  > a:active, .leftMenu .second  > a.current { color: #FFF; background-position: 0 0; }
+
+/******************** content ********************/
+#wrapper {
+	position: relative;
+	width: 100%; min-height: 100%; height: auto; left: 0; top: 0;
+    margin: 0 auto -50px auto;
+}
+
+.container {
+	position: relative;
+	width: 100%; margin: 0 auto; padding-top: 60px;
+	z-index: 0;
+}
+
+.main {
+	position: relative;
+	width: 750px; padding: 20px 0 0 320px;
+}
+
+/******************** footer ********************/
+.footerClear {
+	clear: both;
+	height: 50px;
+}
+
+#footer {
+	position: relative;
+	height: 30px; padding: 10px 20px 10px 0;
+	color: #745f36; font-size: 11px; line-height: 30px; text-align: right;
+}
+
+.fbLink {
+	display: inline-block;
+	width: 20px; height: 20px; margin-left: 5px;
+	vertical-align: middle;
+	background: url("../images/fbLink.png") no-repeat;
+}
+
+/******************** right bg ********************/
+.rightBg {
+	position: fixed; _position: absolute;
+	width: 651px; height: 444px; right: 0; bottom: 0;
+}
+
+/******************** page title ********************/
+.pageTitle {
+	position: absolute;
+	width: 50px; height: 140px; left: 260px; top: 20px;
+}
+
+/******************** pager ********************/
+.pager {
+	height: 33px; margin: 20px 0;
+}
+
+.pager > a {
+	padding: 0 3px; *margin-left: 1px; /*IE7*/
+	color: #be9950; font-size: 14px; font-family: Verdana; line-height: 26px; text-decoration: none; vertical-align: middle;
+	border: 1px solid #b7934c;
+}
+
+.pager > a:hover, .pager > a.current, .pager > a.back {
+	color: #FFF;
+	background: #be9950; border: 1px solid #be9950;
+}
+
+.pager > a.prev, .pager > a.next {
+	display: inline-block;
+	width: 21px; height: 33px; padding: 0; *margin-left: 0; /*IE7*/
+	background: url("../images/arrow_s.png") no-repeat; border: none;
+}
+
+.pager > a.prev:hover { background-position: 0 -33px; }
+.pager > a.next { background-position: -21px 0; }
+.pager > a.next:hover { background-position: -21px -33px; }
+.pager > a.back { padding-bottom: 3px; *padding: 2px 3px 0 3px; /*IE7*/ *margin: 0 3px 0 5px; /*IE7*/ }
+.pager > a.back:hover { background: #9a7731; border: 1px solid #9a7731; }
+
+/******************** 使用編輯器內容區塊 ********************/
+.editor {
+	color: #5b461b; font-size: 13px; line-height: 24px;
+	overflow: hidden;
+}
+
+.editor img {
+	max-width: 100%; height: auto;
+}
+
+.editor ul {
+	list-style-type: disc;
+	margin-left: 20px; *margin-left: 25px; margin-top: -5px;
+}
+
+.editor ol {
+	list-style-type: decimal;
+	margin-left: 25px; *margin-left: 30px; margin-top: -5px;
+}
+
+.editor ul li , .editor ol li {
+	margin: 5px 0;
+}
+
+/******************** 白色有透明度背景 ********************/
+.whiteBg {
+	background: url("../images/whiteBg.png") repeat;
+}

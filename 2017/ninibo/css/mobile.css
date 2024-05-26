@@ -1,0 +1,124 @@
+@charset "utf-8";
+
+.main { min-height: calc(72vh - 65px); margin: 10px auto; }
+
+/*-------------------------- header ------------------------- */
+header { height: 45px; padding: 0; }
+.navBar { position: fixed; width: 100%; top: 0; left: 0; padding: 10px; background: #FFF; border-bottom: 1px solid #7a726f; }
+.navBar > div.logo { flex: 1; margin-left: -35px; z-index: 1; }
+.navBar > div.logo a, .navBar > div.logo a img { height: 25px; }
+.navBar > div.leftMenu { display: none; position: fixed; width: auto; height: 100%; top: 45px; left: 0; padding-bottom: 50px; background: rgba(122,114,111,0.9); overflow: scroll; }
+.navBar > div.leftMenu > div { display: block; width: 100%; padding: 0; border-bottom: 1px solid #635d5a; }
+.navBar > div.leftMenu > div:last-child { border-bottom: none; }
+.navBar > div.leftMenu > div:hover { background: #635d5a; }
+.navBar > div.leftMenu > div > a { display: inline-block; width: 100%; padding: 10px 15px; color: #FFF; }
+@keyframes colorShineM { 0% { color: #FFF; } 50% { color: #ff9191; } 100% { color: #FFF; } }
+.navBar > div.leftMenu > div.point > a { animation-name: colorShineM; }
+.navBar > div.rightMenu { flex: 1; z-index: 1; }
+.secondMenu { display: block; position: static; margin-top: 0; padding: 0 0 10px 0; background: none; }
+.secondMenu > div > a { display: block; padding: 0 15px; }
+.search { flex: 1; font-size: 24px; }
+.searchToggle { top: 10px; right: 10px; }
+.searchBar { width: 100vw; padding: 10px 0; margin: 29px -10px 0 0; background: #FFF; border-bottom: 1px solid #7a726f; }
+.navBar > div.navToggle { display: inline-flex; width: 35px; }
+ @media all and (-ms-high-contrast:none){
+     .navBar > div.navToggle { padding-top: 5px; } /* IE10 */
+     *::-ms-backdrop, .navBar > div.navToggle { padding-top: 5px; } /* IE11 */
+}
+.navIcon { position: relative; width: 30px; height: 25px; zoom: 0.8;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: .5s ease-in-out;
+  -moz-transition: .5s ease-in-out;
+  -o-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+}
+.navIcon span { display: block; position: absolute; width: 100%; height: 4px; left: 0; background: #7a726f; opacity: 1;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: .25s ease-in-out;
+  -moz-transition: .25s ease-in-out;
+  -o-transition: .25s ease-in-out;
+  transition: .25s ease-in-out;
+}
+.navIcon span:nth-child(1) { top: 0px; }
+.navIcon span:nth-child(2), .navIcon span:nth-child(3) { top: 10px; }
+.navIcon span:nth-child(4) { top: 20px; }
+.navIcon.open span:nth-child(1) { width: 0%; top: 10px; left: 50%; }
+.navIcon.open span:nth-child(2) {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.navIcon.open span:nth-child(3) {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+.navIcon.open span:nth-child(4) { width: 0%; top: 10px; left: 50%; }
+
+/*-------------------------- crumbs ------------------------- */
+.crumbs { margin: 5px 10px; font-size: 12px; }
+.crumbs > a { font-size: 12px; }
+
+/*-------------------------- sortSelect ------------------------- */
+.sortSelect { width: 100%; margin: 5px 10px; font-size: 12px; text-align: center; }
+.sortSelect > a { font-size: 12px; }
+
+/*-------------------------- footer ------------------------- */
+footer { padding-bottom: 40px; }
+
+/*-------------------------- ptMenu ------------------------- */
+.ptMenu { display: none; }
+
+/*-------------------------- ptList ------------------------- */
+.ptList { padding: 0 1% !important; }
+
+/*-------------------------- ptDetail ------------------------- */
+.ptPic > div { min-width: 100%; margin: 0 0 1vw 0; }
+.ptContent { top: 60px; }
+.ptContent .price > del { display: block; margin-left: 0; }
+.ptContent .size .select { width: 100%; margin-right: 0; }
+.ptContent .num { width: 100%; }
+.ptContent .num input[type=text] { width: 100%; }
+.addCart { position: fixed; width: 100%; left: 0; bottom: 0; z-index: 4; }
+.addWishList { margin-top: 0; }
+.addWishList button { padding: 5px 0; }
+
+/*-------------------------- member ------------------------- */
+.memberMenu { margin: 30px auto; }
+.memberArea { margin: 0 auto 30px; }
+
+/*-------------------------- order ------------------------- */
+.orderList { margin: 0 15px; }
+.orderList th, .orderList td { display: inline-block; padding: 2px 15px; vertical-align: middle; border-top: none; overflow: hidden; }
+.orderList thead th { display: none; }
+.orderList tbody tr { display: block; padding: 10px 0; text-align: center; border-top: 1px solid #7a726f; }
+.orderList tbody tr:first-child { border-top: none; }
+
+.orderList.detail tbody tr { display: flex; flex-wrap: wrap; justify-content: flex-end; align-items: center; border-top: 1px solid #7a726f; } 
+.orderList.detail tbody tr td  { padding: 2px 8px; }
+.orderList.detail tbody tr td.pic { width: 20%; }
+.orderList.detail tbody tr td.name { width: 80%; }
+.orderList.detail tfoot tr { display: flex; justify-content: flex-end; text-align: right; }
+.orderList.detail tfoot tr th { width: calc(100vw - 30px); }
+.orderList.detail tfoot tr td { width: 50%; }
+
+.orderInfo { max-width: calc(100% - 30px); }
+.orderInfo .group { width: 100%; }
+.orderInfo .group:nth-child(2) { border-top: 1px solid #7a726f; }
+.orderInfo .group > div { width: 35%; }
+.orderInfo .group > div:nth-child(2n+1) { width: 65%; }
+
+/*-------------------------- cart ------------------------- */
+.orderInfo .formRow .select { width: 33%; }
+.orderInfo .formRow .add { width: 100%; } 
+
+/*-------------------------- member_cash ------------------------- */
+.member_cash .remain::before { content: "剩餘"; }

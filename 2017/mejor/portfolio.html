@@ -1,0 +1,227 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<title>╳mejor梅爵工作室╳</title>
+<meta name="title" content="mejor梅爵工作室" /> 
+<meta name="description" content="mejor梅爵工作室" />
+<meta name="keywords" content="mejor梅爵工作室">
+<meta name="author" content="powered by mejor梅爵工作室" /> 
+<meta name="copyright" content="© 2013 mejor梅爵工作室" /> 
+
+<link type="image/x-icon" rel="icon" href="favicon.ico">
+<link type="text/css" rel="stylesheet" href="css/style.css" />
+<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.isotope.min.js"></script><!-- 自由排列 -->
+<script type="text/javascript" src="js/jquery.infinitescroll.min.js"></script><!-- isotope more -->
+<script type="text/javascript" src="js/shadowbox.js"></script><!-- 燈箱 -->
+<script type="text/javascript" src="js/script.js"></script>
+<script type="text/javascript">
+$(function(){
+	if($('#portfolio .element').length > 0){
+		var $container = $('#portfolio');
+		
+		$container.imagesLoaded( function(){
+			$('.element img').stop().animate({opacity:1},500);
+			$container.isotope({
+				transformsEnabled : false,
+				masonry: {
+				  columnWidth: 4
+				},
+				itemSelector : '.element'
+			});
+			
+			$container.infinitescroll(
+				{
+					navSelector  : '#page_nav',    // selector for the paged navigation 
+					nextSelector : '#page_nav a',  // selector for the NEXT link (to page 2)
+					itemSelector : '.element',     // selector for all items you'll retrieve
+					loading: {
+						finishedMsg: 'No more pages to load.',
+						img: 'images/loading.gif'
+					}
+				},
+				// call Isotope as a callback
+				function( newElements ){
+					$('.element img').stop(true,true).animate({opacity:1});
+					$container.isotope( 'appended', $( newElements ) );
+				}
+			);
+		});
+		
+		var $optionSets = $('.option-set'),
+		$optionLinks = $optionSets.find('a');
+	
+		$optionLinks.click(function(){
+			var $this = $(this);
+			// don't proceed if already selected
+			if ( $this.hasClass('selected') ) {
+			  return false;
+			}
+			var $optionSet = $this.parents('.option-set');
+			$optionSet.find('.selected').removeClass('selected');
+			$this.addClass('selected');
+	  
+			// make option object dynamically, i.e. { filter: '.my-filter-class' }
+			var options = {},
+				key = $optionSet.attr('data-option-key'),
+				value = $this.attr('data-option-value');
+			// parse 'false' as false boolean
+			value = value === 'false' ? false : value;
+			options[ key ] = value;
+			if ( key === 'layoutMode' && typeof changeLayoutMode === 'function' ) {
+			  // changes in layout modes need extra logic
+			  changeLayoutMode( $this, options )
+			} else {
+			  // otherwise, apply new options
+			  $container.isotope( options );
+			}
+			
+			return false;
+		});
+	
+		$('.element').hover(function(){
+			$(this).children('.mask').stop(true,true).animate({opacity:0.8});
+			$(this).children('.link').stop(true,true).animate({opacity:1});
+		}, function(){
+			$(this).children('.mask').stop(true,true).animate({opacity:0});
+			$(this).children('.link').stop(true,true).animate({opacity:0});
+		});
+		
+		//lightbox
+		Shadowbox.init();
+	}
+});
+</script>
+</head>
+
+<body>
+
+<div id="wrap">
+	<div id="header">
+		<a class="logo" href="index.html"></a>
+    	<div id="lavaMenu">
+            <ul>
+                <li><a class="news" href="news.html"></a></li>
+                <li><a class="service" href="service_dataWeb.html"></a></li>
+                <li class="selected"><a class="portfolio" href="portfolio.html"></a></li>
+                <li><a class="contact" href="index.html#contact"></a></li>
+                <li><a class="home" href="index.html"></a></li>
+            </ul>
+            <div id="lavaMenuHover"><div class="bg"></div></div>
+		</div><!-- END #lavaMenu -->
+    </div><!-- END #header -->
+    
+    <div id="banner">
+    	<div class="portfolioBanner"></div>
+    </div><!-- END #banner -->
+    
+    <div id="container" style="margin-top:-255px;">
+    	<div class="title"><img src="images/portfolio.jpg" /><img src="images/X.png" />資料庫網頁設計</div>
+        
+        <div class="option-set" data-option-key="filter">
+            <a href="#all" data-option-value="*" class="selected">Show All</a>
+            <a href="#food" data-option-value=".food">餐飲食品</a>
+            <a href="#travel" data-option-value=".travel">觀光旅遊</a>
+            <a href="#brand" data-option-value=".brand">企業品牌</a>
+            <a href="#team" data-option-value=".team">機關團體</a>
+            <a href="#shop" data-option-value=".shop">購物網站</a>
+		</div>
+        
+        <div id="portfolio">
+            <div class="element food"><!-- class右邊那個要對應.option-set a的data-option-value, 才能做分類動態 -->
+                <img src="images/230170_1.jpg" />
+                <a target="_blank" href="portfolio_inner.html" class="link" rel="shadowbox[link];width=600;height=400"></a>
+                <h2>EATO美食護照</h2>
+                <div class="mask"></div>
+            </div>
+            <div class="element travel">
+                <img src="images/230210_1.jpg" />
+                <a target="_blank" href="images/230210_1.jpg" class="link" rel="shadowbox[link]"></a>
+                <h2>宏璽居家工程(公版)</h2>
+                <div class="mask"></div>
+            </div>
+            <div class="element brand">
+                <img src="images/230245_1.jpg" />
+                <a target="_blank" href="http://hsuchien.myweb.hinet.net/" class="link" rel="shadowbox[link]"></a>
+                <h2>食樂拉麵(公版)</h2>
+                <div class="mask"></div>
+            </div>
+            <div class="element team">
+                <img src="images/230170_2.jpg" />
+                <a target="_blank" href="http://hsuchien.myweb.hinet.net/" class="link"></a><!-- 沒下rel參數就是直接外連, 不跳燈箱 -->
+                <h2>詹浩文教機構</h2>
+                <div class="mask"></div>
+            </div>
+            <div class="element shop">
+                <img src="images/230170_3.jpg" />
+                <a target="_blank" href="images/230170_3.jpg" class="link" rel="shadowbox[link]"></a>
+                <h2>亞西亞名床</h2>
+                <div class="mask"></div>
+            </div>
+            <div class="element shop">
+                <img src="images/230170_4.jpg" />
+                <a target="_blank" href="images/230170_4.jpg" class="link" rel="shadowbox[link]"></a>
+                <h2>百鹿食堂(公版)</h2>
+                <div class="mask"></div>
+            </div>
+            <div class="element team">
+                <img src="images/230170_1.jpg" />
+                <a target="_blank" href="portfolio_inner.html" class="link" rel="shadowbox[link];width=600;height=400"></a>
+                <h2>EATO美食護照</h2>
+                <div class="mask"></div>
+            </div>
+            <div class="element brand">
+                <img src="images/230210_1.jpg" />
+                <a target="_blank" href="images/230210_1.jpg" class="link" rel="shadowbox[link]"></a>
+                <h2>宏璽居家工程(公版)</h2>
+                <div class="mask"></div>
+            </div>
+            <div class="element travel">
+                <img src="images/230245_1.jpg" />
+                <a target="_blank" href="http://hsuchien.myweb.hinet.net/" class="link" rel="shadowbox[link]"></a>
+                <h2>食樂拉麵(公版)</h2>
+                <div class="mask"></div>
+            </div>
+            <div class="element food">
+                <img src="images/230170_3.jpg" />
+                <a target="_blank" href="images/230170_3.jpg" class="link" rel="shadowbox[link]"></a>
+                <h2>亞西亞名床</h2>
+                <div class="mask"></div>
+            </div>
+            <div class="element food">
+                <img src="images/230170_4.jpg" />
+                <a target="_blank" class="link" href="images/230170_4.jpg" rel="shadowbox[link]"></a>
+                <h2>百鹿食堂(公版)</h2>
+                <div class="mask"></div>
+            </div>
+            <div class="element travel">
+                <img src="images/230170_1.jpg" />
+                <a target="_blank" href="portfolio_inner.html" class="link" rel="shadowbox[link];width=600;height=400"></a>
+                <h2>EATO美食護照</h2>
+                <div class="mask"></div>
+            </div>
+        </div><!-- END #portfolio -->
+        
+        <!-- more with ajax -->
+        <nav id="page_nav">
+        	<a href="portfolio2.html"></a>
+        </nav>
+        
+        <div class="clearfix"></div>
+        <div align="center" style="margin-top:40px;"><a href="index.html#contact"><img src="images/dataWebBtn.png" /></a></div>
+    </div><!-- END #container -->
+    
+	<div class="footerFix"></div>
+</div><!-- END #wrap -->
+
+<div id="footer">
+	<div class="inner">
+        <a class="mail" target="_blank" href="mailto:service@mejor.com.tw"></a>
+        <a class="home" href="index.html"></a>
+    </div>
+</div><!-- END #footer -->
+
+</body>
+</html>

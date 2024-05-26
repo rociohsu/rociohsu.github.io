@@ -1,0 +1,46 @@
+@charset "utf-8";
+
+/*--------------------------cookies------------------------- */
+.cookie-box {
+	position: fixed;
+  width: 100%; top: 0; left: 0;
+  text-align: center;
+  background: rgba(238,238,238,0.9);
+  letter-spacing: 2px;
+  padding: 20px;
+  z-index: 4;
+}
+.cookie-box p {
+  font-size: 14px;
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+.cookie-box p a {
+  color: #e4007f;
+  font-size: 14px;
+}
+.cookie-box > a {
+  -webkit-border-radius: 50px;
+  border-radius: 50px;
+  background: #ffbce0;
+  font-size: 14px;
+  color: #666;
+  padding: 0 20px;
+  text-decoration: none;
+  border: 1px solid #666;
+  margin-right: 10px;
+  -moz-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+	cursor: pointer;
+}
+.cookie-box .cookie-yes:hover {
+  background: #ffa3d4;
+}
+.cookie-box .cookie-no {
+  background: #eee;
+}
+.cookie-box .cookie-no:hover {
+  background: #e1e1e1;
+}

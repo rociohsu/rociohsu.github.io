@@ -1,0 +1,84 @@
+@charset "UTF-8";
+/* CSS Document */
+
+@import url(style.css);
+
+/******************** news list ********************/
+.newsList {
+	width: 500px; padding-top: 100px;
+	border-bottom: 1px dashed #6a4f29;
+}
+
+.newsList > a {
+	display: block;
+	color: #43350d; font-size: 15px; line-height: 36px; text-decoration: none;
+	border-top: 1px dashed #6a4f29;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	-o-text-overflow: ellipsis;
+	-icab-text-overflow: ellipsis;
+	-khtml-text-overflow: ellipsis;
+	-moz-text-overflow: ellipsis;
+	-webkit-text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+.newsList > a:hover { background: url("../images/news/listHover.png") repeat; }
+.newsList > a .date { padding: 0 5px; color: #ff7e00; font-size: 14px; font-family: Verdana; }
+.newsList > a .store { padding-right: 5px; color: #cc3a4f; }
+
+.newsList > a .pic {
+	display: none; position: absolute;
+	width: 282px; right: 0; top: 0;
+}
+
+.newsList > a:hover .pic { display: block; }
+
+/******************** tooltip ********************/
+#tooltip {
+	position: absolute; display: none;
+	z-index: 10;
+}
+
+#tooltip h3, #tooltip div {
+	padding: 5px;
+	font-size: 13px; color: #FFF; line-height: 14px;
+	background: #FFF;
+}
+
+#tooltip h3, #tooltip div img { width: 240px; }
+
+/******************** news detail ********************/
+.newsDetail { padding-top: 100px; }
+
+.newsDetail .newsTopBar {
+	padding: 10px;
+	color: #000; font-size: 15px;
+	background: url("../images/news/listHover.png") repeat;
+}
+
+.newsDetail .newsTopBar .store {
+	float: left;
+	width: 80px; padding-right: 5px; 
+	color: #cc3a4f;
+}
+
+.newsDetail .newsTopBar .title {
+	float: left;
+	width: 525px;
+}
+
+.newsDetail .newsTopBar .date {
+	float: left;
+	width: 100px;
+	color: #ff7e00; font-size: 14px; font-family: Verdana; text-align: right;
+}
+
+.newsDetail .newsContent {
+	min-height: 400px; padding: 10px;
+}
+
+.newsDetail .newsContent .pic {
+	float: left;
+	margin: 0 10px 5px 0;
+}

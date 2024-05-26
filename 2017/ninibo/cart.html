@@ -1,0 +1,254 @@
+<html lang="zh-Hant">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0,shrink-to-fit=no">
+<meta http-equiv="content-language" content="zh-Hant-TW" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<title>ninibo</title>
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" media="screen and (max-width: 640px)" href="css/mobile.css">
+</head>
+
+<body>
+<header>
+	<div class="navBar container">
+		<div class="navToggle"><a class="navIcon"><span></span><span></span><span></span><span></span></a></div>
+		<div class="logo"><a href="index.html"><img src="images/logo.svg"></a></div>
+		<div class="leftMenu">
+			<div class="point"><a href="category.html">NEW</a></div>
+			<div><a href="category.html">熱賣款</a></div>
+			<div><a href="category.html">快速出貨</a></div>
+			<div class="point"><a href="category.html">SALE</a>
+				<div class="secondMenu">
+					<div><a href="category.html">新品8折</a></div>
+					<div><a href="category.html">2件799</a></div>
+				</div>
+			</div>
+			<div><a href="category.html">ALL</a>
+				<div class="secondMenu">
+					<div><a href="category.html">上衣</a></div>
+					<div><a href="category.html">褲/裙</a></div>
+					<div><a href="category.html">連身/洋裝</a></div>
+					<div><a href="category.html">外套/罩衫</a></div>
+					<div><a href="category.html">配件/飾品</a></div>
+				</div>
+			</div>
+		</div>
+		<div class="rightMenu">
+			<div class="search" >
+				<form action="search.html">
+					<div class="searchToggle">
+						<div class="searchBar">
+							<input type="text" value="">
+							<button type="submit" class="submit">SEARCH</button>
+							<a class="close">&#215;</a>
+						</div>
+					</div>
+					<a class="searchOpen"><i class="icon-search"></i></a>
+				</form>
+			</div>
+			<div class="login"><a href="login.html"><i class="icon-login"></i></a></div>
+			<div class="wishList"><a href="wishlist.html"><i class="icon-heart"></i><b class="wishListNum">0</b></a></div>
+			<div class="cart"><a href="cart.html"><i class="icon-cart"></i><b class="cartNum">0</b></a></div>
+		</div>
+	</div>
+</header>
+
+	
+<div class="main container">
+	<div class="memberMenu">
+		<a href="wishlist.html">收藏清單</a>
+		<a class="current" href="cart.html">購物車</a>
+	</div>
+    
+  <div class="memberCash"><a href="member_cash.html">可用購物金NT$ 100 <i class="icon-search"></i></a></div>
+	
+	<form action="order_detail.html">
+	<table class="orderList detail">
+		<thead>
+			<tr>
+				<th colspan="2">商品名稱</th>
+				<th>顏色</th>
+				<th>尺寸</th>
+				<th>貨況</th>
+				<th>單件價格</th>
+				<th>數量</th>
+				<th>小計</th>
+				<th>刪除</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td class="pic"><a href="product.html"><img src="images/product/pt1.jpg"></a></td>
+				<td class="name"><h1>小小牛仔</h1><h2>兩面穿連身吊帶褲</h2></td>
+				<td>白色</td>
+				<td>L</td>
+				<td>現貨</td>
+				<td class="price">NT$ <b>790</b> <del>NT$ 990</del></td>
+				<td>
+					<div class="num">
+						<input type="button" class="min" value="-">  
+						<input type="text" class="buyNum" value="1" max="10" readonly>  
+						<input type="button" class="add" value="+">
+					</div>
+				</td>
+				<td>NT$ 799</td>
+				<td><button type="button" class="delete">x</button></td>
+			</tr>
+			<tr>
+				<td class="pic"><a href="product.html"><img src="images/product/pt2.jpg"></a></td>
+				<td class="name"><h1>小小牛仔</h1><h2>兩面穿連身吊帶褲</h2></td>
+				<td>白色</td>
+				<td>L</td>
+				<td>現貨</td>
+				<td class="price">NT$ <b>790</b> <del>NT$ 990</del></td>
+				<td>
+					<div class="num">
+						<input type="button" class="min" value="-">  
+						<input type="text" class="buyNum" value="1" max="10" readonly>
+						<input type="button" class="add" value="+">
+					</div>
+				</td>
+				<td>NT$ 799</td>
+				<td><button type="button" class="delete">x</button></td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<th colspan="9">
+					<div><a href="category.html">滿3000元免運</a></div>
+					<div><a href="category.html">新品8折</a></div>
+				</th>
+			</tr>
+			<tr>
+				<td colspan="7">合計3件</td>
+				<td colspan="2">NT$1800</td>
+			</tr>
+			<tr>
+				<td colspan="7">折抵購物金</td>
+				<td colspan="2">-NT$<input type="tel" class="num" value="100"></td>
+			</tr>
+			<tr>
+				<td colspan="7">運費</td>
+				<td colspan="2">NT$0</td>
+			</tr>
+			<tr>
+				<td colspan="7">總計</td>
+				<td colspan="2">NT$1700</td>
+			</tr>
+		</tfoot>
+	</table>
+	<div class="orderInfo">
+		<div class="group">
+			<h1>訂購資訊</h1>
+			<div>訂單編號</div><div>2018061416193957</div>
+			<div>訂單日期</div><div>2018/06/15 12:19AM</div>
+			<div>訂購人</div><div><input type="text" id="name" value="張妮妮"></div>
+			<div>聯絡電話</div><div><input type="tel" id="mobile" value="0912345***"></div>
+				<input type="hidden" id="zipcode" value="100">
+				<input type="hidden" id="city" value="台北市">
+				<input type="hidden" id="county" value="大安區">
+				<input type="hidden" id="addr" value="敦化南路二段71號">
+			<div>E-MAIL</div><div>shachien@gmail.com</div>
+			<div>送貨方式</div><div>
+				<div class="select">
+					<select id="getWay">
+						<option value="宅配">宅配</option>
+						<option value="郵局">郵局</option>
+						<option value="7-11取貨">7-11取貨</option>
+						<option value="7-11取貨付款">7-11取貨付款</option>
+						<option value="全家取貨">全家取貨</option>
+						<option value="全家取貨付款">全家取貨付款</option>
+					</select>
+				</div>
+			</div>
+			<div>付款方式</div><div>
+				<div class="select">
+					<select id="payWay1">
+						<option value="信用卡付款">信用卡付款(綠界)</option>
+						<option value="ATM轉帳">ATM轉帳</option>
+					</select>
+					<select id="payWay2">
+						<option value="超商取貨付款">超商取貨付款</option>
+					</select>
+				</div>
+			</div>
+			<div>備註</div><div>7-11取貨、全家取貨<br>請提供與身分證件相同的真實姓名以讓門市人員查驗，若填寫錯誤導致無法取件，重配郵資將由訂購人負擔。</div>
+		</div>
+		<div class="group">
+			<h1>收件資訊</h1>
+			<div><label><input type="checkbox" id="sameAll">同訂購人</label></div><div></div>
+			<div>電子發票</div><div><input type="radio" name="e" checked></div>
+			<div>紙本發票</div><div><input type="radio" name="e"></div>
+			<div>統一編號</div><div><input type="tel" value=""></div>
+			
+			<div>發票寄送地址</div><div class="formRow">
+				<label class="tip">地址</label>
+				<input class="short" type="tel" maxlength="5" id="zipcode1" placeholder="郵遞區號" readonly>
+				<div class="select">
+					<select id="city1">
+						<option value="新北市">新北市</option>
+						<option value="台北市">台北市</option>
+					</select>
+				</div>
+    		<div class="select">
+					<select id="county1">
+						<option value="中正區">中正區</option>
+						<option value="大安區">大安區</option>
+					</select>
+				</div>
+				<input class="add" type="text" id="addr1" value="">
+			</div>
+			
+			<div>收件人</div><div><input type="text" id="name2" value=""></div>
+			<div>聯絡電話</div><div><input type="tel" id="mobile2" value=""></div>
+			
+			<!-- 超商取貨顯示 -->
+			<div class="superBusi">門市名稱</div><div class="superBusi"><input type="text" value=""><button type="button" class="find"><i class="icon-search"></i></button></div>
+			<div class="superBusi">店號</div><div class="superBusi"><input type="tel" value=""></div>
+			
+			<!-- 郵寄宅配顯示 -->
+			<div class="addrSelf">收件地址</div><div class="formRow addrSelf">
+				<label class="tip">地址</label>
+				<input class="short" type="tel" maxlength="5" id="zipcode2" placeholder="郵遞區號" readonly>
+				<div class="select">
+					<select id="city2">
+						<option value="新北市">新北市</option>
+						<option value="台北市">台北市</option>
+					</select>
+				</div>
+    		<div class="select">
+					<select id="county2">
+						<option value="中正區">中正區</option>
+						<option value="大安區">大安區</option>
+					</select>
+				</div>
+				<input class="add" type="text" id="addr2" value="">
+			</div>
+		</div>
+	</div>
+		
+	<div class="btn">
+		<button type="reset" class="delete">清空購物車</button>
+		<button type="submit">送出訂單</button>
+	</div>
+	</form>
+	
+</div>
+	
+<footer class="container">
+	<a><i class="icon-ig"></i></a>
+	<a><i class="icon-fb"></i></a>
+	<a><i class="icon-line"></i></a>
+	<p>shachien@gmail.com<br />OPEN 09:00-12:00 13:00-18:00</p>
+</footer>
+	
+<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="js/jquery-migrate-3.0.0.min.js"></script>
+<script type="text/javascript" src="js/jquery.magnific-popup.min.js"></script>
+<script type="text/javascript" src="js/owl.carousel.min.js"></script>
+<script type="text/javascript" src="js/wow.min.js"></script>
+<script type="text/javascript" src="js/layout.js"></script>
+</body>
+</html>

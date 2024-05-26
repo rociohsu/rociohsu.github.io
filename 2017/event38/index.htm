@@ -1,0 +1,252 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=big5" />
+<title>PChome商店街 - 1/12-1/31 商店街年貨大街 名店年菜伴手禮 早鳥搶先購</title>
+<script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript">
+$(function(){	
+	//topBtn滑動
+	var name = '.topBtn';
+	var menuYloc = null;
+	menuYloc = parseInt($(name).css("top").substring(0,$(name).css("top").indexOf("px")));
+		
+	$(window).scroll(function () {
+		var pheight=0;
+		if($(document).scrollTop()>650){	
+			offset = 250+$(document).scrollTop()+"px";
+			$('a.topBtn').stop(true,false).fadeIn(500);
+		}else{
+			offset=650+"px";
+			$('a.topBtn').stop(true,false).fadeOut(300);
+		}
+	
+		$(name).animate({top:offset},{duration:500,queue:false});
+	});
+	
+	//點選滑動頁面
+	$('a.topBtn, a.tab').click(function(){
+		var id = $(this).attr('rel');
+		var $body = (window.opera) ? (document.compatMode == "CSS1Compat" ? $('html') : $('body')) : $('html,body');
+		$body.animate({
+			scrollTop: $(id).offset().top
+		},300);
+	});
+
+});
+</script>
+<STYLE type="text/css">
+body { margin:0; padding: 0; font-size: 12px; font-family: Verdana, Arial, Helvetica, sans-serif; -webkit-text-size-adjust: none; }
+h1 ,h2 ,h3 ,h4 ,h5 ,h6 { margin: 0; }
+table { text-align: center; }
+img { border: none; }
+a, a:hover { color: #000; text-decoration: none;}
+
+.bg { position: relative; background: #a60000 url(http://img.pcstore.com.tw/store_ad/150112store/bg.jpg) no-repeat center top; }
+.topBtn { position: absolute; display: none; width: 100px; height: 132px; right: 0; top: 650px; cursor: pointer; }
+.tab { cursor: pointer; }
+
+/* footer */
+.footer { font-size:12px; padding:10px; }
+.footer p { margin:5px; }
+.footer a {	color:#0072ff; text-decoration:none; }
+.footer a:hover { color:#0072ff; text-decoration:underline; }
+.copyright { font-size:10px; color:#6f6f6f}
+</STYLE>
+</head>
+
+<body>
+
+<div class="bg" id="top">
+<!-- 主視覺 -->
+<table width="1260" align="center" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td>
+    	<table width="441" align="center" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td colspan="2"><a href="http://www.pcstore.com.tw/"><img src="main_01.jpg" width="441" height="114" border="0" style="display:block;" /></a></td>
+          </tr>
+          <tr>
+            <td colspan="2"><a href="https://paystore.pcstore.com.tw/adm/coupon_getit.htm?inw=IDT8jF6..HJFPvR1rem1Sy.KG"><img src="main_04.jpg" width="441" height="348" border="0" style="display:block;" /></a></td>
+          </tr>
+          <tr>
+            <td><a href="http://www.pcstore.com.tw/adm/psearch.htm?st_sort=1&amp;showstyle=Graph&amp;pql_word=IGE1eMu..OMOLnXoGHAGQXXzGJUUmYdYytAeDnMpxJ-UWXXvAR9OjcdvwlO.Zs1pap9Ojidsk&amp;slt_k_range=all&amp;pch_exh=P000754&amp;slt_p_range=&amp;slt_p_range_s=&amp;slt_p_range_e=&amp;p_sup_kind_b=2"><img src="main_05.jpg" width="225" height="319" border="0" style="display:block;" /></a></td>
+            <td><a href="http://www.pcstore.com.tw/lai_mart/S730349.htm"><img src="main_06.jpg" width="216" height="319" border="0" style="display:block;" /></a></td>
+          </tr>
+        </table>
+    </td>
+    <td width="370" background="http://img.pcstore.com.tw/store_ad/150112store/main_02.jpg"><img src="main_02.gif" width="370" height="781" border="0" style="display:block;" /></td>
+    <td>
+    	<table width="449" align="center" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td colspan="2"><a href="http://www.pcstore.com.tw/kuaiche/F00741615.htm"><img src="main_03.jpg" width="449" height="489" border="0" style="display:block;" /></a></td>
+          </tr>
+          <tr>
+            <td><a href="http://www.pcstore.com.tw/lovefruit/HM/search.htm?st_sort=3&pql_word=IUKG6Nf..GHHNFwefhvoXHUIVzvE74z0_8FmmFU0g0NTh94QWRTSx..IVzvE74z0_8Jii"><img src="main_07.jpg" width="225" height="292" border="0" style="display:block;" /></a></td>
+            <td><a class="tab" rel="#group2"><img src="main_08.jpg" width="224" height="292" border="0" style="display:block;" /></a></td>
+          </tr>
+        </table>
+    </td>
+  </tr>
+</table>
+
+
+<!-- 主打品 -->
+<table width="1260" align="center" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><a href="http://www.pcstore.com.tw/ydmall/HM/coupon_intro.htm?inw=ICziP7f..CPFMfuIT0A-gW6fS"><img src="main_09.jpg" width="630" height="441" border="0" style="display:block;" /></a></td>
+    <td><a href="http://www.pcstore.com.tw/nanhairich/S669018.htm"><img src="main_10.jpg" width="630" height="441" border="0" style="display:block;" /></a></td>
+  </tr>
+  <tr>
+    <td><a href="http://www.pcstore.com.tw/oe-sea/S108973.htm"><img src="main_11.jpg" width="630" height="428" border="0" style="display:block;" /></a></td>
+    <td><a href="http://www.pcstore.com.tw/itaste/S00VNEG.htm"><img src="main_12.jpg" width="630" height="428" border="0" style="display:block;" /></a></td>
+  </tr>
+  <tr>
+    <td><a href="http://www.pcstore.com.tw/lai_mart/S674869.htm"><img src="main_13.jpg" width="630" height="386" border="0" style="display:block;" /></a></td>
+    <td><a href="http://www.pcstore.com.tw/seamarket/"><img src="main_14.jpg" width="630" height="386" border="0" style="display:block;" /></a></td>
+  </tr>
+  <tr>
+    <td><a href="http://www.pcstore.com.tw/kuaiche/"><img src="main_15.jpg" width="630" height="428" border="0" style="display:block;" /></a></td>
+    <td><a href="http://www.pcstore.com.tw/blackbridge/S827841.htm"><img src="main_16.jpg" width="630" height="428" border="0" style="display:block;" /></a></td>
+  </tr>
+  <tr>
+    <td><a href="http://www.pcstore.com.tw/nature_food/"><img src="main_17.jpg" width="630" height="406" border="0" style="display:block;" /></a></td>
+    <td><a href="http://www.pcstore.com.tw/lovefruit/S649076.htm"><img src="main_18.jpg" width="630" height="406" border="0" style="display:block;" /></a></td>
+  </tr>
+</table>
+
+
+<!-- 食品 -->
+<table width="1260" align="center" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><a href="http://www.pcstore.com.tw/transasia/S00VHLK.htm"><img src="group1_01.jpg" width="420" height="246" border="0" style="display:block;" /></a></td>
+    <td><a href="http://www.pcstore.com.tw/itaste/S00VNEG.htm"><img src="group1_02.jpg" width="420" height="246" border="0" style="display:block;" /></a></td>
+    <td><a href="http://www.pcstore.com.tw/fastbuy/S00VVDS.htm"><img src="group1_03.jpg" width="420" height="246" border="0" style="display:block;" /></a></td>
+  </tr>
+  <tr>
+    <td><a href="http://www.pcstore.com.tw/lohasinn/S00VE1T.htm"><img src="group1_04.jpg" width="420" height="239" border="0" style="display:block;" /></a></td>
+    <td><a href="http://www.pcstore.com.tw/orderme/S00VT0Q.htm"><img src="group1_05.jpg" width="420" height="239" border="0" style="display:block;" /></a></td>
+    <td><a href="http://www.pcstore.com.tw/tpebj/S908897.htm?st_sort=1"><img src="group1_06.jpg" width="420" height="239" border="0" style="display:block;" /></a></td>
+  </tr>
+  <tr>
+    <td><a href="http://www.pcstore.com.tw/fashionsky/S00UI8E.htm"><img src="group1_07.jpg" width="420" height="240" border="0" style="display:block;" /></a></td>
+    <td><a href="http://www.pcstore.com.tw/ourmart/S404370.htm"><img src="group1_08.jpg" width="420" height="240" border="0" style="display:block;" /></a></td>
+    <td><a href="http://www.pcstore.com.tw/nykitchen/"><img src="group1_09.jpg" width="420" height="240" border="0" style="display:block;" /></a></td>
+  </tr>
+  <tr>
+    <td><a href="http://www.pcstore.com.tw/shibuya/S823690.htm"><img src="group1_10.jpg" width="420" height="245" border="0" style="display:block;" /></a></td>
+    <td><a href="http://www.pcstore.com.tw/cupserver/S590665.htm"><img src="group1_11.jpg" width="420" height="245" border="0" style="display:block;" /></a></td>
+    <td><a href="http://www.pcstore.com.tw/awastea/S202084.htm"><img src="group1_12.jpg" width="420" height="245" border="0" style="display:block;" /></a></td>
+  </tr>
+</table>
+
+
+<!-- 保健 -->
+<table width="1260" align="center" border="0" cellspacing="0" cellpadding="0" id="group2">
+  <tr>
+    <td colspan="3"><img src="group2_01.jpg" width="1260" height="141" border="0" style="display:block;" /></td>
+  </tr>
+  <tr>
+    <td><a href="http://www.pcstore.com.tw/abbott/"><img src="group2_02.jpg" width="420" height="246" border="0" style="display:block;" /></a></td>
+    <td><a href="http://www.pcstore.com.tw/nsi-nutrition/S758464.htm"><img src="group2_03.jpg" width="420" height="246" border="0" style="display:block;" /></a></td>
+    <td><a href="http://www.pcstore.com.tw/yeslife/S605624.htm"><img src="group2_04.jpg" width="420" height="246" border="0" style="display:block;" /></a></td>
+  </tr>
+  <tr>
+    <td><a href="http://www.pcstore.com.tw/longking1233/S00VT6D.htm"><img src="group2_05.jpg" width="420" height="238" border="0" style="display:block;" /></a></td>
+    <td><a href="http://www.pcstore.com.tw/hacsquare/"><img src="group2_06.jpg" width="420" height="238" border="0" style="display:block;" /></a></td>
+    <td><a href="http://www.pcstore.com.tw/bliss/"><img src="group2_07.jpg" width="420" height="238" border="0" style="display:block;" /></a></td>
+  </tr>
+  <tr>
+    <td><a href="http://www.pcstore.com.tw/Comvita/S00VSU5.htm"><img src="group2_08.jpg" width="420" height="255" border="0" style="display:block;" /></a></td>
+    <td><a href="http://www.pcstore.com.tw/youngdeliverer/"><img src="group2_09.jpg" width="420" height="255" border="0" style="display:block;" /></a></td>
+    <td><a href="http://www.pcstore.com.tw/annabelle/S00UMUH.htm"><img src="group2_10.jpg" width="420" height="255" border="0" style="display:block;" /></a></td>
+  </tr>
+</table>
+
+
+<!-- 各店LOGO -->
+<table width="1260" align="center" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><img src="group3.jpg" width="1260" height="130" border="0" style="display:block;" /></td>
+  </tr>
+  <tr>
+  	<td bgcolor="#692d19">
+        <table align="center" border="0" cellspacing="20" cellpadding="0">
+          <tr>
+            <td width="170" align="center"><a href="http://www.pcstore.com.tw/ydmall" style="color:#ffffff;"><img src="1.jpg" width="170" height="80" border="0" style="margin-bottom:3px;"> YD MALL</a></td>
+            <td width="170" align="center"><a href="http://www.pcstore.com.tw/select" style="color:#ffffff;"><img src="2.gif" width="170" height="80" border="0" style="margin-bottom:3px;">良品嚴選計畫</a></td>
+            <td width="170" align="center"><a href="http://www.pcstore.com.tw/cupserver" style="color:#ffffff;"><img src="3.jpg" width="170" height="80" border="0" style="margin-bottom:3px;">伺服憩 cupserver</a></td>
+            <td width="170" align="center"><a href="http://www.pcstore.com.tw/awastea" style="color:#ffffff;"><img src="4.gif" width="170" height="80" border="0" style="margin-bottom:3px;">阿華師茶業</a></td>
+            <td width="170" align="center"><a href="http://www.pcstore.com.tw/itsotea" style="color:#ffffff;"><img src="5.gif" width="170" height="80" border="0" style="margin-bottom:3px;">一手世界茶館</a></td>
+            <td width="170" align="center"><a href="http://www.pcstore.com.tw/warmmarkets" style="color:#ffffff;"><img src="6.jpg" width="170" height="80" border="0" style="margin-bottom:3px;">熱度市集</a></td>
+          </tr>
+          <tr>
+            <td width="170" align="center"><a href="http://www.pcstore.com.tw/lovefruit" style="color:#ffffff;"><img src="7.jpg" width="170" height="80" border="0" style="margin-bottom:3px;">菁英農場</a></td>
+            <td width="170" align="center"><a href="http://www.pcstore.com.tw/shideas" style="color:#ffffff;"><img src="8.jpg" width="170" height="80" border="0" style="margin-bottom:3px;">吉舖家jib+</a></td>
+            <td width="170" align="center"><a href="http://www.pcstore.com.tw/tftea" style="color:#ffffff;"><img src="9.gif" width="170" height="80" border="0" style="margin-bottom:3px;">茶鼎天 CHA-DING TEA</a></td>
+            <td width="170" align="center"><a href="http://www.pcstore.com.tw/jadetea" style="color:#ffffff;"><img src="10.jpg" width="170" height="80" border="0" style="margin-bottom:3px;">名池茶業</a></td>
+            <td width="170" align="center"><a href="http://www.pcstore.com.tw/coffee-life" style="color:#ffffff;"><img src="11.gif" width="170" height="80" border="0" style="margin-bottom:3px;">嵐山咖啡生活網</a></td>
+            <td width="170" align="center"><a href="http://www.pcstore.com.tw/mactin" style="color:#ffffff;"><img src="12.jpg" width="170" height="80" border="0" style="margin-bottom:3px;">馬可汀健康心園道</a></td>
+          </tr>
+          <tr>
+            <td width="170" align="center"><a href="http://www.pcstore.com.tw/bobo888" style="color:#ffffff;"><img src="13.jpg" width="170" height="80" border="0" style="margin-bottom:3px;">波波健康生活館</a></td>
+            <td width="170" align="center"><a href="http://www.pcstore.com.tw/shilaipao" style="color:#ffffff;"><img src="14.jpg" width="170" height="80" border="0" style="margin-bottom:3px;">精米屋</a></td>
+            <td width="170" align="center"><a href="http://www.pcstore.com.tw/zeus" style="color:#ffffff;"><img src="15.gif" width="170" height="80" border="0" style="margin-bottom:3px;">宙斯健身營養網</a></td>
+            <td width="170" align="center"><a href="http://www.pcstore.com.tw/genki-ichiban" style="color:#ffffff;"><img src="16.gif" width="170" height="80" border="0" style="margin-bottom:3px;">元氣一番.com</a></td>
+            <td width="170" align="center"><a href="http://www.pcstore.com.tw/sweetypharm" style="color:#ffffff;"><img src="17.gif" width="170" height="80" border="0" style="margin-bottom:3px;">甜心健康生活藥妝</a></td>
+            <td width="170" align="center"><a href="http://www.pcstore.com.tw/yinjung" style="color:#ffffff;"><img src="18.jpg" width="170" height="80" border="0" style="margin-bottom:3px;">多立康</a></td>
+          </tr>
+          <tr>
+            <td width="170" align="center"><a href="http://www.pcstore.com.tw/yeslife" style="color:#ffffff;"><img src="19.jpg" width="170" height="80" border="0" style="margin-bottom:3px;">《NOW》健而婷生技</a></td>
+            <td width="170" align="center"><a href="http://www.pcstore.com.tw/myeshop365" style="color:#ffffff;"><img src="20.jpg" width="170" height="80" border="0" style="margin-bottom:3px;"> Organika優格康</a></td>
+            <td width="170" align="center"><a href="http://www.pcstore.com.tw/magichealth" style="color:#ffffff;"><img src="21.jpg" width="170" height="80" border="0" style="margin-bottom:3px;">健康魔法師</a></td>
+            <td width="170" align="center"><a href="http://www.pcstore.com.tw/udr24h" style="color:#ffffff;"><img src="22.jpg" width="170" height="80" border="0" style="margin-bottom:3px;"> UDR_你的健康管理師</a></td>
+            <td width="170" align="center"><a href="http://www.pcstore.com.tw/abbott" style="color:#ffffff;"><img src="23.jpg" width="170" height="80" border="0" style="margin-bottom:3px;">亞培營養活力購</a></td>
+            <td width="170" align="center"><a href="http://www.pcstore.com.tw/lingoil" style="color:#ffffff;"><img src="24.jpg" width="170" height="80" border="0" style="margin-bottom:3px;">十靈本舖</a></td>
+          </tr>
+          <tr>
+            <td width="170" align="center"><a href="http://www.pcstore.com.tw/guan" style="color:#ffffff;"><img src="25.jpg" width="170" height="80" border="0" style="margin-bottom:3px;">冠燕燕窩養生館</a></td>
+            <td width="170" align="center"><a href="http://www.pcstore.com.tw/tendance-bio" style="color:#ffffff;"><img src="26.jpg" width="170" height="80" border="0" style="margin-bottom:3px;">素直商鋪</a></td>
+            <td width="170" align="center"><a href="http://www.pcstore.com.tw/sellbeauty" style="color:#ffffff;"><img src="27.jpg" width="170" height="80" border="0" style="margin-bottom:3px;"> Beauty小舖</a></td>
+            <td width="170" align="center"><a href="http://www.pcstore.com.tw/upcare" style="color:#ffffff;"><img src="28.jpg" width="170" height="80" border="0" style="margin-bottom:3px;">優沛康 UPCARE</a></td>
+            <td width="170" align="center"><a href="http://www.pcstore.com.tw/sinphar" style="color:#ffffff;"><img src="29.jpg" width="170" height="80" border="0" style="margin-bottom:3px;">杏輝專櫃</a></td>
+            <td width="170" align="center"><a href="http://www.pcstore.com.tw/ecomgo" style="color:#ffffff;"><img src="30.jpg" width="170" height="80" border="0" style="margin-bottom:3px;">益康便利GO</a></td>
+          </tr>
+          <tr>
+            <td width="170" align="center"><a href="http://www.pcstore.com.tw/youngdeliverer" style="color:#ffffff;"><img src="31.jpg" width="170" height="80" border="0" style="margin-bottom:3px;">遞漾健康嚴選</a></td>
+            <td width="170" align="center"><a href="http://www.pcstore.com.tw/sunbiotech3388" style="color:#ffffff;"><img src="32.jpg" width="170" height="80" border="0" style="margin-bottom:3px;">泰陽健康生技館</a></td>
+            <td width="170" align="center"><a href="http://www.pcstore.com.tw/weichi" style="color:#ffffff;"><img src="33.jpg" width="170" height="80" border="0" style="margin-bottom:3px;">薇琪健康生活館</a></td>
+            <td width="170" align="center"><a href="http://www.pcstore.com.tw/superqik" style="color:#ffffff;"><img src="34.jpg" width="170" height="80" border="0" style="margin-bottom:3px;">啟康健康館</a></td>
+            <td width="170" align="center"><a href="http://www.pcstore.com.tw/takmg" style="color:#ffffff;"><img src="35.jpg" width="170" height="80" border="0" style="margin-bottom:3px;">瑪斯肌力網 </a></td>
+            <td width="170" align="center"><a href="http://www.pcstore.com.tw/airdan" style="color:#ffffff;"><img src="36.gif" width="170" height="80" border="0" style="margin-bottom:3px;">康馨醫藥網</a></td>
+          </tr>
+          <tr>
+            <td width="170" align="center"><a href="http://www.pcstore.com.tw/hercules" style="color:#ffffff;"><img src="37.gif" width="170" height="80" border="0" style="margin-bottom:3px;">海克利斯健身補給</a></td>
+            <td width="170" align="center"><a href="http://www.pcstore.com.tw/helthin" style="color:#ffffff;"><img src="38.jpg" width="170" height="80" border="0" style="margin-bottom:3px;">美的適生活藥妝</a></td>
+            <td width="170" align="center"><a href="http://www.pcstore.com.tw/pupil12002" style="color:#ffffff;"><img src="39.jpg" width="170" height="80" border="0" style="margin-bottom:3px;"> PuPil健康美麗小舖</a></td>
+            <td width="170" align="center"><a href="http://www.pcstore.com.tw/bliss" style="color:#ffffff;"><img src="40.jpg" width="170" height="80" border="0" style="margin-bottom:3px;">幸福健康生活館</a></td>
+            <td width="170" align="center"><a href="http://www.pcstore.com.tw/ts6-bioshop" style="color:#ffffff;"><img src="41.gif" width="170" height="80" border="0" style="margin-bottom:3px;"> TS6@生技賣店</a></td>
+            <td width="170" align="center"><a href="http://www.pcstore.com.tw/nsi-nutrition" style="color:#ffffff;"><img src="42.jpg" width="170" height="80" border="0" style="margin-bottom:3px;">美國 Sundown 日落恩賜</a></td>
+          </tr>
+        </table>
+        <br />
+    </td>
+  </tr>
+</table>
+
+<a class="topBtn" rel="#top"><img src="topBtn.png" width="100" height="132" border="0" /></a>
+<br /><br />
+</div>
+
+
+<!-- footer 開始  -->
+<div align="center" class="footer">
+  <p>本廣告商品規格、顏色、價位如與網站不符，以網站標示為準</p>
+  <a target="_blank" href="http://www.pcstore.com.tw/"><img src="logo.png" width="264" height="55" border="0" /></a>
+  <p class="copyright">&#169; 商店街市集國際資訊股份有限公司版權所有，未經確認授權，嚴禁轉貼節錄</p>
+</div>
+<!-- footer 結束  -->
+
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<title>╳mejor梅爵工作室╳</title>
+<meta name="title" content="mejor梅爵工作室" /> 
+<meta name="description" content="mejor梅爵工作室" />
+<meta name="keywords" content="mejor梅爵工作室">
+<meta name="author" content="powered by mejor梅爵工作室" /> 
+<meta name="copyright" content="© 2013 mejor梅爵工作室" /> 
+
+<link type="image/x-icon" rel="icon" href="favicon.ico">
+<link type="text/css" rel="stylesheet" href="css/style.css" />
+<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.cycle.all.js"></script><!-- banner動態 -->
+<script type="text/javascript" src="js/jquery.isotope.min.js"></script><!-- 自由排列 -->
+<script type="text/javascript" src="js/shadowbox.js"></script><!-- 燈箱 -->
+<script type="text/javascript" src="js/jquery.selectbox-0.2.min.js"></script><!-- select樣式 -->
+<script type="text/javascript" src="js/script.js"></script>
+<script type="text/javascript">
+$(function(){
+	//banner
+	if($('#banner .images').length > 0){
+		$('#banner .images').cycle({ 
+			fx:     'fade',
+			speed:   1000,
+			timeout: 6000,
+			next:   '#banner .arrowNext', 
+			prev:   '#banner .arrowPrev'
+		});
+	}
+	
+	if($('#portfolio .element').length > 0){
+		var $container = $('#portfolio');
+		
+		$container.imagesLoaded( function(){
+			$('.element img').stop().animate({opacity:1},500);
+			$container.isotope({
+				transformsEnabled : false,
+				masonry: {
+				  columnWidth: 4
+				},
+				itemSelector : '.element'
+			});
+		});
+	
+		$('.element').hover(function(){
+			$(this).children('.mask').stop(true,true).animate({opacity:0.8});
+			$(this).children('.link').stop(true,true).animate({opacity:1});
+		}, function(){
+			$(this).children('.mask').stop(true,true).animate({opacity:0});
+			$(this).children('.link').stop(true,true).animate({opacity:0});
+		});
+		
+		//lightbox
+		Shadowbox.init();
+	}
+	
+	//input style
+	inputNote();
+	
+	//select style
+	$('#require').selectbox({effect:'fade'});
+	$('#computation').selectbox({effect:'fade'});
+});
+</script>
+</head>
+
+<body>
+
+<div id="wrap">
+	<div id="header">
+		<a class="logo" href="index.html"></a>
+    	<div id="lavaMenu">
+            <ul>
+                <li><a class="news" href="news.html"></a></li>
+                <li><a class="service" href="service_dataWeb.html"></a></li>
+                <li><a class="portfolio" href="portfolio.html"></a></li>
+                <li><a class="contact" href="index.html#contact"></a></li>
+                <li class="selected"><a class="home" href="index.html"></a></li>
+            </ul>
+            <div id="lavaMenuHover"><div class="bg"></div></div>
+		</div><!-- END #lavaMenu -->
+    </div><!-- END #header -->
+    
+    <div id="banner">
+    	<div class="images">
+        	<a href="#"><img src="images/1000380_1.jpg" /></a>
+            <a href="service_dataWeb.html"><img src="images/1000380_2.jpg" /></a>
+        </div>
+        <a class="arrowPrev" href="#"></a>
+        <a class="arrowNext" href="#"></a>
+    </div><!-- END #banner -->
+    
+    <div id="container">
+    	<div class="title"><a href="portfolio.html"><img src="images/lastProjects.jpg" /><img src="images/X.png" /><img src="images/more.png" /></a></div>
+        <div id="portfolio">
+            <div class="element">
+                <img src="images/230170_1.jpg" />
+                <a target="_blank" href="portfolio_inner.html" class="link" rel="shadowbox[link];width=600;height=400"></a>
+                <h2>EATO美食護照</h2>
+                <div class="mask"></div>
+            </div>
+            <div class="element">
+                <img src="images/230170_2.jpg" />
+                <a target="_blank" href="images/230170_2.jpg" class="link" rel="shadowbox[link]"></a>
+                <h2>宏璽居家工程(公版)</h2>
+                <div class="mask"></div>
+            </div>
+            <div class="element">
+                <img src="images/230170_3.jpg" />
+                <a target="_blank" href="http://hsuchien.myweb.hinet.net/" class="link" rel="shadowbox[link]"></a>
+                <h2>食樂拉麵(公版)</h2>
+                <div class="mask"></div>
+            </div>
+            <div class="element">
+                <img src="images/230170_4.jpg" />
+                <a target="_blank" href="http://hsuchien.myweb.hinet.net/" class="link"></a><!-- 沒下rel參數就是直接外連, 不跳燈箱 -->
+                <h2>詹浩文教機構</h2>
+                <div class="mask"></div>
+            </div>
+        </div><!-- END #portfolio -->
+        
+        <div class="floatLeft" style="width:455px; margin:20px 0;">
+			<div class="title"><a href="news.html"><img src="images/news.jpg" /><img src="images/X.png" /><img src="images/more.png" /></a></div>
+			<a class="newsList" href="news.html#news1"><span class="name">專業網站建置特惠中，請來電洽詢。</span><span class="date">2013-06-30</span></a>
+            <a class="newsList" href="news.html#news1"><span class="name">專業網站建置特惠中，請來電洽詢。</span><span class="date">2013-06-30</span></a>
+            <a class="newsList" href="news.html#news1"><span class="name">專業網站建置特惠中，請來電洽詢。</span><span class="date">2013-06-30</span></a>
+            <a class="newsList" href="news.html#news1"><span class="name">專業網站建置特惠中，請來電洽詢。</span><span class="date">2013-06-30</span></a>
+            <a class="newsList" href="news.html#news1"><span class="name">專業網站建置特惠中，請來電洽詢。</span><span class="date">2013-06-30</span></a>
+		</div>
+        
+        <div class="floatRight" style="width:480px; margin:20px 0;">
+        	<div class="title"><img src="images/contact.jpg" /><img src="images/X.png" /><img src="images/contactMsg.png" /></div>
+            <form id="contact" name="contact" action="index.html">
+            	<label class="floatLeft" style="width:235px; margin-right:8px;"><input type="text" name="name" title="聯絡人" value="" /></label>
+                <label class="floatLeft" style="width:235px;"><input type="text" name="phone" title="電話" value="" /></label>
+                <div class="clearfix"></div>
+                <label><input type="text" name="email" title="E-mail" value="" /></label>
+                <label class="floatLeft" style="width:235px; margin-right:8px; z-index:1;"><select name="require" id="require" tabindex="1">
+                	<option value="我的需求" disabled selected>我的需求</option>
+                    <option value="客製資料庫網站">客製資料庫網站</option>
+                    <option value="雲端POS系統">雲端POS系統</option>
+                    <option value="LBS行動型網站">LBS行動型網站</option>
+                    <option value="網路行銷諮詢">網路行銷諮詢</option>
+                    <option value="會員制購物系統">會員制購物系統</option>
+                </select></label>
+                <label class="floatLeft" style="width:235px; z-index:1;"><select name="computation" id="computation" tabindex="1">
+                	<option value="我的預算" disabled selected>我的預算</option>
+                    <option value="2萬以下">2萬以下</option>
+                    <option value="2萬-5萬">2萬-5萬</option>
+                    <option value="5萬-20萬">5萬-20萬</option>
+                    <option value="20萬以上">20萬以上</option>
+                </select></label>
+                <div class="clearfix"></div>
+                <label class="floatLeft" style="width:390px; margin-right:10px;"><textarea name="message" title="留言內容"></textarea></label>
+                <label class="floatLeft" style="width:80px;"><input type="submit" class="sendBtn" value="" /></label>
+                <div class="clearfix"></div>
+            </form>
+        </div>
+        
+        <div class="clearfix"></div>
+    </div><!-- END #container -->
+    
+	<div class="footerFix"></div>
+</div><!-- END #wrap -->
+
+<div id="footer">
+	<div class="inner">
+        <a class="mail" target="_blank" href="mailto:service@mejor.com.tw"></a>
+        <a class="home" href="index.html"></a>
+    </div>
+</div><!-- END #footer -->
+
+</body>
+</html>

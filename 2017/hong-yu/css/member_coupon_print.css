@@ -1,0 +1,110 @@
+@charset "UTF-8";
+/* CSS Document */
+
+@import url(reset.css);
+
+body {
+	-webkit-text-size-adjust: none;
+	color: #999; font-family: Verdana, "新細明體", sans-serif; font-size: 13px; line-height: 18px;
+}
+
+.container {
+	width: 580px; margin: 50px auto; padding: 7px;
+	border: 8px solid #553c07;
+}
+
+/******************** 使用編輯器內容區塊 ********************/
+.editor {
+	color: #000; font-size: 13px; line-height: 22px;
+	overflow: hidden;
+}
+
+.editor img {
+	max-width: 100%; height: auto;
+}
+
+.editor ul {
+	list-style-type: disc;
+	margin-left: 20px; *margin-left: 25px; margin-top: -5px;
+}
+
+.editor ol {
+	list-style-type: decimal;
+	margin-left: 25px; *margin-left: 30px; margin-top: -5px;
+}
+
+.editor ul li , .editor ol li {
+	margin: 5px 0;
+}
+
+.editor p { margin: 10px 0; }
+
+/******************** header ********************/
+.header {
+	position: relative;
+	width: 580px; height: 90px;
+	overflow: hidden;
+}
+
+.header .bg {
+	display: block;	position: absolute;
+	width: 580px; height: 90px; left: 0; top: 0;
+}
+
+.header .logo {
+	display: block;	position: absolute;
+	width: 145px; height: 72px; left: 10px; top: 10px;
+}
+
+/******************** content ********************/
+.content {
+	width: 540px; padding: 15px;
+	border-left: 5px solid #553c07;
+	border-right: 5px solid #553c07;
+}
+
+.content .pic {
+	float: left;
+	margin: 0 10px 5px 0;
+}
+
+.content h4 {
+	font-size: 15px; font-weight: bold; line-height: 30px;
+	border-bottom: 1px dashed #afa693;
+}
+
+.group {
+	float: left;
+	width: 260px; margin: 0 5px;
+	color: #000; font-size: 13px; line-height: 20px;
+}
+
+.group .name { margin-bottom: 5px; font-size: 15px; font-weight: bold; }
+.group .info { margin-bottom: 5px; }
+
+/******************** footer ********************/
+.footer {
+	position: relative;
+	width: 580px; height: 92px;
+	overflow: hidden;
+}
+
+.footer .bg {
+	display: block;	position: absolute;
+	width: 580px; height: 92px; left: 0; top: 0;
+}
+
+.footer .copyright {
+	display: block;	position: absolute;
+	width: 580px; height: 30px;
+	color: #745f36; font-size: 11px; line-height: 30px; text-align: center;
+}
+
+.downloadBtn {
+	display: block;	position: absolute;
+	width: 93px; height: 35px; left: 50%; top: 35px; margin: 0 0 0 -47px;
+	background: url("../images/btn.jpg") no-repeat 0 -214px;
+	cursor: pointer;
+}
+
+.downloadBtn:hover { background-position: -93px -214px; }

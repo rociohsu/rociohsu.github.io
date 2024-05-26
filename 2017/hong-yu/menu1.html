@@ -1,0 +1,300 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<title>川蜀食尚餐飲集團</title>
+<meta name="title" content="川蜀食尚餐飲集團" /> 
+<meta name="description" content="川蜀食尚餐飲集團" />
+<meta name="keywords" content="川蜀食尚, 山間堂, 川蜀美食, 食尚美食, 川菜, 湘菜, 宴席菜, 商業午餐">
+<meta name="author" content="web design by Mejor,development by Mejor,powered by Mejor" /> 
+<meta name="copyright" content="© 2014 Hong Yu Co, Ltd. All Rights Reserved. 版權所有 宏宇餐飲顧問有限公司" /> 
+
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<link type="text/css" rel="stylesheet" href="css/menu.css" />
+<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.backgroundPosition.fixed.js"></script>
+<script type="text/javascript" src="js/jquery.tools.min.js"></script>
+<script type="text/javascript" src="js/jquery.fancybox-1.3.4.pack.js"></script>
+<script type="text/javascript">
+$(function(){
+	$('.leftMenu .first:eq(3)').addClass('first_current');
+	$('.leftMenu .second a:eq(2)').addClass('current');
+});
+</script>
+<script type="text/javascript" src="js/script.js"></script>
+<script type="text/javascript">
+$(function(){
+	$('#tabs').tabs('#menuList > div', {
+		effect: 'fade',
+		fadeInSpeed: 300,
+		rotate: false,
+		history: false
+    }).slideshow();
+	
+	//取消click事件
+	$('#menuList > div').attr('onclick','').unbind('click');
+	
+	//上下list切換
+	/*$('.prev , .next').click(function(){
+		location.hash=$('#tabs a.current').attr('href');
+	});*/
+	
+	//menu img hover zoom
+	$('#menuList > div .group').hover(function(){
+		$(this).children('.zoom').stop(true,true).fadeIn(300);
+	},function(){
+		$(this).children('.zoom').stop(true,true).fadeOut(100);
+	});
+	
+	//menu lightbox
+	$('#menuList > div .group[rel="menu_group"]').fancybox({
+		overlayOpacity:0.9,
+		overlayColor:"#c0b69b",
+		titlePosition:'inside',
+		titleFormat:function(alt, currentArray, currentIndex, currentOpts) {
+			return '<span id="fancybox-title-over">Image ' +  (currentIndex + 1) + ' / ' + currentArray.length + '<span class="lightboxName">' + alt + '</span></span>';
+		}
+	});
+});
+</script>
+
+</head>
+
+<body>
+
+<div class="rightBg"><img src="images/member/bg.png" /></div>
+
+<div id="wrapper">
+	<div class="container">
+        <div class="main">
+        	<div class="pageTitle"><img src="images/menu/title.png" /></div>
+            
+            <div class="titleLink">
+            	<img src="images/menu/logo1.png" alt="川蜀食尚" />
+                
+                <div class="sort">
+                	<a href="menu1.html" class="current">小籠包牛肉麵</a><!--為當頁分類時,加class="current"-->
+                    <a href="menu1.html">牛肉</a>
+                    <a href="menu1.html">豬肉</a>
+                    <a href="menu1.html">雞肉</a>
+                    <a href="menu1.html">開胃菜</a>
+                    <a href="menu1.html">蔬菜</a>
+                    <a href="menu1.html">湯品</a>
+                    <a href="menu1.html">海鮮</a>
+                    <a href="menu1.html">蛋、豆腐</a>
+                    <a href="menu1.html">宴席菜</a>
+                    <a href="menu1.html">合菜系列</a>
+                    <a href="menu1.html">商業午餐</a>
+                </div><!-- END .sort -->
+                
+			</div><!-- END .titleLink -->
+            
+			<div class="line"></div>
+            
+			<div id="menuList">
+                <div id="page1">
+                	<a class="group" href="images/menu/640480_1.jpg" rel="menu_group" alt="培根高麗菜<span class='price'>$<b>180</b></span><br /><span class='info'>以蒜香清炒，口感酥脆不油膩</span>">
+                    	<img class="pic" src="images/menu/220165_1.jpg" />
+                        <span class="zoom"></span>
+                        <span class="price">$<b>180</b></span>
+                        <span class="name">培根高麗菜</span>
+                        <span class="info">以蒜香清炒，口感酥脆不油膩</span>
+                    </a>
+                    
+                    <a class="group" href="images/menu/640480_2.jpg" rel="menu_group" alt="培根高麗菜<span class='price'>$<b>180</b></span><br /><span class='info'>以蒜香清炒，口感酥脆不油膩</span>">
+                    	<img class="pic" src="images/menu/220165_2.jpg" />
+                        <span class="zoom"></span>
+                        <span class="price">$<b>200</b></span>
+                        <span class="name">培根高麗菜</span>
+                        <span class="info">以蒜香清炒，口感酥脆不油膩</span>
+                    </a>
+                    
+                    <a class="group" href="images/menu/640480_3.jpg" rel="menu_group" alt="培根高麗菜<span class='price'>$<b>180</b></span><br /><span class='info'>以蒜香清炒，口感酥脆不油膩</span>">
+                    	<img class="pic" src="images/menu/220165_3.jpg" />
+                        <span class="zoom"></span>
+                        <span class="price">$<b>200</b></span>
+                        <span class="name">培根高麗菜</span>
+                        <span class="info">以蒜香清炒，口感酥脆不油膩</span>
+                    </a>
+                    
+                    <a class="group" href="images/menu/640480_4.jpg" rel="menu_group" alt="培根高麗菜<span class='price'>$<b>180</b></span><br /><span class='info'>以蒜香清炒，口感酥脆不油膩</span>">
+                    	<img class="pic" src="images/menu/220165_4.jpg" />
+                        <span class="zoom"></span>
+                        <span class="price">$<b>180</b></span>
+                        <span class="name">培根高麗菜</span>
+                        <span class="info">以蒜香清炒，口感酥脆不油膩</span>
+                    </a>
+                    
+                    <a class="group" href="images/menu/640480_5.jpg" rel="menu_group" alt="培根高麗菜<span class='price'>$<b>180</b></span><br /><span class='info'>以蒜香清炒，口感酥脆不油膩</span>">
+                    	<img class="pic" src="images/menu/220165_5.jpg" />
+                        <span class="zoom"></span>
+                        <span class="price">$<b>200</b></span>
+                        <span class="name">培根高麗菜</span>
+                        <span class="info">以蒜香清炒，口感酥脆不油膩</span>
+                    </a>
+                    
+                    <a class="group" href="images/menu/640480_1.jpg" rel="menu_group" alt="培根高麗菜<span class='price'>$<b>180</b></span><br /><span class='info'>以蒜香清炒，口感酥脆不油膩</span>">
+                    	<img class="pic" src="images/menu/220165_1.jpg" />
+                        <span class="zoom"></span>
+                        <span class="price">$<b>200</b></span>
+                        <span class="name">培根高麗菜</span>
+                        <span class="info">以蒜香清炒，口感酥脆不油膩</span>
+                    </a>
+                    
+                    <div style="clear:both;"></div>
+                </div>
+                
+                <div id="page2">
+                	<a class="group" href="images/menu/640480_1.jpg" rel="menu_group" alt="培根高麗菜<span class='price'>$<b>180</b></span><br /><span class='info'>以蒜香清炒，口感酥脆不油膩</span>">
+                    	<img class="pic" src="images/menu/220165_1.jpg" />
+                        <span class="zoom"></span>
+                        <span class="price">$<b>180</b></span>
+                        <span class="name">培根高麗菜</span>
+                        <span class="info">以蒜香清炒，口感酥脆不油膩</span>
+                    </a>
+                    
+                    <a class="group" href="images/menu/640480_3.jpg" rel="menu_group" alt="培根高麗菜<span class='price'>$<b>180</b></span><br /><span class='info'>以蒜香清炒，口感酥脆不油膩</span>">
+                    	<img class="pic" src="images/menu/220165_3.jpg" />
+                        <span class="zoom"></span>
+                        <span class="price">$<b>200</b></span>
+                        <span class="name">培根高麗菜</span>
+                        <span class="info">以蒜香清炒，口感酥脆不油膩</span>
+                    </a>
+                    
+                    <a class="group" href="images/menu/640480_4.jpg" rel="menu_group" alt="培根高麗菜<span class='price'>$<b>180</b></span><br /><span class='info'>以蒜香清炒，口感酥脆不油膩</span>">
+                    	<img class="pic" src="images/menu/220165_4.jpg" />
+                        <span class="zoom"></span>
+                        <span class="price">$<b>200</b></span>
+                        <span class="name">培根高麗菜</span>
+                        <span class="info">以蒜香清炒，口感酥脆不油膩</span>
+                    </a>
+                    
+                    <a class="group" href="images/menu/640480_5.jpg" rel="menu_group" alt="培根高麗菜<span class='price'>$<b>180</b></span><br /><span class='info'>以蒜香清炒，口感酥脆不油膩</span>">
+                    	<img class="pic" src="images/menu/220165_5.jpg" />
+                        <span class="zoom"></span>
+                        <span class="price">$<b>180</b></span>
+                        <span class="name">培根高麗菜</span>
+                        <span class="info">以蒜香清炒，口感酥脆不油膩</span>
+                    </a>
+                    
+                    <a class="group" href="images/menu/640480_1.jpg" rel="menu_group" alt="培根高麗菜<span class='price'>$<b>180</b></span><br /><span class='info'>以蒜香清炒，口感酥脆不油膩</span>">
+                    	<img class="pic" src="images/menu/220165_1.jpg" />
+                        <span class="zoom"></span>
+                        <span class="price">$<b>200</b></span>
+                        <span class="name">培根高麗菜</span>
+                        <span class="info">以蒜香清炒，口感酥脆不油膩</span>
+                    </a>
+                    
+                    <a class="group" href="images/menu/640480_2.jpg" rel="menu_group" alt="培根高麗菜<span class='price'>$<b>180</b></span><br /><span class='info'>以蒜香清炒，口感酥脆不油膩</span>">
+                    	<img class="pic" src="images/menu/220165_2.jpg" />
+                        <span class="zoom"></span>
+                        <span class="price">$<b>200</b></span>
+                        <span class="name">培根高麗菜</span>
+                        <span class="info">以蒜香清炒，口感酥脆不油膩</span>
+                    </a>
+                    
+                    <div style="clear:both;"></div>
+                </div>
+                
+                <div id="page3">
+                	<a class="group" href="images/menu/640480_1.jpg" rel="menu_group" alt="培根高麗菜<span class='price'>$<b>180</b></span><br /><span class='info'>以蒜香清炒，口感酥脆不油膩</span>">
+                    	<img class="pic" src="images/menu/220165_1.jpg" />
+                        <span class="zoom"></span>
+                        <span class="price">$<b>180</b></span>
+                        <span class="name">培根高麗菜</span>
+                        <span class="info">以蒜香清炒，口感酥脆不油膩</span>
+                    </a>
+                    
+                    <a class="group" href="images/menu/640480_2.jpg" rel="menu_group" alt="培根高麗菜<span class='price'>$<b>180</b></span><br /><span class='info'>以蒜香清炒，口感酥脆不油膩</span>">
+                    	<img class="pic" src="images/menu/220165_2.jpg" />
+                        <span class="zoom"></span>
+                        <span class="price">$<b>200</b></span>
+                        <span class="name">培根高麗菜</span>
+                        <span class="info">以蒜香清炒，口感酥脆不油膩</span>
+                    </a>
+                    
+                    <a class="group" href="images/menu/640480_3.jpg" rel="menu_group" alt="培根高麗菜<span class='price'>$<b>180</b></span><br /><span class='info'>以蒜香清炒，口感酥脆不油膩</span>">
+                    	<img class="pic" src="images/menu/220165_3.jpg" />
+                        <span class="zoom"></span>
+                        <span class="price">$<b>200</b></span>
+                        <span class="name">培根高麗菜</span>
+                        <span class="info">以蒜香清炒，口感酥脆不油膩</span>
+                    </a>
+                    
+                    <a class="group" href="images/menu/640480_4.jpg" rel="menu_group" alt="培根高麗菜<span class='price'>$<b>180</b></span><br /><span class='info'>以蒜香清炒，口感酥脆不油膩</span>">
+                    	<img class="pic" src="images/menu/220165_4.jpg" />
+                        <span class="zoom"></span>
+                        <span class="price">$<b>180</b></span>
+                        <span class="name">培根高麗菜</span>
+                        <span class="info">以蒜香清炒，口感酥脆不油膩</span>
+                    </a>
+                    
+                    <div style="clear:both;"></div>
+                </div>
+                
+                <a class="prev" title="上一頁"></a>
+                <a class="next" title="下一頁"></a>
+                    
+                <div id="tabs">
+                    <a href="#page1"></a><!-- href="#"對應#menuList > div的id -->
+                    <a href="#page2"></a>
+                    <a href="#page3"></a>
+                </div><!-- END #tabs -->
+                
+            </div><!-- END #menuList -->
+            
+            <div class="line"></div>
+            <img src="images/menu/menuIntro1.png" longdesc="四川古稱巴蜀之地，號稱「天府之國」，川菜乃中國四大菜系之一，自古即以『尚滋味』、『好辛香』著稱，食味萬千的川菜，豈止於此，『吃在中國，味在四川』之說，流傳有『一菜一格，百菜百味』的佳話，「川蜀食尚」就此孕育而生。「川蜀食尚」位於中和環球購物中心四樓，自開幕以來就在美食界享有好評，以美味的創意川味料理著稱，鎮店主廚擁有川式菜餚經驗20年，再搭配上巧思與創意，成就出令人激賞的創意四川料理；而店內雅緻時尚、乾淨簡單的裝潢，時尚與復古的精緻線條相互交錯得恰到好處，讓人打破了一般人對於川菜館的刻板印象，寬敞舒適的用餐環境，讓你不論是聚餐大宴或是朋友小酌都非常的合適，對於傳統的川菜已經煩膩？ 想找回已經遺忘的四川美味？快來「川蜀食尚」四川料理，滿足你對四川料理的美味幻想。" />
+            
+		</div><!-- END .main -->
+    </div>
+	
+    <div class="footerClear"></div>
+</div>
+
+<div id="footer">
+	© 2014 Hong Yu Co, Ltd. All Rights Reserved. 版權所有 宏宇餐飲顧問有限公司
+    <a class="fbLink" target="_blank" href="https://www.facebook.com/pages/%E5%B7%9D%E8%9C%80%E9%A3%9F%E5%B0%9A%E7%92%B0%E7%90%83%E4%B8%AD%E5%92%8C%E5%BA%97/141173349399281"></a>
+</div><!-- END #footer -->
+
+<div id="topBar">
+	<div class="topLink">
+    	<a href="stores.html">分店資訊</a>    |     
+        <a href="menu1.html">食尚美食</a>    |     
+        <a href="member.html">會員登入/註冊</a>    |     
+        <a href="personnel.html">員工專區</a>
+    </div>
+    <div class="line"></div>
+</div><!-- END #topBar -->
+
+<div id="left">
+	<a class="logo" href="index.html"><img src="images/logo.png" /></a>
+    <div class="leftMenu">
+		<div class="first"><a class="news " href="news.html"><!--最新消息--></a></div>
+        <div class="first"><a class="about"><!--關於我們--></a>
+        	<div class="second">
+            	<a href="about1.html">歷史沿革</a>
+                <a href="about2.html">經營理念</a>
+            </div>
+        </div>
+        <div class="first"><a class="stores" href="stores.html"><!--分店資訊--></a></div>
+        <div class="first"><a class="menu"><!--食尚美食--></a>
+        	<div class="second">
+            	<a href="menu1.html">川蜀食尚</a>
+                <a href="menu2.html">山間堂</a>
+            </div>
+        </div>
+        <div class="first"><a class="member"><!--尊榮會員--></a>
+        	<div class="second">
+            	<a href="member_coupon.html">優惠訊息</a>
+                <a href="member.html">會員登入/註冊</a>
+                <a href="member_edit.html">會員資料修改</a>
+            </div>
+        </div>
+        <div class="first"><a class="contact" href="contact.html"><!--聯絡我們--></a></div>
+	</div>
+</div><!-- END #left -->
+
+</body>
+</html>

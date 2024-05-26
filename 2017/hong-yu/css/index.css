@@ -1,0 +1,107 @@
+@charset "UTF-8";
+/* CSS Document */
+
+@import url(style.css);
+@import url(bgstretcher.css);
+
+html { overflow-x: hidden; }
+body { background: url("../images/indexBg.jpg") repeat; }
+#topBar { background: url("../images/indexBg.jpg") repeat; }
+#topBar .topLink { color: #b19941; }
+#topBar .topLink > a { color: #e7d287; }
+#topBar .topLink > a:hover { color: #FFF; }
+#topBar .line { background: none; }
+#footer { color: #dfb566; }
+.main { padding: 15px 0 0 283px; }
+
+/******************** banner ********************/
+.bannerBg {
+	height: 600px; padding: 0 0 0 234px;
+	background: url("../images/sliderBg.jpg") repeat;
+}
+
+.banner {
+	position: relative;
+	height: 540px; margin: 0 auto; padding: 30px 50px;
+	overflow: hidden;
+}
+
+.banner .images {
+	width: 100%; height: 540px; margin: 0 auto;
+	background: #000;
+	-moz-box-shadow: 0px 0px 10px 10px #16091a;
+	-webkit-box-shadow: 0px 0px 10px 10px #16091a;
+	box-shadow: 0px 0px 10px 10px #16091a;
+	overflow: hidden;
+}
+
+.banner .images img {
+	display: block; position: absolute;
+	left: 0; top: 0;
+}
+
+.banner > a {
+	display: block; position: absolute;
+	width: 59px; height: 83px; left: 10px; top: 43%;
+	background: url("../images/arrow.png") no-repeat;
+	z-index: 100; cursor: pointer;
+}
+.banner > a.arrowPrev { background-position: 0 0; }
+.banner > a.arrowPrev:hover { background-position: 0 -83px; }
+.banner > a.arrowNext { left: auto; right: 10px; background-position: -59px 0; }
+.banner > a.arrowNext:hover { background-position: -59px -83px; }
+
+/******************** news ********************/
+.newsBox {
+	float: left;
+	width: 400px; margin-top: 12px;
+}
+
+.newsBox .title {
+	position: relative;
+	height: 32px; margin-bottom: 5px;
+	background: url("../images/newsTitle.png") no-repeat left top;
+}
+
+.newsBox .title .more {
+	position: absolute; display: block;
+	width: 52px; height: 33px; right: 0; top: 0;
+	background: url("../images/newsMore.png") no-repeat;
+}
+
+.newsBox .title .more:hover { background-position: 0 -33px; }
+
+.newsBox .lists { border-top: 1px dashed #bd955f; }
+
+.newsBox .lists > a {
+	display: block;
+	color: #ffd3ac; line-height: 26px; text-decoration: none;
+	border-bottom: 1px dashed #bd955f;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	-o-text-overflow: ellipsis;
+	-icab-text-overflow: ellipsis;
+	-khtml-text-overflow: ellipsis;
+	-moz-text-overflow: ellipsis;
+	-webkit-text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+.newsBox .lists > a:hover { background: url("../images/newsHover.png") repeat; }
+.newsBox .lists > a .date { padding: 0 5px; color: #ffae00; font-size: 12px; font-family: Verdana; }
+.newsBox .lists > a .store { padding-right: 5px; color: #000; }
+
+/******************** 各店LOGO ********************/
+.storeLogo {
+	float: left;
+	width: 120px; margin: 0 10px 0 21px;
+}
+
+.storeLogo { width: 120px; height: 60px; }
+
+.QRcode {
+	float: left;
+	width: 175px; height: 100px; margin-top: 5px;
+}
+
+.QRcode img { width: 175px; height: 100px; } 

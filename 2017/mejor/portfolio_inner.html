@@ -1,0 +1,152 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<title>╳mejor梅爵工作室╳</title>
+<meta name="title" content="mejor梅爵工作室" /> 
+<meta name="description" content="mejor梅爵工作室" />
+<meta name="keywords" content="mejor梅爵工作室">
+<meta name="author" content="powered by mejor梅爵工作室" /> 
+<meta name="copyright" content="© 2013 mejor梅爵工作室" /> 
+
+<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.jget.js"></script>
+
+<style type="text/css">
+	body { background: #FFF; }
+	#abgne-block-20120327 {
+	width: 600px;
+	overflow: hidden;
+	}
+	#abgne-block-20120327 ul, #abgne-block-20120327 li {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	}
+	#abgne-block-20120327 .tabs {
+	}
+	#abgne-block-20120327 .tabs li {
+	float: left;
+	margin: 0 0 -1px 5px;
+	height: 32px;
+	cursor: pointer;
+	border-radius: 5px 5px 0 0;
+	background-color: #FFF;
+	}
+	#abgne-block-20120327 .tabs li.active {
+	padding-bottom: 1px;
+	border-bottom: none;
+	background-color: #fafafa;
+	}
+	#abgne-block-20120327 .tabs li.hover{
+		background: #f5f5f5; 
+	}
+	#abgne-block-20120327 .tabs span {
+	display: block;
+	float: left;
+	overflow: hidden;
+	padding-top: 7px;
+	padding-right: 15px;
+	padding-left: 15px;
+	padding-bottom: 5px;
+	}
+	#abgne-block-20120327 .tab_container {
+	clear: both;
+	background: #fff;
+	overflow: hidden;
+	border-radius: 5px;
+	}
+	#abgne-block-20120327 .tab_container ul {
+	position: relative;
+	overflow: hidden;
+	height: 350px;
+	}
+	#abgne-block-20120327 .tab_container .tab_content li {
+	position: absolute;
+	width: 600px;
+	height: 100%;
+	background: #fff;
+	}
+	#abgne-block-20120327 .tab_container .tab_content li img {
+	display: block;
+	float: left;
+	width: 600px;
+	}
+	#abgne-block-20120327 .tab_container .tab_content li h3 {
+		font-size: 22px;
+		line-height: 22px;
+		margin: 5px 0 15px;
+	}
+</style>
+<script type="text/javascript">
+	$(function(){
+		// 先取得網址上的參數 ?tab=1
+		var _q = $.jget['tab'];
+		// 若有參數 tab 則顯示指定的頁籤, 否則預設顯示第一個頁籤
+		// 並先把 .tabs, .tabs li 及 .tab_content, .tab_content li 等元素取出
+		// 同時也要取得 .tab_content 的寬
+		var _default = !!!_q ? 0 : parseInt(_q), 
+			$block = $('#abgne-block-20120327'), 
+			$tabs = $block.find('.tabs'), 
+			$tabsLi = $tabs.find('li'), 
+			$tab_content = $block.find('.tab_content'), 
+			$tab_contentLi = $tab_content.find('li'), 
+			_width = $tab_content.width();
+		
+		// 當滑鼠移到 .tabs li 上時要套用 .hover 樣式
+		// 移出時要移除 .hover 樣式
+		$tabsLi.hover(function(){
+			var $this = $(this);
+
+			// 若被滑鼠移上去的 li 是目前顯示的頁籤就不做任何動作
+			if($this.hasClass('active')) return;
+
+			$this.toggleClass('hover');
+		}).click(function(){	// 當滑鼠點擊 .tabs li 時
+			// 先取出被點擊及目前顯示的頁籤與索引
+			var $active = $tabsLi.filter('.active').removeClass('active'), 
+				_activeIndex = $active.index(),  
+				$this = $(this).addClass('active').removeClass('hover'), 
+				_index = $this.index(), 
+				isNext = _index > _activeIndex;
+			
+			// 如果被點擊的頁籤就是目前已顯示的頁籤, 則不做任何動作
+			if(_activeIndex == _index) return;
+			
+			// 依索引大或小來決定移動的位置
+			$tab_contentLi.eq(_activeIndex).stop().animate({
+				left: isNext ? -_width : _width
+			}).end().eq(_index).css('left', isNext ? _width : -_width).stop().animate({
+				left: 0
+			});
+		});
+		
+		// 先把預設要顯示的頁籤加上 .active 樣式及顯示相對應的內容
+		$tabsLi.eq(_default).addClass('active');
+		$tab_contentLi.eq(_default).siblings().css({
+			left: _width
+		});
+	});
+</script>
+</head>
+
+<body>
+<div id="abgne-block-20120327">
+  <ul class="tabs">
+		  <li><span>about2</span></li>
+		  <li><span>news2</span></li>
+		  <li><span>index2</span></li>
+		</ul>
+  <div class="tab_container">
+			<ul class="tab_content">
+				<li><img src="images/j01-1.jpg" /> </li>
+                <li><img src="images/j01-2.jpg" /> </li>
+                <li><img src="images/j01-3.jpg" /> </li>
+		  </ul>
+	  </div>
+  </div>
+</body>
+</body>
+</html>

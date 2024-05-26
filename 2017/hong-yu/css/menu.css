@@ -1,0 +1,137 @@
+@charset "UTF-8";
+/* CSS Document */
+
+@import url(style.css);
+@import url(jquery.fancybox-1.3.4.css);
+
+.main .line {
+	width: 750px; margin: 10px 0;
+	background: url("../images/menu/line.png") no-repeat center;
+}
+
+/******************** menu logo link ********************/
+.titleLink {
+	position: relative;
+	padding: 50px 0 0 20px;
+}
+
+.titleLink > a {
+	display: inline-block;
+	width: 160px; height: 80px;
+}
+
+.titleLink > a.menu1 { background: url("../images/menu/logo1t.png") no-repeat;}
+.titleLink > a.menu1:hover, .titleLink > a.menu1_current { background: url("../images/menu/logo1.png") no-repeat; }
+.titleLink > a.menu2 { background: url("../images/menu/logo2t.png") no-repeat; }
+.titleLink > a.menu2:hover, .titleLink > a.menu2_current { background: url("../images/menu/logo2.png") no-repeat; }
+.titleLink > img { width: 160px; height: 80px; }
+
+.titleLink .sort {
+	position: absolute;
+	width: 420px; right: 20px; bottom: 5px;
+	text-align: right;
+}
+
+.titleLink .sort > a {
+	display: inline-block;
+	height: 24px; padding: 0 5px; margin-bottom: 5px;
+	color: #8d7547;	font-size: 15px; line-height: 28px; *line-height: 24px; /*IE7*/ text-decoration: none;
+	background: #dfc896;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0){ .titleLink .sort > a { line-height: 22px; } }  /*chrome and safari*/
+
+.titleLink .sort > a:hover, .titleLink .sort > a.current { color: #ffe790; background: #961722; }
+
+/******************** menu list ********************/
+#menuList {
+	position: relative;
+	width: 720px; height: 480px; margin: 0 auto;
+}
+
+#menuList > div {
+	position: absolute; display: none;
+	width: 720px; height: 480px; left: 0; top: 0;
+	overflow: hidden;
+}
+
+#tabs {
+	position: fixed; _position: absolute;
+	width: 0; height: 0; left: -1000px; bottom: -1000px;
+}
+
+#tabs a {}
+#tabs a.current {}
+
+#menuList .prev, #menuList .next {
+	display: block; position: absolute;
+	width: 59px; height: 83px; left: -60px; top: 42%;
+	background: url("../images/arrow.png") no-repeat;
+	z-index: 10; cursor: pointer;
+}
+
+#menuList .prev { background-position: 0 0; }
+#menuList .prev:hover	{ background-position: 0 -166px; }
+
+#menuList .next { left: auto; right: -60px; background-position: -59px 0; }
+#menuList .next:hover { background-position: -59px -166px; }
+
+#menuList .disabled {
+    visibility:hidden !important;
+}
+
+/******************** menu list group ********************/
+#menuList > div .group {
+	display: block; float: left; position: relative;
+	width: 240px; height: 240px; margin: 0;
+	text-decoration: none;
+	background: url("../images/menu/listBg.png") no-repeat left top;
+	cursor: pointer;
+}
+
+#menuList > div .group .pic {
+	display: block;
+	width: 220px; height: 165px; margin: 6px 10px 5px 10px;
+}
+
+#menuList > div .group .zoom {
+	display: none; position: absolute;
+	width: 220px; height: 165px; left: 10px; top: 6px;
+	background: url("../images/menu/zoom.png") no-repeat center;
+}
+
+#menuList > div .group .price {
+	display: block; position: absolute;
+	right: 10px; bottom: 69px; padding: 2px 3px;
+	color: #FFF; font-size: 14px; font-family: Verdana;
+	background: #c89e4c;
+}
+
+#menuList > div .group .price b { font-size: 22px; font-weight: normal; }
+
+#menuList > div .group .name {
+	display: block;
+	margin: 0 10px 2px 10px;
+	color: #463410; font-size: 15px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	-o-text-overflow: ellipsis;
+	-icab-text-overflow: ellipsis;
+	-khtml-text-overflow: ellipsis;
+	-moz-text-overflow: ellipsis;
+	-webkit-text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+#menuList > div .group .info {
+	display: block;
+	height: 36px; margin: 0 10px;
+	color: #858138;
+	overflow: hidden;
+}
+
+/******************** lightbox info ********************/
+.lightboxName { display: block; margin-top: 5px; color: #000; font-size: 15px; }
+.lightboxName .price { padding-left: 5px; color: #c90000; font-size: 14px; font-family: Verdana; }
+.lightboxName .price b { font-size: 22px; font-weight: normal; }
+.lightboxName .info { display: block; margin-top: 5px; color: #858138; font-size: 13px; }

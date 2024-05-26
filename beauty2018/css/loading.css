@@ -1,0 +1,49 @@
+#loadingarea { min-height: 450px; padding-top: 150px; }
+.loadingbox{
+	position: relative;
+  width: 150px; height: 150px;
+  margin: 0 auto;
+}
+.loadingbox:before{
+  content:'';
+  position: absolute;
+  z-index:2;
+  width:150px;
+  height:150px;
+  left:0; top:0;
+  background:url(../images/beautystar.png) no-repeat center center; 
+  background-size:cover;
+  -webkit-animation:box 2s infinite ; 
+}
+@-webkit-keyframes box{
+  0%{
+    top:0px;
+  }
+  20%{
+    border-radius:2px;
+  }
+  50%{
+    top:-30px; 
+    border-bottom-right-radius:25px;
+  }
+  80%{
+    border-radius:2px;
+  }
+  100%{
+    top:0px;
+  }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.spinner{margin:0 auto;width:50px;height:40px;text-align:center;font-size:10px}
+.spinner>div{background-color:#E72990;height:100%;width:6px;display:inline-block;-webkit-animation:sk-stretchdelay 1.2s infinite ease-in-out;animation:sk-stretchdelay 1.2s infinite ease-in-out}
+.spinner .rect2{-webkit-animation-delay:-1.1s;animation-delay:-1.1s}
+.spinner .rect3{-webkit-animation-delay:-1s;animation-delay:-1s}
+.spinner .rect4{-webkit-animation-delay:-.9s;animation-delay:-.9s}
+.spinner .rect5{-webkit-animation-delay:-.8s;animation-delay:-.8s}
+@-webkit-keyframes sk-stretchdelay{0%,100%,40%{-webkit-transform:scaleY(.4)}20%{-webkit-transform:scaleY(1)}}
+@keyframes sk-stretchdelay{0%,100%,40%{transform:scaleY(.4);-webkit-transform:scaleY(.4)}20%{transform:scaleY(1);-webkit-transform:scaleY(1)}}
