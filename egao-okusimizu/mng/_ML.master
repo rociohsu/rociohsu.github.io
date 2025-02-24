@@ -1,0 +1,298 @@
+<%@ Master Language="C#"  AutoEventWireup="true" CodeFile="_ML.master.cs" Inherits="_default" %>
+<!DOCTYPE html>
+<html>
+<head>
+     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title><%=Session["後台管理標題"] %></title>   
+       <link rel="stylesheet" href="theme/bower_components/sweetalert/dist/sweetalert.css">
+   <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Bootstrap 3.3.7 -->
+  <link rel="stylesheet" href="theme/bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="theme/bower_components/font-awesome/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="theme/bower_components/Ionicons/css/ionicons.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="theme/dist/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="theme/bower_components/treeview/css/bootstrap-treeview.css">
+  <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+    <link rel="stylesheet" href="theme/dist/css/skins/skin-blue.css">
+      <link rel="stylesheet" href="theme/dist/css/custom.css">
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+  <!-- Google Font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+
+
+    <!--以下是選日期需要的JS-->
+    <link rel="stylesheet" href="../javascript/jquery-ui/jquery-ui.min.css" type="text/css"/>
+    <link rel="stylesheet" href="../javascript/jquery-ui/jquery-ui.theme.min.css" type="text/css"/>
+    <link rel="stylesheet" href="../javascript/jquery-ui/jquery-ui-timepicker-addon.css" type="text/css"/> <!--選時間需要的CSS-->
+
+    
+    <asp:ContentPlaceHolder id="head" runat="server">
+    
+    </asp:ContentPlaceHolder>
+    
+</head>
+<body class="hold-transition skin-blue fixed sidebar-mini">
+<div class="wrapper">
+
+
+
+
+  <!-- Main Header -->
+  <header class="main-header">
+         
+
+      <!-- Logo 左上方logo-->
+        <a href="ml_indexmain.aspx" class="logo">
+        <!-- mini logo for sidebar mini 50x50 pixels -->
+        <span class="logo-mini"><img src="theme/dist/img/logo.png" /></span>
+        <!-- logo for regular state and mobile devices -->
+        <span class="logo-lg" style="font-size:20px"><img src="theme/dist/img/logo.png"/><%=aa.xxtitle %></span>
+         </a>
+    <!-- Header Navbar: style can be found in header.less -->      
+                 
+    </header>
+
+
+  <!-- Main Header -->
+  <header class="main-header">
+      <a id="return-to-top"><i class="fa  fa-arrow-up"></i></a>
+    <!-- Logo -->
+
+    <!-- Header Navbar 上方登出menu-->
+    <nav class="navbar navbar-static-top" >
+      <!-- Sidebar toggle button-->
+      <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+        <span class="sr-only">Toggle navigation</span>
+      </a>
+
+
+
+      <!-- Navbar Right Menu -->
+     <span class="logo-mini"></span>
+      <div class="text-center  visible-lg visible-md visible-sm" style="line-height:50px"> <!--非手機出現-->
+           <span class="pull-right">
+                <a href="#" data-toggle="control-sidebar" data-no-persist="true" style="color:#ffffff"><em class="fa fa-key"></em>  <%=Session["mmnam"].ToString() %>　</a>
+                <a  class="text-sm" style="margin-right:15px;color:#ffffff" href="#" onclick="if (confirm('確定登出嗎?')) {window.location='ml_logout.ashx';}"><i class="glyphicon glyphicon-log-out" style="margin-right:10px"></i>登出</a>
+            </span>
+      </div>
+      <span class="logo-mini"></span>
+      <div class="text-center  visible-xs" style="line-height:50px"> <!--手機出現-->
+          <a href="#" onclick="window.location='ml_indexmain.aspx'" style="color:#ffffff"><img src="theme/dist/img/logo.png" /></a>
+            
+            <a class="text-sm pull-right" href="#" style="color:#ffffff;margin-right:15px" onclick="if (confirm('確定登出嗎?')) {window.location='ml_logout.ashx';}">登出</a>
+            <a class="text-sm pull-right" href="#"  style="color:#ffffff;margin-right:20px" data-toggle="control-sidebar" data-no-persist="true" ><em class="fa fa-key"></em></a>
+      </div>
+    </nav>
+  </header>
+  <!-- Left side column. contains the logo and sidebar -->
+  <aside class="main-sidebar">
+
+    <!-- sidebar: style can be found in sidebar.less -->
+
+      
+
+      <section class="sidebar">
+      
+      <!-- Sidebar Menu -->
+      <%show_menuleft(); %>
+      <!-- /.sidebar-menu -->
+          
+ </section>
+    <!-- /.sidebar -->
+  </aside>
+
+    <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+  
+
+   
+
+    <!-- Main content -->
+    <section class="content container-fluid">
+        <h2><%=mmtitle.Substring(mmtitle.LastIndexOf('/')+1, (mmtitle.Length - mmtitle.LastIndexOf('/')-1))%></h2>
+              <!--//path -->
+        <ol class="breadcrumb">
+            <li><a href="ML_INDEXMAIN.aspx"> <i class="fa fa-home"></i> </a></li>
+            <%=@"<li><a href=""#"">" + mmtitle.Replace("/","</a></li><li><a href=\"#\">") + "</a></li>" %>
+            <%if (XXurl+mmpara != YYurl) { %> <%if (msno == "0") {%><li class=""><a>新增</a></li><%} else {%><li class=""><a>修改</a></li><%} }%>
+        </ol>
+        <!--//path -->
+         
+
+                    <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+                    </asp:ContentPlaceHolder>
+                   
+       </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+  <!-- Main Footer -->
+  <footer class="main-footer">
+    <!-- To the right -->
+    <div class="pull-right hidden-xs">
+      
+    </div>
+    <!-- Default to the left -->
+    <strong>Copyright &copy; 2018 <a href="#"></a>.</strong> All rights reserved.
+  </footer>
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Create the tabs -->
+    <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
+      <li class="active"><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i>使用者設定</a></li>
+    </ul>
+    <!-- Tab panes -->
+      
+      <!-- Settings tab content -->
+      <div class="tab-pane" id="control-sidebar-settings-tab">
+        <form method="post">
+          <h3 class="control-sidebar-heading"></h3>
+
+         <div class="form-group">
+                                  <div class="panel-heading">
+                                      <label>E-mail:</label><input type="text" class="form-control" name="chg_email" id="chg_email" />
+                                  </div>
+                                  <div class="panel-body">
+                                      <label>原密碼:</label><input type="password" class="form-control" name="chg_pwd0" id="chg_pwd0" />
+                                      <label>新密碼:</label><input type="password" class="form-control" name="chg_pwd1" id="chg_pwd1" placeholder="8至20字元英數混合" />
+                                      <label>密碼確認:</label><input type="password" class="form-control" name="chg_pwd2" id="chg_pwd2" placeholder="8至20字元英數混合"/>
+                                      <input type="button" class="btn btn-primary" onclick="chg_pwd();" value="儲存" />
+                                  </div>
+
+                                </div>
+          <!-- /.form-group -->
+        </form>
+      </div>
+      <!-- /.tab-pane -->
+   
+  </aside>
+  <!-- /.control-sidebar -->
+  <!-- Add the sidebar's background. This div must be placed
+  immediately after the control sidebar -->
+  <div class="control-sidebar-bg"></div>
+</div>
+<!-- ./wrapper -->
+
+    
+     <!-- SWEET ALERT-->
+   <script src="theme/bower_components/sweetalert/dist/sweetalert.min.js"></script>
+
+    <!-- jQuery 3 -->
+<script src="theme/bower_components/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap 3.3.7 -->
+<script src="theme/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- SlimScroll -->
+<script src="theme/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+
+<!-- AdminLTE App -->
+<script src="theme/dist/js/adminlte.min.js"></script>
+ <script src="theme/bower_components/treeview/js/bootstrap-treeview.js"></script>
+    
+
+   <script src="theme/dist/js/m3.js?rnd=<%=aa.generatevcode(20) %>"></script>
+
+   <script type="text/javascript" src="/javascript/areacode.js" ></script> <!--縣市地區-->    
+    
+        <script type="text/javascript">
+        //修改資料預先載入email-->
+        $(document).ready(function () {
+            //$('#t1').keypress(function(e){
+            //  if(e.keyCode==13)
+            //  $('#b1').click();
+            //});
+            $.ajax({
+                url: "ml_chgpwd.ashx",
+                dataType: 'json',
+                type: "GET",
+                data: {},
+                success: function (response) {
+                    //alert(response);
+                    if (response.RS == "OK") {
+                        $("#chg_email").val(response.EMAIL);
+                    }
+                    else {
+
+                        console.log(response.RS);
+                    }
+                },
+                error: function () {
+                    swal("伺服掛點!/m3.js/ERROR 01");
+                }
+            });
+            return false;
+
+        });
+    
+
+        //以下是控制按了列表的欄位後, 排序的動作
+        $(function () {
+            //$(document).ready(function() {
+
+            $("th span.title").mousedown(function ()
+            {
+                var maa = $(this).text();
+
+                if ($("form").get(0).xord.value == maa)
+                {
+                    if ($("form").get(0).xsot.value == "U") $("form").get(0).xsot.value = "";
+                    else $("form").get(0).xsot.value = "U"
+                }
+
+                //if (maa == "▲") { $("form").get(0).xsot.value = ""; $("form").get(0).action = ''; $("form").get(0).b1.value = 'q'; $("form").get(0).submit(); }
+                //else if (maa == "▼") { $("form").get(0).xsot.value = "U"; $("form").get(0).action = ''; $("form").get(0).b1.value = 'q'; $("form").get(0).submit(); }
+                //else
+                $("form").get(0).xord.value = maa; $("form").get(0).action = ''; $("form").get(0).b1.value = 'q'; $("form").get(0).submit();
+            });
+        });
+        //結束
+       
+    </script>
+
+   <script type="text/javascript" src="../javascript/jquery-ui/jquery-ui.min.js" ></script>
+    <script type="text/javascript" src="../javascript/jquery-ui/jquery-ui-timepicker-addon.js"></script> <!--選時間需要的JS-->
+	<script type="text/javascript" src="../javascript/jquery-ui/jquery-ui-sliderAccess.js"></script><!--選時間需要的JS-->
+    <script type="text/javascript" src="../javascript/jquery-ui/i18n/jquery-ui-timepicker-addon-i18n.min.js"></script><!--選時間需要的JS-->
+    <script type="text/javascript" src="../javascript/jquery-ui/i18n/jquery-ui-timepicker-zh-TW.js"></script><!--選時間需要的中文化JS-->
+
+    <script type="text/javascript">
+        $(function () {
+            $(".pickdate").datepicker({    //numberOfMonths: 3,
+                showButtonPanel: true,
+                dateFormat: 'yy/mm/dd'     //changeYear: true
+            });
+            var opt1 = {
+                dateFormat: 'yy/mm/dd',
+                showSecond: false,
+                timeFormat: 'HH:mm',
+                stepHour: 1,
+                stepMinute: 1,
+                separator: ' ',
+                showTime: true,
+                showButtonPanel: false
+            };
+            $('.pickdatetime').datetimepicker(opt1);
+        });
+
+    </script>
+    <!--以上是選日期需要的JS-->
+
+     <asp:ContentPlaceHolder id="footer" runat="server">
+        
+     </asp:ContentPlaceHolder>
+  </body> 
+</html>

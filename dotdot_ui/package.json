@@ -1,0 +1,16 @@
+{
+  "name": "dotdot_ui",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://gerrit.iiot.io/dotdot_ui"
+  },
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,7 @@
+﻿User-agent: *
+Allow: /
+Sitemap: https://www.omuse.com.tw/sitemap.xml
+
+User-agent: *
+Disallow: /
+Sitemap: https://www.omuse.com.tw/okusimizu/

@@ -1,0 +1,145 @@
+﻿body ,h1, h2, h3, h4, h5, h6 {
+    font-family: Arial, "文泉驛正黑", "WenQuanYi Zen Hei", "儷黑 Pro", "LiHei Pro", "微軟正黑體", "Microsoft JhengHei", sans-serif;
+    font-weight: 400;
+    /*overflow-x: hidden;*/
+    /*overflow-y: auto*/
+}
+
+h3 {
+    color: #000;
+}
+body {
+    font-size: 15px;
+    color: #666666;
+}
+.breadcrumb {
+    background-color: #8f8f8f;
+}
+
+.breadcrumb a {
+    color: white;
+}
+.title1 {
+    color: #2494c0;
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.title2 {
+    color: #666666;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.font16 {
+    font-size: 16px;
+}
+
+.info-box-icon {
+    border-top-left-radius: 2px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 2px;
+    display: block;
+    float: left;
+    height: 90px;
+    width: 90px;
+    text-align: center;
+    line-height: 45px;
+    background: #fff
+}
+
+.table .thead-light th {
+    color: #495057;
+    background-color: #e9ecef;
+    border-color: #dee2e6;
+    line-height: 30px;
+}
+
+.css-keyword {
+    min-width: 120px;
+}
+
+.input-group .input-group-addon {
+    border: 0px;
+    background-color: transparent
+}
+
+/*scroll to top */
+#return-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.7);
+    width: 50px;
+    height: 50px;
+    display: block;
+    text-decoration: none;
+    -webkit-border-radius: 35px;
+    -moz-border-radius: 35px;
+    border-radius: 35px;
+    display: none;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+    #return-to-top i {
+        color: #fff;
+        margin: 0;
+        position: relative;
+        left: 16px;
+        top: 13px;
+        font-size: 19px;
+        -webkit-transition: all 0.3s ease;
+        -moz-transition: all 0.3s ease;
+        -ms-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
+        transition: all 0.3s ease;
+    }
+
+    #return-to-top:hover {
+        background: rgba(0, 0, 0, 0.9);
+    }
+
+        #return-to-top:hover i {
+            color: #fff;
+            top: 5px;
+        }
+/*scroll to top end*/
+
+
+input.largerCheckbox {
+    width: 20px;
+    height: 20px;
+}
+/*sav edit reste*/
+.sidemenu {
+    height: auto; /* Full-height: remove this if you want "auto" height */
+    width: auto; /* Set the width of the sidebar */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 100; /* Stay on top */
+    top: 58px; /* Stay at the top */
+    right: 15px;
+    background-color: #C6C6C6;
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 20px;
+    padding: 5px;
+    border-radius: 5px 5px;
+}
+
+.main-sidebar {
+    padding-top: 60px;
+}
+
+.content-wrapper {
+    background-color: #f3f3f3;
+}
+
+.fixed .content-wrapper, .fixed .right-side {
+    padding-top: 30px;
+}
