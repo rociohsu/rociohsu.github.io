@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumina 品牌形象網站 - 專案詳情</title>
+    
+    <!-- Google Fonts: Noto Sans TC (無襯線) + Playfair Display (襯線) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+    
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4C4264',   /* 深紫灰 */
+                        secondary: '#6A5F83', /* 淺紫灰 */
+                        dark: '#1C1C1E',      /* 質感黑 */
+                        grayLight: '#F5F5F7', /* 質感白灰 */
+                        grayMid: '#8E8E93',   /* 中灰 */
+                    },
+                    fontFamily: {
+                        sans: ['"Noto Sans TC"', 'sans-serif'],
+                        serif: ['"Playfair Display"', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* 客製化滾動條 */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #6A5F83; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #4C4264; }
+
+        /* 捲動淡入動畫 */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* 背景環境光暈 (Blobs) */
+        .blob {
+            position: absolute;
+            filter: blur(80px);
+            z-index: -1;
+            opacity: 0.4;
+            animation: float 10s infinite ease-in-out alternate;
+        }
+        @keyframes float {
+            0% { transform: translate(0px, 0px) scale(1); }
+            100% { transform: translate(30px, -50px) scale(1.1); }
+        }
+    </style>
+</head>
+<body class="bg-white text-dark font-sans antialiased selection:bg-primary selection:text-white relative overflow-x-hidden">
+
+    <!-- 背景光暈 -->
+    <div class="blob bg-secondary/20 w-96 h-96 rounded-full top-0 left-[-10%]"></div>
+    <div class="blob bg-primary/10 w-[500px] h-[500px] rounded-full top-[40%] right-[-10%] animation-delay-2000"></div>
+
+    <!-- 浮動導覽列 -->
+    <nav class="fixed w-full top-4 z-50 px-6 transition-transform duration-300" id="navbar">
+        <div class="max-w-5xl mx-auto bg-white/80 backdrop-blur-xl rounded-full shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white/50 px-6 md:px-8 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center space-x-2 text-primary hover:text-secondary transition group">
+                <i class="ph ph-arrow-left text-xl group-hover:-translate-x-1 transition-transform"></i>
+                <span class="font-medium text-sm tracking-widest">BACK TO HOME</span>
+            </a>
+            <div class="hidden md:flex space-x-4 text-xs font-medium tracking-wider text-grayMid">
+                <span>PROJECT 01</span>
+                <span>/</span>
+                <span class="text-dark">LUMINA</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 1. 專案總覽 (Hero & Meta) -->
+    <header class="pt-40 pb-20 px-6 md:px-12 max-w-5xl mx-auto fade-up">
+        <div class="text-center mb-16">
+            <p class="text-secondary font-medium tracking-widest text-xs md:text-sm mb-6">品牌形象網站 / UIUX 設計</p>
+            <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-6">
+                Lumina 永續保養品牌
+            </h1>
+            <h2 class="text-2xl md:text-4xl text-grayMid font-serif italic">
+                Purity meets Digital Experience.
+            </h2>
+        </div>
+
+        <!-- 有機形狀大首圖 -->
+        <div class="w-full aspect-video md:aspect-[21/9] rounded-t-[4rem] rounded-b-3xl overflow-hidden bg-gray-100 mb-16 relative group">
+            <img src="https://images.unsplash.com/photo-1600132806370-bf17e65e942f?q=80&w=2000&auto=format&fit=crop" alt="Lumina Cover" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000">
+        </div>
+
+        <!-- 專案 Meta 資訊 -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 bg-grayLight rounded-3xl p-8 md:p-12">
+            <div>
+                <p class="text-xs text-grayMid tracking-widest mb-2">MY ROLE</p>
+                <p class="font-medium">UI/UX Designer<br>Web Designer</p>
+            </div>
+            <div>
+                <p class="text-xs text-grayMid tracking-widest mb-2">TIMELINE</p>
+                <p class="font-medium">2026.03 - 2026.05<br>(8 Weeks)</p>
+            </div>
+            <div>
+                <p class="text-xs text-grayMid tracking-widest mb-2">TOOLS</p>
+                <p class="font-medium">Figma, Miro<br>Webflow</p>
+            </div>
+            <div>
+                <p class="text-xs text-grayMid tracking-widest mb-2">CLIENT</p>
+                <p class="font-medium">Lumina Skincare<br>Taipei, Taiwan</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- 分隔線 -->
+    <div class="max-w-5xl mx-auto px-6"><div class="w-full h-px bg-gray-200"></div></div>
+
+    <!-- 2. 背景與挑戰 (The Challenge) -->
+    <section class="py-24 px-6 md:px-12 max-w-3xl mx-auto fade-up">
+        <h3 class="text-3xl font-serif italic mb-8 text-primary">01. The Challenge</h3>
+        <h4 class="text-2xl font-bold mb-6">如何在數位空間傳遞「天然純粹」的觸感？</h4>
+        <p class="text-grayMid text-lg leading-relaxed mb-6">
+            Lumina 是一個新創的純素保養品牌。他們原本的網站缺乏品牌識別度，且結帳流程過於繁瑣，導致購物車放棄率高達 65%。
+        </p>
+        <p class="text-grayMid text-lg leading-relaxed mb-8">
+            我們的挑戰是：在視覺上，需要打造一個能體現「極簡、天然、高級感」的數位門面；在體驗上，必須將購買流程縮短至三步以內，提升轉換率。
+        </p>
+        <div class="bg-grayLight border-l-4 border-primary p-6 rounded-r-xl text-dark font-medium italic">
+            "We want our digital presence to feel as clean and refreshing as our products." - Lumina Founder
+        </div>
+    </section>
+
+    <!-- 3. 設計策略 / 解決方案 (The Approach) -->
+    <section class="py-24 bg-dark text-white px-6 md:px-12">
+        <div class="max-w-5xl mx-auto">
+            <h3 class="text-3xl font-serif italic mb-16 text-secondary fade-up">02. The Approach</h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                <div class="fade-up">
+                    <h4 class="text-2xl font-bold mb-4">重塑資訊架構 (Information Architecture)</h4>
+                    <p class="text-gray-400 leading-relaxed mb-6">
+                        首先，我們梳理了繁雜的產品線，將導覽列精簡為「臉部保養」、「身體沐浴」與「品牌理念」三大核心。透過卡片分類法 (Card Sorting)，確保使用者能在 5 秒內找到目標商品。
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-start space-x-3 text-gray-300">
+                            <i class="ph ph-check-circle text-secondary text-xl shrink-0 mt-0.5"></i>
+                            <span>優化導覽層級，減少 40% 的跳出率。</span>
+                        </li>
+                        <li class="flex items-start space-x-3 text-gray-300">
+                            <i class="ph ph-check-circle text-secondary text-xl shrink-0 mt-0.5"></i>
+                            <span>設計全新的「膚質測驗」互動流程，提升用戶參與度。</span>
+                        </li>
+                    </ul>
+                </div>
+                <!-- 抽象 Wireframe 示意圖 -->
+                <div class="bg-gray-800 rounded-3xl p-8 aspect-square flex flex-col space-y-4 fade-up">
+                    <div class="w-full h-8 bg-gray-700 rounded-full animate-pulse"></div>
+                    <div class="w-3/4 h-8 bg-gray-700 rounded-full animate-pulse"></div>
+                    <div class="flex-1 w-full bg-gray-700 rounded-2xl mt-4 animate-pulse"></div>
+                    <div class="grid grid-cols-2 gap-4 h-32">
+                        <div class="bg-gray-700 rounded-2xl animate-pulse"></div>
+                        <div class="bg-gray-700 rounded-2xl animate-pulse"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. 設計規範 (Design System) -->
+    <section class="py-24 px-6 md:px-12 max-w-5xl mx-auto fade-up">
+        <h3 class="text-3xl font-serif italic mb-12 text-primary text-center">03. Design System</h3>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+            <!-- Colors -->
+            <div>
+                <h4 class="text-xl font-bold mb-6">Colors</h4>
+                <div class="flex space-x-4">
+                    <div class="flex flex-col items-center">
+                        <div class="w-16 h-16 rounded-full bg-[#4C4264] shadow-md mb-2"></div>
+                        <span class="text-xs text-grayMid">#4C4264</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="w-16 h-16 rounded-full bg-[#6A5F83] shadow-md mb-2"></div>
+                        <span class="text-xs text-grayMid">#6A5F83</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="w-16 h-16 rounded-full bg-[#E5E0DA] shadow-md mb-2"></div>
+                        <span class="text-xs text-grayMid">#E5E0DA</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="w-16 h-16 rounded-full bg-[#1C1C1E] shadow-md mb-2"></div>
+                        <span class="text-xs text-grayMid">#1C1C1E</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Typography -->
+            <div>
+                <h4 class="text-xl font-bold mb-6">Typography</h4>
+                <div class="bg-grayLight p-6 rounded-2xl space-y-6">
+                    <div>
+                        <p class="text-xs text-grayMid mb-1">HEADINGS (Playfair Display)</p>
+                        <h1 class="text-3xl font-serif">Elegant & Natural.</h1>
+                    </div>
+                    <div>
+                        <p class="text-xs text-grayMid mb-1">BODY (Noto Sans TC)</p>
+                        <p class="text-sm">我們相信，保養是一種與自己對話的儀式。乾淨的無襯線體確保了最佳的易讀性。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. 最終介面 (High-Fidelity UI) -->
+    <section class="py-24 bg-grayLight px-6 md:px-12 overflow-hidden">
+        <div class="max-w-5xl mx-auto">
+            <h3 class="text-3xl font-serif italic mb-16 text-primary fade-up text-center">04. Final Product</h3>
+            
+            <!-- 錯落展示網格 -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16">
+                <!-- 左側：首頁展示 -->
+                <div class="space-y-8 md:space-y-16 fade-up">
+                    <div class="rounded-3xl overflow-hidden shadow-[0_20px_50px_rgb(0,0,0,0.1)] hover:-translate-y-2 transition-transform duration-500">
+                        <img src="https://images.unsplash.com/photo-1556228578-0d85b1a4d571?q=80&w=1000&auto=format&fit=crop" alt="UI Shot 1" class="w-full h-auto">
+                    </div>
+                    <div class="rounded-3xl overflow-hidden shadow-[0_20px_50px_rgb(0,0,0,0.1)] hover:-translate-y-2 transition-transform duration-500">
+                        <img src="https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?q=80&w=1000&auto=format&fit=crop" alt="UI Shot 2" class="w-full h-auto">
+                    </div>
+                </div>
+                
+                <!-- 右側：手機版與內頁 (往下推移製造錯落感) -->
+                <div class="space-y-8 md:space-y-16 md:mt-24 fade-up delay-100">
+                    <div class="rounded-[2.5rem] overflow-hidden shadow-[0_20px_50px_rgb(0,0,0,0.15)] border-8 border-white hover:-translate-y-2 transition-transform duration-500 max-w-sm mx-auto md:max-w-full">
+                        <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=800&auto=format&fit=crop" alt="Mobile UI" class="w-full h-auto">
+                    </div>
+                    <div class="p-8 bg-white rounded-3xl shadow-sm text-center">
+                        <i class="ph ph-shopping-cart text-3xl text-primary mb-4"></i>
+                        <h4 class="font-bold mb-2">無縫結帳體驗</h4>
+                        <p class="text-sm text-grayMid">將結帳步驟從 5 步縮減為 3 步，並支援 Apple Pay 快速付款。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. 成效與反思 (Results & Takeaways) -->
+    <section class="py-24 px-6 md:px-12 max-w-3xl mx-auto text-center fade-up">
+        <h3 class="text-3xl font-serif italic mb-8 text-primary">05. Results</h3>
+        <p class="text-grayMid text-lg leading-relaxed mb-12">
+            全新網站上線後的第三個月，我們取得了顯著的商業成果。這證明了「極簡設計」不僅是視覺上的享受，更能實質推動商業轉化。
+        </p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+            <div class="bg-grayLight p-8 rounded-3xl">
+                <p class="text-5xl font-bold text-primary mb-2 font-serif italic">+45%</p>
+                <p class="text-sm text-dark font-medium">轉換率提升</p>
+            </div>
+            <div class="bg-grayLight p-8 rounded-3xl">
+                <p class="text-5xl font-bold text-primary mb-2 font-serif italic">-30%</p>
+                <p class="text-sm text-dark font-medium">購物車放棄率</p>
+            </div>
+            <div class="bg-grayLight p-8 rounded-3xl">
+                <p class="text-5xl font-bold text-primary mb-2 font-serif italic">1.5x</p>
+                <p class="text-sm text-dark font-medium">頁面停留時間</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 底部導覽 (Next Project) -->
+    <footer class="bg-dark text-white py-24 text-center">
+        <div class="max-w-3xl mx-auto px-6 fade-up">
+            <p class="text-gray-400 tracking-widest text-sm mb-4">NEXT PROJECT</p>
+            <a href="#" class="inline-block group">
+                <h2 class="text-4xl md:text-6xl font-bold mb-2 group-hover:text-secondary transition-colors">
+                    FinTech 智能理財 APP
+                </h2>
+                <div class="flex items-center justify-center space-x-2 text-primary group-hover:text-white transition-colors mt-6">
+                    <span class="font-medium">查看專案</span>
+                    <i class="ph ph-arrow-right group-hover:translate-x-2 transition-transform"></i>
+                </div>
+            </a>
+        </div>
+    </footer>
+
+    <!-- JavaScript 動畫實作 -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // 導覽列隱藏/顯示邏輯 (往下滑隱藏，往上滑顯示)
+            let lastScrollY = window.scrollY;
+            const navbar = document.getElementById('navbar');
+
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > lastScrollY && window.scrollY > 100) {
+                    // 向下滾動，隱藏導覽列
+                    navbar.style.transform = 'translateY(-150%)';
+                } else {
+                    // 向上滾動，顯示導覽列
+                    navbar.style.transform = 'translateY(0)';
+                }
+                lastScrollY = window.scrollY;
+            });
+
+            // 捲動進場動畫 (Intersection Observer)
+            const fadeUpElements = document.querySelectorAll('.fade-up');
+            const observerOptions = { root: null, rootMargin: '0px', threshold: 0.15 };
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target); 
+                    }
+                });
+            }, observerOptions);
+
+            fadeUpElements.forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+</html>

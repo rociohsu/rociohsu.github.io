@@ -1,68 +1,449 @@
-<html lang="zh-Hant">
-
+<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0,shrink-to-fit=no">
-<meta http-equiv="content-language" content="zh-Hant-TW" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-<title>Rocio</title>
-<link rel="icon" type="image/x-icon" href="images/favicon.ico">
-<link rel="stylesheet" href="css/layout.css">
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-113806188-2"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rocio Hsu | UI/UX & Web Designer Portfolio</title>
+    
+    <!-- Google Fonts: Noto Sans TC -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
 
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-	})(window,document,'script','dataLayer','GTM-5B3NTXP');</script>
-	<!-- End Google Tag Manager -->
+    <!-- Tailwind CSS (CDN for single file deployment) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4C4264',   /* 深紫灰 */
+                        secondary: '#6A5F83', /* 淺紫灰 */
+                        dark: '#1C1C1E',      /* 質感黑 */
+                        grayLight: '#F5F5F7', /* 質感白灰 */
+                        grayMid: '#8E8E93',   /* 中灰 */
+                    },
+                    fontFamily: {
+                        sans: ['"Noto Sans TC"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* 客製化滾動條 */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #6A5F83;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #4C4264;
+        }
+
+        /* 捲動淡入動畫樣式 */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* 作品集圖片遮罩效果 */
+        .portfolio-card:hover .portfolio-overlay {
+            opacity: 1;
+        }
+        .portfolio-card:hover img {
+            transform: scale(1.05);
+        }
+    </style>
 </head>
+<body class="bg-white text-dark font-sans antialiased selection:bg-primary selection:text-white">
 
-<body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5B3NTXP"
-	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-	<!-- End Google Tag Manager (noscript) -->
-<!-- <canvas class="circle animated pulse infinite"></canvas>
-<canvas class="circle large animated pulse infinite"></canvas>
-<canvas class="circle white small animated pulse infinite"></canvas> -->
-	
-<header>
-	<a class="logo" href="index.html"><img src="images/logo.svg"></a>
-	<menu>
-		<div class="hamburger hamburger--3dy">
-			<div class="hamburger-box">
-				<div class="hamburger-inner"></div>
-			</div>
-		</div>
-		
-		<ul>
-			<li><a href="about.html">About Me</a></li>
-			<li><a href="website.html">Web Design</a></li>
-			<!--<li><a href="uiux.html">UI Design</a></li>-->
-			<li><a href="graphic.html">Graphic Design</a></li>
-			<li><a href="shootingplan.html">Shooting Plan</a></li>
-			<li><a href="photography.html">Photography</a></li>
-			<li><a href="painting.html">Painting</a></li>
-			<li><a href="2017/index.html">History Works</a></li>
-		</ul>
-	</menu>
-</header>
+    <!-- 導覽列 -->
+    <nav class="fixed w-full bg-white/90 backdrop-blur-md z-50 transition-all duration-300 border-b border-gray-100" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="text-2xl font-bold tracking-wider text-primary">
+                    <img src="images/logo.svg" style="width: 100px;">
+                </div>
 
-<section class="index">
-	<h1>Hello, I am Rocio.</h1>
-	<h2>Web & UI Designer</h2>
-</section>
-	
-<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
-<script type="text/javascript" src="js/jquery-migrate-3.0.0.min.js"></script>
-<script type="text/javascript" src="js/jquery.fittext.js"></script>
-<script type="text/javascript" src="js/jquery.lettering.min.js"></script>
-<script type="text/javascript" src="js/jquery.textillate.min.js"></script>
-<script type="text/javascript" src="js/wow.min.js"></script>
-<script type="text/javascript" src="js/layout.js"></script>
-	
+                <!-- 桌機版選單 -->
+                <div class="hidden md:flex space-x-8">
+                    <button class="nav-link text-sm font-medium text-grayMid hover:text-primary transition-colors filter-trigger" data-filter="brand">品牌形象網站</button>
+                    <button class="nav-link text-sm font-medium text-grayMid hover:text-primary transition-colors filter-trigger" data-filter="uiux">網頁/APP介面設計</button>
+                    <button class="nav-link text-sm font-medium text-grayMid hover:text-primary transition-colors filter-trigger" data-filter="campaign">活動頁設計</button>
+                    <button class="nav-link text-sm font-medium text-grayMid hover:text-primary transition-colors filter-trigger" data-filter="ecommerce">賣場設計</button>
+                    <a href="#about" class="text-sm font-medium text-grayMid hover:text-primary transition-colors">關於我</a>
+                </div>
+
+                <!-- 手機版漢堡按鈕 -->
+                <button class="md:hidden text-dark focus:outline-none" id="mobile-menu-btn">
+                    <i class="ph ph-list text-3xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- 手機版選單下拉 -->
+        <div class="md:hidden bg-white hidden absolute w-full shadow-lg border-t border-gray-100" id="mobile-menu">
+            <div class="flex flex-col px-6 py-4 space-y-4 pb-6">
+                <button class="text-left text-base text-grayMid hover:text-primary filter-trigger mobile-link" data-filter="brand">品牌形象網站</button>
+                <button class="text-left text-base text-grayMid hover:text-primary filter-trigger mobile-link" data-filter="uiux">網頁/APP介面設計</button>
+                <button class="text-left text-base text-grayMid hover:text-primary filter-trigger mobile-link" data-filter="campaign">活動頁設計</button>
+                <button class="text-left text-base text-grayMid hover:text-primary filter-trigger mobile-link" data-filter="ecommerce">賣場設計</button>
+                <a href="#about" class="text-base text-grayMid hover:text-primary mobile-link">關於我</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 首頁 Hero Section -->
+    <header class="pt-32 pb-20 md:pt-48 md:pb-32 px-6 md:px-12 max-w-7xl mx-auto fade-up">
+        <div class="max-w-3xl">
+            <p class="text-secondary font-medium tracking-widest text-sm mb-4">WEB DESIGN & UI/UX DESIGN</p>
+            <h1 class="text-5xl md:text-7xl font-bold leading-tight mb-8" style="line-height: 120%;">
+                將複雜的邏輯<br>
+                轉化為<span class="text-primary">看得懂的畫面</span>
+            </h1>
+            <p class="text-grayMid text-lg md:text-xl leading-relaxed mb-12 max-w-2xl">
+                我是 Rocio Hsu，擅長多種風格，主張「少即是多」，有邏輯性的編排資訊，順暢呈現想說的故事。
+            </p>
+        </div>
+    </header>
+
+    <!-- 作品集 Section -->
+    <section id="portfolio" class="py-20 bg-grayLight px-6 md:px-12">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 fade-up">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Selected Works</h2>
+                    <p class="text-grayMid">精選專案與設計作品</p>
+                </div>
+                
+                <!-- 篩選按鈕 (桌機版顯示為主) -->
+                <div class="flex flex-wrap gap-3 mt-6 md:mt-0">
+                    <button class="filter-btn active px-4 py-2 rounded-full text-sm font-medium bg-primary text-white transition" data-filter="all">全部</button>
+                    <button class="filter-btn px-4 py-2 rounded-full text-sm font-medium bg-white text-grayMid border border-gray-200 hover:border-primary hover:text-primary transition" data-filter="brand">品牌形象</button>
+                    <button class="filter-btn px-4 py-2 rounded-full text-sm font-medium bg-white text-grayMid border border-gray-200 hover:border-primary hover:text-primary transition" data-filter="uiux">網頁/APP介面</button>
+                    <button class="filter-btn px-4 py-2 rounded-full text-sm font-medium bg-white text-grayMid border border-gray-200 hover:border-primary hover:text-primary transition" data-filter="campaign">活動頁</button>
+                    <button class="filter-btn px-4 py-2 rounded-full text-sm font-medium bg-white text-grayMid border border-gray-200 hover:border-primary hover:text-primary transition" data-filter="ecommerce">賣場設計</button>
+                </div>
+            </div>
+
+            <!-- 作品網格 -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 lg:gap-12" id="portfolio-grid">
+                
+                <!-- 專案 1 (品牌形象)
+                <div class="portfolio-item portfolio-card group relative overflow-hidden rounded-2xl bg-white cursor-pointer fade-up" data-category="brand">
+                    <div class="aspect-[4/3] overflow-hidden bg-gray-200 relative">
+                        <img src="https://images.unsplash.com/photo-1600132806370-bf17e65e942f?q=80&w=1000&auto=format&fit=crop" alt="品牌形象網站" class="w-full h-full object-cover transition-transform duration-700">
+                        <div class="portfolio-overlay absolute inset-0 bg-primary/80 opacity-0 transition-opacity duration-300 flex items-center justify-center">
+                            <span class="text-white border border-white px-6 py-2 rounded-full text-sm tracking-wider">查看專案</span>
+                        </div>
+                    </div>
+                    <div class="p-6 md:p-8">
+                        <p class="text-secondary text-xs font-bold tracking-widest mb-2">品牌形象網站</p>
+                        <h3 class="text-2xl font-bold mb-2">Lumina 永續保養品牌</h3>
+                        <p class="text-grayMid text-sm">傳遞品牌價值的極簡視覺設計，強調天然與純粹的品牌精神。</p>
+                    </div>
+                </div> -->
+
+                <!-- 專案 2 (APP介面)
+                <div class="portfolio-item portfolio-card group relative overflow-hidden rounded-2xl bg-white cursor-pointer fade-up" data-category="uiux">
+                    <div class="aspect-[4/3] overflow-hidden bg-gray-200 relative">
+                        <img src="https://images.unsplash.com/photo-1616423640778-28d1b53229bd?q=80&w=1000&auto=format&fit=crop" alt="APP介面設計" class="w-full h-full object-cover transition-transform duration-700">
+                        <div class="portfolio-overlay absolute inset-0 bg-primary/80 opacity-0 transition-opacity duration-300 flex items-center justify-center">
+                            <span class="text-white border border-white px-6 py-2 rounded-full text-sm tracking-wider">查看專案</span>
+                        </div>
+                    </div>
+                    <div class="p-6 md:p-8">
+                        <p class="text-secondary text-xs font-bold tracking-widest mb-2">網頁/APP介面設計</p>
+                        <h3 class="text-2xl font-bold mb-2">FinTech 智能理財 APP</h3>
+                        <p class="text-grayMid text-sm">將繁雜的金融數據轉化為直覺、清晰的圖表與操作介面，提升使用者信任感。</p>
+                    </div>
+                </div> -->
+
+                <!-- 專案 3 (活動頁)
+                <div class="portfolio-item portfolio-card group relative overflow-hidden rounded-2xl bg-white cursor-pointer fade-up" data-category="campaign">
+                    <div class="aspect-[4/3] overflow-hidden bg-gray-200 relative">
+                        <div class="w-full h-full bg-gradient-to-br from-[#4C4264] to-[#2a243a] flex items-center justify-center p-12 transition-transform duration-700">
+                             <div class="text-white text-center border border-white/30 p-8 w-full h-full flex flex-col justify-center items-center">
+                                 <h4 class="text-3xl font-bold mb-2">2026</h4>
+                                 <p class="tracking-widest opacity-80">SUMMER CAMPAIGN</p>
+                             </div>
+                        </div>
+                        <div class="portfolio-overlay absolute inset-0 bg-primary/90 opacity-0 transition-opacity duration-300 flex items-center justify-center z-10">
+                            <span class="text-white border border-white px-6 py-2 rounded-full text-sm tracking-wider">查看專案</span>
+                        </div>
+                    </div>
+                    <div class="p-6 md:p-8">
+                        <p class="text-secondary text-xs font-bold tracking-widest mb-2">活動頁設計</p>
+                        <h3 class="text-2xl font-bold mb-2">年度夏季促銷活動頁</h3>
+                        <p class="text-grayMid text-sm">高轉換率導向的一頁式設計，運用動態視覺與強烈 CTA 引導使用者購買。</p>
+                    </div>
+                </div> -->
+
+                <!-- 專案 4 (賣場設計)
+                <div class="portfolio-item portfolio-card group relative overflow-hidden rounded-2xl bg-white cursor-pointer fade-up" data-category="ecommerce">
+                    <div class="aspect-[4/3] overflow-hidden bg-gray-200 relative">
+                        <img src="https://images.unsplash.com/photo-1661956602116-aa6865609028?q=80&w=1000&auto=format&fit=crop" alt="賣場設計" class="w-full h-full object-cover transition-transform duration-700">
+                        <div class="portfolio-overlay absolute inset-0 bg-primary/80 opacity-0 transition-opacity duration-300 flex items-center justify-center">
+                            <span class="text-white border border-white px-6 py-2 rounded-full text-sm tracking-wider">查看專案</span>
+                        </div>
+                    </div>
+                    <div class="p-6 md:p-8">
+                        <p class="text-secondary text-xs font-bold tracking-widest mb-2">賣場設計</p>
+                        <h3 class="text-2xl font-bold mb-2">KURA 居家美學電商</h3>
+                        <p class="text-grayMid text-sm">優化購物車流程與商品展示陳列，打造沉浸式的線上購物體驗。</p>
+                    </div>
+                </div> -->
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 關於我 Section -->
+    <section id="about" class="py-24 px-6 md:px-12 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center fade-up">
+            <!-- 照片/抽象圖佔位 -->
+            <div class="relative w-full aspect-square md:aspect-auto md:h-[600px] rounded-3xl overflow-hidden bg-grayLight flex items-center justify-center">
+                <div class="absolute inset-0 bg-gradient-to-tr from-secondary/20 to-transparent"></div>
+                <img src="images/rocio.jpg" alt="Profile of Rocio Hsu" class="w-full h-full object-cover">
+            </div>
+            
+            <!-- 文字內容 -->
+            <div>
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">
+                    About Me
+                </h2>
+             
+                <!-- 💡 這裡預留了從網頁擷取的自介內容替換區域 -->
+                <p class="text-grayMid leading-relaxed mb-6">
+                    Hello！我是許智倩 Rocio Hsu，是一個認真工作認真玩的人，個性正直善良喜歡分享，愛貓、喜愛流行新鮮事物，樂於學習、有勇於解決問題的態度和能力，喜歡用有效率的方法做事。
+                </p>
+                <p class="text-grayMid leading-relaxed mb-6">我在網頁設計領域已有17年經驗， 曾參與新創公司團隊開拓新平台， 也曾在網頁設計公司2年，參與大小網站製作， 並在電商數年，製作各種風格的活動導購頁和廣告素材，和開發部門協作新平台前後台，在時尚產業工作經驗7年。
+                </p>
+                <p class="text-grayMid leading-relaxed mb-8">
+                    在工作上是即戰力，從畫面設計到前端頁面產出，皆可自行獨立完成；在專案中，我不僅擔任視覺創造者的角色，更注重前期的功能情境討論、資訊架構規邏輯，與開發團隊密切合作，確保每一次的成果都是有價值與意義的。
+                </p>
+                
+                <div class="mb-10">
+                    <h4 class="font-bold mb-4">專業技能</h4>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-4 py-1.5 bg-grayLight text-sm rounded-full text-dark">UI/UX Design</span>
+                        <span class="px-4 py-1.5 bg-grayLight text-sm rounded-full text-dark">Web Design</span>
+                        <span class="px-4 py-1.5 bg-grayLight text-sm rounded-full text-dark">Figma</span>
+                        <span class="px-4 py-1.5 bg-grayLight text-sm rounded-full text-dark">Prototype</span>
+                        <span class="px-4 py-1.5 bg-grayLight text-sm rounded-full text-dark">Gemini Canva</span>
+                        <span class="px-4 py-1.5 bg-grayLight text-sm rounded-full text-dark">Claude Design</span>
+                        <span class="px-4 py-1.5 bg-grayLight text-sm rounded-full text-dark">HTML & CSS & jQuery 切版</span>
+                        <span class="px-4 py-1.5 bg-grayLight text-sm rounded-full text-dark">Photoshop修圖/合成/編排</span>
+                    </div>
+                </div>
+
+                <a href="mailto:shachien@gmail.com" class="inline-flex items-center space-x-2 bg-dark text-white px-8 py-4 rounded-full hover:bg-primary transition duration-300">
+                    <span>聯繫我</span>
+                    <i class="ph ph-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- 學經歷時間軸 (新增) -->
+        <div class="mt-24 grid grid-cols-1 md:grid-cols-2 gap-16 border-t border-gray-100 pt-16 fade-up">
+            <!-- 工作經歷 -->
+            <div>
+                <h3 class="text-2xl font-bold mb-8 flex items-center text-primary">
+                    <i class="ph ph-briefcase text-3xl mr-3"></i>
+                    工作經歷 Experience
+                </h3>
+                <div class="space-y-10 border-l-2 border-gray-100 ml-4 pl-8">
+                    <!-- 經歷 1 (目前工作)
+                    <div class="relative">
+                        <span class="absolute -left-[43px] top-1 w-5 h-5 rounded-full bg-white border-4 border-primary shadow-sm"></span>
+                        <p class="text-secondary text-sm font-bold tracking-widest mb-1">2023 - PRESENT</p>
+                        <h4 class="text-lg font-bold text-dark">資深 UI/UX 設計師</h4>
+                        <p class="text-grayMid font-medium mb-3">OOO 科技股份有限公司</p>
+                        <p class="text-sm text-grayMid leading-relaxed">
+                            主導核心產品線 UI/UX 改版，建立與維護 Design System。與 PM、前端工程師密切合作，將設計稿完美落地，並成功提升整體產品體驗與轉換率 25%。
+                        </p>
+                    </div> -->
+                    <!-- 經歷 2 (過去工作)
+                    <div class="relative">
+                        <span class="absolute -left-[43px] top-1 w-5 h-5 rounded-full bg-white border-4 border-gray-300"></span>
+                        <p class="text-grayMid text-sm font-bold tracking-widest mb-1">2020 - 2023</p>
+                        <h4 class="text-lg font-bold text-dark">網頁設計師 Web Designer</h4>
+                        <p class="text-grayMid font-medium mb-3">XXX 數位整合行銷</p>
+                        <p class="text-sm text-grayMid leading-relaxed">
+                            負責品牌客戶的形象網站、活動網頁與電商視覺設計。熟練掌握 RWD 響應式設計原則與前端切版基礎，參與超過 20+ 個專案上線。
+                        </p>
+                    </div> -->
+                </div>
+            </div>
+
+            <!-- 學歷 -->
+            <div>
+                <h3 class="text-2xl font-bold mb-8 flex items-center text-primary">
+                    <i class="ph ph-graduation-cap text-3xl mr-3"></i>
+                    學歷 Education
+                </h3>
+                <div class="space-y-10 border-l-2 border-gray-100 ml-4 pl-8">
+                    <!-- 學歷 1
+                    <div class="relative">
+                        <span class="absolute -left-[43px] top-1 w-5 h-5 rounded-full bg-white border-4 border-secondary shadow-sm"></span>
+                        <p class="text-secondary text-sm font-bold tracking-widest mb-1">2016 - 2020</p>
+                        <h4 class="text-lg font-bold text-dark">視覺傳達設計學系 學士</h4>
+                        <p class="text-grayMid font-medium mb-3">國立 OOOO 大學</p>
+                        <p class="text-sm text-grayMid leading-relaxed">
+                            主修視覺設計、人機互動與多媒體應用。畢業製作獲得校內優良設計獎，並展出於新一代設計展。具備扎實的設計美學與排版基礎。
+                        </p>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white py-12 px-6 md:px-12 text-center md:text-left">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-6 md:mb-0">
+                <p>&copy; 2026 Rocio Hsu. All rights reserved.</p>
+            </div>
+            
+            <div class="flex space-x-6">
+                <a target="_blank" href="https://www.instagram.com/rocio.hsu/" class="text-gray-400 hover:text-white transition"><i class="ph ph-instagram-logo text-2xl"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript 功能實作 -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // 1. 手機版選單切換
+            const mobileBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+            const menuIcon = mobileBtn.querySelector('i');
+
+            function toggleMenu() {
+                mobileMenu.classList.toggle('hidden');
+                if(mobileMenu.classList.contains('hidden')){
+                    menuIcon.classList.replace('ph-x', 'ph-list');
+                } else {
+                    menuIcon.classList.replace('ph-list', 'ph-x');
+                }
+            }
+
+            mobileBtn.addEventListener('click', toggleMenu);
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', toggleMenu);
+            });
+
+            // 2. 導覽列滾動陰影效果
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 20) {
+                    navbar.classList.add('shadow-sm');
+                } else {
+                    navbar.classList.remove('shadow-sm');
+                }
+            });
+
+            // 3. 作品集篩選功能 (包含導覽列點擊導向)
+            const filterTriggers = document.querySelectorAll('.filter-trigger');
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const portfolioItems = document.querySelectorAll('.portfolio-item');
+            const portfolioSection = document.getElementById('portfolio');
+
+            function filterPortfolio(category) {
+                // 更新按鈕樣式 (僅針對作品集區塊內的按鈕)
+                filterBtns.forEach(btn => {
+                    if(btn.dataset.filter === category) {
+                        btn.classList.remove('bg-white', 'text-grayMid', 'border', 'border-gray-200');
+                        btn.classList.add('bg-primary', 'text-white');
+                    } else {
+                        btn.classList.add('bg-white', 'text-grayMid', 'border', 'border-gray-200');
+                        btn.classList.remove('bg-primary', 'text-white');
+                    }
+                });
+
+                // 篩選項目
+                portfolioItems.forEach(item => {
+                    if (category === 'all' || item.dataset.category === category) {
+                        item.style.display = 'block';
+                        // 稍微延遲加入動畫效果
+                        setTimeout(() => {
+                            item.style.opacity = '1';
+                            item.style.transform = 'scale(1)';
+                        }, 50);
+                    } else {
+                        item.style.opacity = '0';
+                        item.style.transform = 'scale(0.95)';
+                        setTimeout(() => {
+                            item.style.display = 'none';
+                        }, 300); // 對應 transition 速度
+                    }
+                });
+            }
+
+            // 綁定所有帶有 filter-trigger 類別的元素 (導覽列 + 過濾按鈕)
+            filterTriggers.forEach(trigger => {
+                trigger.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const category = e.target.dataset.filter;
+                    filterPortfolio(category);
+                    
+                    // 如果點擊的是導覽列，則平滑捲動到作品集區塊
+                    if(!e.target.classList.contains('filter-btn')){
+                        portfolioSection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            });
+
+            // 作品集區塊本身的按鈕綁定
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const category = e.target.dataset.filter;
+                    filterPortfolio(category);
+                });
+            });
+
+
+            // 4. 捲動進場動畫 (Intersection Observer)
+            const fadeUpElements = document.querySelectorAll('.fade-up');
+            
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.15
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target); // 動畫只播放一次
+                    }
+                });
+            }, observerOptions);
+
+            fadeUpElements.forEach(el => {
+                observer.observe(el);
+            });
+
+        });
+    </script>
 </body>
 </html>
