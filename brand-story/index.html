@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta content="text/html;charset=utf-8" http-equiv="content-type">
+    <meta name="MobileOptimized" content="width">
+	<meta name="HandheldFriendly" content="true">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://static.daf-shoes.com/_Art/web/standard/css/component.css">
+    <script type="text/javascript" src="https://www.daf-shoes.com/site/js/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+<div class="header">
+    <div class="header__menu">
+        <a class="pt-all" href="product-category.html">全部商品</a>
+        <a href="product-category.html">新品</a>
+        <a href="product-category.html">暢銷</a>
+        <a href="product-category.html">鞋款</a>
+        <a href="product-category.html">包款</a>
+        <a href="https://www.daf-shoes.com/product/pageSet/3329">穿搭</a>
+        <a href="product-event.html" style="color: #CF93CC;">SALE</a>
+    </div>
+
+    <div class="header__logo">
+        <a href="index.html"><img src="https://www.daf-shoes.com/site/images/daf-logo.svg" alt="D+AF"></a>
+    </div>
+
+    <div class="header__syslink">
+        <button type="button" class="header__syslink__search"><i class="icon-search"></i></button>
+        
+        <a class="header__syslink__member" href="member.html"><i class="icon-member"></i></a>
+
+        <a class="header__syslink__cart" href="checkout.html"><i class="icon-cart"></i><span class="header__syslink__cart-total">10</span></a>
+        <button class="header__syslink__menu mobile" type="button"><i class="icon-menu"></i></button>
+    </div>
+</div><!-- END .header -->
+
+<!-- 內容開始 -->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
+body { overflow-x: hidden; }
+.main .content { padding: 0; }
+.wrapper .wrapper-content { width: 100% !important; padding: 0; }
+.about-content { padding-left: 0; padding-right: 0; padding-bottom: 0; } /* 關於D+AF 品牌故事 手機版要加上這個 */
+
+/* 主視覺滿版的時候加這段 */
+.site-header { position: fixed; width: 100%; left: 0; top: 0; right: 0; background: none; border-bottom: none; z-index: 2; }
+.top__bar + .site-header, .header-timer + .site-header { padding-top: 70px; }
+/* ---- */
+
+.daf-container { color: #2c2c2c; font-size: 16px; font-family: 'League Spartan', 'Noto Sans TC', 'Microsoft JhengHei', '黑體', sans-serif; 
+    font-weight: 400; letter-spacing: 0.5px; line-height: 180%; background: #FFFFFF; }
+.daf-container.en { font-size: 15px; }
+.daf-container * { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+.daf-container section:not(.mainkv) { position: relative; width: 100%; margin: 0 auto; padding: 12dvh 5%; }
+.daf-container article { position: relative; width: 100%; margin: 0 auto; padding: 8dvh 5%; font-weight: 300; text-align: center; }
+.daf-container article > * { width: 100%; max-width: 640px; margin: 0 auto; }
+.daf-container article.bg-gray { background: #ccd2ce; }
+.daf-container img { display: block; width: 100%; height: auto; }
+.daf-container a { color: #000000; text-decoration: none !important; }
+.daf-container a:hover { text-decoration: none !important; }
+.daf-container a > .pic { overflow: hidden; }
+.daf-container a > .pic img { transition: 0.3s; }
+.daf-container a:hover > .pic img { transform: scale(1.03); }
+.daf-container .mobile { display: none; }
+.daf-container article h1, .daf-container article h2 { margin: 0 auto 20px auto; font-size: 28px; font-weight: 600; line-height: 140%; }
+.daf-container.en article h1, .daf-container.en article h2 { font-size: 24px; }
+.daf-container article p { margin: 15px auto; }
+
+.mainkv { position: relative; width: 100%; z-index: 0; }
+.mainkv * { display: block; width: 100%; margin: 0 auto; }
+
+.collection { padding: 0 !important; display: flex; flex-flow: nowrap; }
+.collection > * { width: 100%; }
+.collection article { max-width: 600px; }
+
+.service-list { width: 100%; max-width: 540px; margin: 7% auto; padding: 7% 10%; border: 1px solid #c4c4c4; }
+.service-list > li { list-style-type: none; margin: 10px 0; padding-left: 24px; text-align: left; 
+    background: url(https://static.daf-shoes.com/_Art/lookbook/brand/240901/checked.svg) no-repeat left center; background-size: 16px; }
+
+.categories { width: 100%; max-width: 1440px; margin: 0 auto; padding-top: 0 !important; 
+    display: flex; flex-flow: wrap; justify-content: space-between; align-items: flex-end; }
+.categories > a { display: block; width: 17%; margin-bottom: 20px; 
+    font-size: 18px; text-align: center; text-transform: uppercase; }
+.categories > a > span { display: inline-block; border-bottom: 1px solid #2c2c2c; }
+
+.storesinfo { padding: 5vh 0 !important; background: #f5f5f5; }
+.storesinfo-wrap { width: 100%; max-width: 1240px; margin: 0 auto; }
+
+.company-info { padding: 30px 15px !important; text-align: center; }
+.company-info > span { display: inline-block; margin: 0 10px; color: #4F4F4F; font-size: 14px; }
+
+@media (max-width: 820px) {
+    .daf-container { font-size: 14px; -webkit-text-size-adjust: none; }
+    .daf-container.en { font-size: 13px; }
+    .daf-container section:not(.mainkv) { padding: 10dvh 20px; }
+    .daf-container article { padding: 5dvh 20px; }
+    .daf-container .pc { display: none; }
+    .daf-container .mobile { display: block; }
+    .daf-container article h1, .daf-container article h2 { font-size: 20px; }
+    .daf-container.en article h1, .daf-container.en article h2 { font-size: 16px; }
+    
+    .collection { flex-flow: wrap; }
+
+    .categories { padding: 0 10% 10dvh 10% !important; }
+    .categories > a { width: 43%; margin-bottom: 0; font-size: 14px; }
+    .categories > a:nth-child(5) { margin-top: 10px; }
+    .categories > a:nth-child(7) { margin-top: 30px; }
+    .categories > a:nth-child(9) { margin-top: 20px; }
+
+    .storesinfo { padding: 5dvh 0 !important; }
+    
+    .company-info > span { font-size: 12px; }
+}
+</style>
+
+<div class="daf-container">
+    <section class="mainkv">
+        <div class="pc"><img src="mainkv.jpg" alt="女鞋品牌推薦！「D+AF」網購女鞋品牌介紹"></div>
+        <div class="mobile"><img src="https://static.daf-shoes.com/_Art/lookbook/brand/240901/mainkv-m.jpg" alt="女鞋品牌推薦！「D+AF」網購女鞋品牌介紹"></div>
+    </section>
+    
+    <article>
+        <h1>D+AF裝扮每一個千篇一律<br>
+            引領每一刻時下潮流</h1>
+            
+        <p>在紛擾繁忙的生活<br>
+            有時候只是一個有陽光的午後、一杯溫度剛好的熱茶<br>
+            或是恰好買到喜歡的東西</p>
+            
+        <p>這樣一個小確幸的瞬間<br>
+            就能重新為生活帶來整裝待發的勇氣</p>
+            
+        <p>D+AF就是提供這樣美好瞬間的品牌</p>
+    </article>
+
+    <section class="collection">
+        <div><img src="https://static.daf-shoes.com/_Art/lookbook/brand/240901/clt-l.jpg" alt="D+AF 女鞋品牌，最懂女孩們的心，滿足時尚品味與穿搭需求，伴妳一起走出生活的美麗"></div>
+        <div><img src="https://static.daf-shoes.com/_Art/lookbook/brand/240901/clt-r.jpg" alt="D+AF 女鞋品牌，最懂女孩們的心，滿足時尚品味與穿搭需求，伴妳一起走出生活的美麗"></div>
+    </section>
+
+    <article class="bg-gray">
+        <h2>D+AF 是一間致力於設計美和時尚的<br>
+            手製女鞋品牌</h2>
+
+        <p>我們不斷推出最新豐富多元的鞋款，引領時下流行<br>
+            穿上D+AF讓你輕鬆走在時尚最前端</p>
+            
+        <p>你能在D+AF找到學院風必備樂福鞋<br>
+            優雅氣質的瑪莉珍鞋、甜蜜約會的跟鞋、<br>
+            或是穿了被誤會修圖的美腿瘦瘦靴等各類鞋款</p>
+            
+        <p>不用怕腳太大、太小沒尺寸<br>
+            我們看見每顆愛美的心，貼心備齊34~44全尺碼<br>
+            希望每一個喜歡我們的你們都能有美的享受</p>
+    </article>
+
+    <section class="collection">
+        <div>
+            <div><img src="https://static.daf-shoes.com/_Art/lookbook/brand/240901/mit-md.jpg" alt="D+AF女鞋品牌購物網站 女鞋穿搭推薦"></div>
+            <article>
+                <h2>D+AF 手製女鞋品牌<br>
+                    最懂女孩們的心</h2>
+        
+                <p>堅持專業手工製鞋，打造100%舒適度<br>
+                    我們提供兼具品質與時尚的優質女鞋<br>
+                    並且提供7天鑑賞期、30天內免費維修的服務<br>
+                    讓你網購沒有負擔</p>
+                    
+                <p>每個來過D+AF的人，洋溢幸福的笑臉離開<br>
+                    因為在D+AF能找到你所有想要的美鞋</p>
+                    
+                <p>穿上新鞋<br>
+                    期待能和你在這個充滿無限可能的世界<br>
+                    一起展開一場綺麗爛漫的冒險</p>
+            </article>
+        </div>
+        <div>
+            <div><img src="https://static.daf-shoes.com/_Art/lookbook/brand/240901/mit-make.jpg" alt="女鞋 D+AF 製鞋流程照"></div>
+            <article>
+                <h2>Our Services<br>
+                    我們的服務</h2>
+                <ul class="service-list">
+                    <li>品質保證</li>
+                    <li>7日鑑賞期</li>
+                    <li>免費維修 - 30天內免費維修</li>
+                </ul>
+            </article>
+        </div>
+    </section>
+
+    <section class="mainkv">
+        <div class="pc"><img src="https://static.daf-shoes.com/_Art/lookbook/brand/240901/md.jpg" alt="D+AF人氣熱銷鞋款 涼鞋 樂福鞋 牛津鞋 高跟鞋 瑪莉珍鞋 德比鞋 厚底鞋 輕量鞋 涼鞋 後空鞋 製造女鞋及各式女靴(短/中/長)款"></div>
+        <div class="mobile"><img src="https://static.daf-shoes.com/_Art/lookbook/brand/240901/md-m.jpg" alt="D+AF人氣熱銷鞋款 涼鞋 樂福鞋 牛津鞋 高跟鞋 瑪莉珍鞋 德比鞋 厚底鞋 輕量鞋 涼鞋 後空鞋 製造女鞋及各式女靴(短/中/長)款"></div>
+    </section>
+
+    <section class="categories" style="display: none;">
+        <a href="https://www.daf-shoes.com/product/pageSet/1552"><img src="https://static.daf-shoes.com/_Art/lookbook/brand/240901/pt1.jpg" alt="Q萌軟軟．雲朵抓皺小床墊涼拖鞋"><span>Sliders</span></a>
+        <a href="https://www.daf-shoes.com/product/pageSet/1547"><img src="https://static.daf-shoes.com/_Art/lookbook/brand/240901/pt2.jpg" alt="美好假期．交叉細帶超軟Q底涼鞋"><span>Sandals</span></a>
+        <a href="https://www.daf-shoes.com/product/pageSet/145"><img src="https://static.daf-shoes.com/_Art/lookbook/brand/240901/pt3.jpg" alt="可愛品味．MIT小蝴蝶圍兜兜健走鞋"><span>MIT</span></a>
+        <a href="https://www.daf-shoes.com/product/list/130"><img src="https://static.daf-shoes.com/_Art/lookbook/brand/240901/pt4.jpg" alt="學院風範．超軟Q馬銜釦樂福鞋"><span>Loafers</span></a>
+        <a href="https://www.daf-shoes.com/product/list/325"><img src="https://static.daf-shoes.com/_Art/lookbook/brand/240901/pt5.jpg" alt="摩登少女．輕量鋸齒底綁帶德比鞋"><span>Derbys</span></a>
+        <a href="https://www.daf-shoes.com/product/pageSet/2155"><img src="https://static.daf-shoes.com/_Art/lookbook/brand/240901/pt6.jpg" alt="甜跩女神．漆皮圓頭高跟瑪莉珍鞋"><span>MaryJanes</span></a>
+        <a href="https://www.daf-shoes.com/product/list/142"><img src="https://static.daf-shoes.com/_Art/lookbook/brand/240901/pt7.jpg" alt="典雅春氛．素面尖頭小V口中跟鞋"><span>Heels</span></a>
+        <a href="https://www.daf-shoes.com/product/list/256"><img src="https://static.daf-shoes.com/_Art/lookbook/brand/240901/pt8.jpg" alt="晴雨二穿．側鬆緊切爾西短雨靴"><span>Rainboots</span></a>
+        <a href="https://www.daf-shoes.com/product/list/148"><img src="https://static.daf-shoes.com/_Art/lookbook/brand/240901/pt9.jpg" alt="美麗零死角．素面方頭高跟瘦瘦靴"><span>Ankle Boots</span></a>
+        <a href="https://www.daf-shoes.com/product/list/199"><img src="https://static.daf-shoes.com/_Art/lookbook/brand/240901/pt10.jpg" alt="好感專屬．中車線設計方頭低跟長靴"><span>Tall Boots</span></a>
+    </section>
+
+    <section class="mainkv storesinfo">
+        <a class="storesinfo-wrap" href="https://www.daf-shoes.com/product/pageSet/2743">
+            <div class="pc"><img src="https://static.daf-shoes.com/_Art/store/storesinfo-zh.jpg" alt="D+AF門市資訊：各式流行女鞋：涼鞋、拖鞋、高跟鞋、穆勒鞋、樂福鞋、牛津鞋、休閒鞋、豆豆鞋、OL上班跟鞋、短靴、長靴、各式流行女鞋都在D+AF全台最美鞋店。"></div>
+            <div class="mobile"><img src="https://static.daf-shoes.com/_Art/store/storesinfo-zh-m.jpg" alt="D+AF門市資訊：各式流行女鞋：涼鞋、拖鞋、高跟鞋、穆勒鞋、樂福鞋、牛津鞋、休閒鞋、豆豆鞋、OL上班跟鞋、短靴、長靴、各式流行女鞋都在D+AF全台最美鞋店。"></div>
+        </a>
+    </section>
+
+    <section class="mainkv">
+        <a href="https://www.daf-shoes.com/">
+            <div class="pc"><img src="https://static.daf-shoes.com/_Art/lookbook/brand/240901/back.jpg" alt="SHOP NOW"></div>
+            <div class="mobile"><img src="https://static.daf-shoes.com/_Art/lookbook/brand/240901/back-m.jpg" alt="SHOP NOW"></div>
+        </a>
+    </section>
+
+    <section class="company-info">
+        <span>公司名稱：晨希時尚有限公司</span>
+        <span>統一編號：27921248</span>
+        <span>登記地址：新北市中和區建康路176號2樓</span>
+    </section>
+</div><!-- END .daf-container -->
+<!-- 內容結束 -->
+
+</body>
+</html>

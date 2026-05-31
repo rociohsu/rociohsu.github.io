@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="253.88" viewBox="0 0 1920 253.88">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="circlebg" class="cls-1" d="M961,7971c-363.2,0-697.136,82.24-961,219.89V7937H1920v252.85C1656.45,8052.82,1323.29,7971,961,7971Z" transform="translate(0 -7937)"/>
+</svg>
