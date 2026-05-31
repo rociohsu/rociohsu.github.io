@@ -69,12 +69,8 @@
 </head>
 <body class="bg-white text-dark font-sans antialiased selection:bg-primary selection:text-white relative overflow-x-hidden">
 
-    <!-- 背景光暈 -->
-    <div class="blob bg-secondary/20 w-96 h-96 rounded-full top-0 left-[-10%]"></div>
-    <div class="blob bg-primary/10 w-[500px] h-[500px] rounded-full top-[40%] right-[-10%] animation-delay-2000"></div>
-
     <!-- 浮動導覽列 -->
-    <nav class="fixed w-full top-4 z-50 px-6 transition-transform duration-300" id="navbar">
+    <nav class="fixed inset-x-0 top-4 z-50 px-6 transition-transform duration-300" id="navbar">
         <div class="max-w-5xl mx-auto bg-white/80 backdrop-blur-xl rounded-full shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white/50 px-6 md:px-8 py-4 flex justify-between items-center">
             <a href="index.html" class="flex items-center space-x-2 text-primary hover:text-secondary transition group">
                 <i class="ph ph-arrow-left text-xl group-hover:-translate-x-1 transition-transform"></i>
@@ -103,16 +99,16 @@
         </div>
 
         <!-- 專案資訊 -->
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-8 bg-grayLight rounded-3xl p-8 md:p-12">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 bg-grayLight rounded-3xl p-8 md:p-12">
             <div>
                 <p class="text-xs text-grayMid tracking-widest mb-2">TOOLS</p>
                 <p class="font-medium">Gemini Canva<br>Claude Design<br>Figma</p>
             </div>
             <div>
                 <p class="text-xs text-grayMid tracking-widest mb-2">PROTOTYPE</p>
-                <p class="font-medium"><a class="text-primary hover:text-secondary" target="_blank" href="https://rociohsu.github.io/m-CMS/">https://rociohsu.github.io/m-CMS/</a></p>
+                <p class="font-medium"><a class="text-primary hover:text-secondary" target="_blank" href="https://rociohsu.github.io/m-CMS/">Github 網址</a></p>
             </div>
-            <div>
+            <div class="md:col-span-2">
                 <p class="text-xs text-grayMid tracking-widest mb-2">MY ROLE</p>
                 <p class="font-medium">了解需求與規格後，以AI加速探索方案，以公司的CIS為設計規範，介面以使用者易用性為優先，將AI生成結果轉化為可設計、可溝通的介面方案，加速和客戶/PM/RD溝通與開發。</p>
             </div>
