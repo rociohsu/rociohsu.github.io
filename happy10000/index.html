@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta content="text/html;charset=utf-8" http-equiv="content-type">
+    <meta name="MobileOptimized" content="width">
+	<meta name="HandheldFriendly" content="true">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://static.daf-shoes.com/_Art/web/standard/css/component.css">
+    <script type="text/javascript" src="https://www.daf-shoes.com/site/js/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+
+<!-- 內容開始 -->
+<link rel="stylesheet" href="https://static.daf-shoes.com/_Art/landingpage/product.css" rel="stylesheet">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
+body { overflow-x: hidden; }
+.main .content { padding: 0; }
+.wrapper .wrapper-content { width: 100% !important; }
+
+.daf-container { color: #4b3029; font-size: 18px; font-weight: 600; letter-spacing: 0;
+    font-family: 'League Spartan', 'Microsoft JhengHei', '黑體', sans-serif, serif; background: #5b372e; }
+.daf-container * { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+.daf-container section:not(.mainkv) { position: relative; width: 100%; margin: 0 auto; padding: 10dvh 5% 0; }
+.daf-container img { display: block; width: 100%; height: auto; }
+.daf-container a { color: #eb6da5; text-decoration: underline !important; }
+.daf-container a.btn { display: inline-block; padding: 3px 5px; margin-top: 20px;
+    font-size: 22px; text-decoration: none !important; border-bottom: 2px solid #eb6da5; }
+.daf-container a.btn:hover { font-size: 24px; }
+.daf-container a > .pic { display: block; overflow: inherit; }
+.daf-container a > .pic img { transition: 0.3s; }
+.daf-container a:hover > .pic img { transform: scale(1.02); }
+.daf-container .mobile { display: none; }
+.daf-container h2 { margin: 0 auto 15px auto; color: #FFFFFF; font-size: 40px; font-weight: bold; text-align: center; }
+.daf-container h2#event4 { margin-top: 7%; padding-top: 5%; border-top: 1px dashed #5b372e; }
+.daf-container h2 span { display: inline-block; }
+.daf-container h2 b { color: #eb6da5; font-weight: 600; }
+.daf-container h3 { margin: 6% auto 4% auto; font-size: 24px; font-weight: 600; text-align: center; }
+.daf-container h3 u { padding-bottom: 3px; text-decoration: none; border-bottom: 3px solid #4b3029; }
+.daf-container ul { margin-left: 25px; list-style-type: decimal; }
+.daf-container ul li { margin: 10px 0 0; }
+.daf-container .shop-btn { display: block; width: 70%; max-width: 320px; padding: 0; margin: 20px auto; background: none; border: none; }
+
+.mainkv { position: relative; width: 100%; }
+.mainkv .menu-list { position: absolute; width: 20%; top: 5%; right: 3%; 
+    display: flex; flex-flow: column; gap: 15px; }
+.mainkv .menu-list > a { display: block; width: 100%; }
+
+.container-box { width: 100%; max-width: 1024px; margin: 0 auto; padding: 4% 8%; 
+    background: #e8cad7; border-radius: 25px; }
+.container-box h2 { color: #4b3029; }
+.container-box .coupon { display: block; width: 70%; max-width: 400px; margin: 20px auto 0 auto; }
+.container-box .d-point { display: block; width: 100%; max-width: 600px; margin: 0 auto; }
+.container-box .steps { display: block; width: 100%; max-width: 600px; margin: 0 auto; }
+
+.redbag-list { display: flex; flex-flow: nowrap; gap: 25px; justify-content: center; 
+    width: 100%; max-width: 720px; margin: 0 auto; }
+.redbag-list > a { display: block; width: 100%; }
+
+.table01 { width: 100%; max-width: 600px; margin: 20px auto; padding: 0; text-align: center;
+    border: 2px #e8cad7 solid; box-sizing: border-box; border-collapse: collapse; background: #FFFFFF; }
+.table01 th, .table01 td { padding: 10px;  text-align: center; vertical-align: middle;
+    border: 1px #e8cad7 solid; }
+.table01 th { color: #FFFFFF; background: #eb6da5; }
+.table01 td .vip-card { width: 80px; margin: 0 auto 5px auto; }
+.table01 td .vip-card img { display: block; width: 100%; height: auto; }
+.table01 .red { color: #eb6da5; font-weight: bold; }
+
+.products { padding-bottom: 10dvh !important; }
+.products .pt-list .pt-item { background: #FFFFFF; }
+.products .pt-list .pt-item .name { font-size: 16px; color: #4b3029; }
+.daf-container .pt-list .pt-item .price .sale { color: #eb6da5; }
+.daf-container .pt-list .pt-item .addCartPs { background-color: #eb6da5;
+    background-image: url(https://static.daf-shoes.com/_Art/landingpage/cart-w.svg); }
+
+@media (max-width: 820px) {
+    .daf-container { font-size: 16px; -webkit-text-size-adjust: none; }
+    .daf-container section:not(.mainkv) { padding: 5dvh 10px 0; }
+    .daf-container .pc { display: none; }
+    .daf-container .mobile { display: block; }
+    .daf-container h2 { font-size: 30px; }
+    .daf-container h2#event4 { margin-top: 9%; padding-top: 7%; }
+    .daf-container h3 { margin: 10% auto 7% auto; font-size: 18px; }
+
+    .mainkv .menu-list { width: 95%; top: auto; right: 3%; bottom: 5%; left: 2%;
+        display: grid; grid-template-columns: repeat(2, 1fr); grid-gap: 10px 5px; }
+
+    .container-box { padding: 25px 15px; border-radius: 15px; }
+
+    .redbag-list { gap: 10px; }
+
+    .products .pt-list { padding: 10px 5px; }
+    .products .pt-list .pt-item .name { font-size: 14px; }
+}
+</style>
+
+<div class="daf-container">
+    <section class="mainkv">
+        <div class="pc"><img src="https://static.daf-shoes.com/_Art/news/2025/251107/mainkv.jpg" alt="D+AF 普發一萬加碼紅包活動，普發$10000 D+AF把你的普發金變更大！四大好康：現領紅包$1000、買5000送$5000、領D幣10000點、D幣10倍送。展現D+AF秋冬女鞋購物節時尚氛圍"></div>
+        <div class="mobile"><img src="https://static.daf-shoes.com/_Art/news/2025/251107/mainkv-m.jpg" alt="D+AF 普發一萬加碼紅包活動，普發$10000 D+AF把你的普發金變更大！四大好康：現領紅包$1000、買5000送$5000、領D幣10000點、D幣10倍送。展現D+AF秋冬女鞋購物節時尚氛圍"></div>
+        <div class="menu-list">
+            <a href="#event1">
+                <div class="pic"><img src="https://static.daf-shoes.com/_Art/news/2025/251107/menu1.png" alt="D+AF 普發金加碼！送你$1000紅包，現領現折！快來領取你的冬季治裝費"></div>
+            </a>
+
+            <a href="#event2">
+                <div class="pic"><img src="https://static.daf-shoes.com/_Art/news/2025/251107/menu2.png" alt="D+AF 普發金加碼！滿5000送5000！買越多賺越多"></div>
+            </a>
+
+            <a href="#event3">
+                <div class="pic"><img src="https://static.daf-shoes.com/_Art/news/2025/251107/menu3.png" alt="D+AF 普發金加碼！D幣10000點送給你！現領現折$100 可與折價券同步使用，折上折賺更多！"></div>
+            </a>
+
+            <a href="#event4">
+                <div class="pic"><img src="https://static.daf-shoes.com/_Art/news/2025/251107/menu4.png" alt="D+AF 普發金加碼回饋D幣10倍送，買越多賺越多！"></div>
+            </a>
+        </div>
+    </section>
+
+    <section id="event1">
+        <h2><span>紅包放大術!</span> <span><b>$1000</b>超狂神券立即領取</span></h2>
+    
+        <article class="container-box">
+            <div class="redbag-list">
+                <a href="https://www.daf-shoes.com/api/CouponTicketToMember?ctsn=cash200">
+                    <div class="pic"><img src="https://static.daf-shoes.com/_Art/news/2025/251107/redbag200.png" alt="D+AF普發金加碼！折價券$200 滿 $2000 使用，紅包加碼優惠，滿額即可折抵"></div>
+                </a>
+
+                <a href="https://www.daf-shoes.com/api/CouponTicketToMember?ctsn=cash300">
+                    <div class="pic"><img src="https://static.daf-shoes.com/_Art/news/2025/251107/redbag300.png" alt="D+AF普發金加碼！折價券$300 滿 $2500 使用，紅包加碼優惠，滿額即可折抵"></div>
+                </a>
+
+                <a href="https://www.daf-shoes.com/api/CouponTicketToMember?ctsn=cash500">
+                    <div class="pic"><img src="https://static.daf-shoes.com/_Art/news/2025/251107/redbag500.png" alt="D+AF普發金加碼！折價券$500 滿 $3500 使用，紅包加碼優惠，滿額即可折抵"></div>
+                </a>
+            </div>
+
+            <h3><u>注意事項</u></h3>
+            <ul>
+                <li>使用期限：2025/11/15 ~ 2025/11/19</li>
+                <li>特價商品不列入折價券活動。</li>
+                <li>折價券不得與其他優惠、折扣碼、購物金、滿額折扣合併使用。</li>
+                <li>登入會員並點選領券即可領取，領取成功後可到個人帳戶＞優惠券查看確認。</li>
+                <li>同一帳號限領取乙次，不得重複領取、使用。</li>
+                <li>每日數量有限，以實際結帳順序為主，若達使用上限即無法折抵。</li>
+                <li>本券之折抵金額恕無法折現或找零。</li>
+                <li>此活動為D+AF官方購物網站限定活動，門市不適用此活動。</li>
+            </ul>
+        </article>
+    </section>
+
+    <section id="event2">
+        <h2><span>放大你的<b>普發金</b></span> <span>更放大你的<b>好運勢</b>!</span></h2>
+    
+        <article class="container-box">
+            <h2 style="margin-bottom: 0;">買5000 <b>送$5000</b></h2>
+            <div style="margin-top: 0; text-align: center;">2026年1月起紅包不間斷，每月發NT$ 500折價券</div>
+            <div><img class="coupon" src="https://static.daf-shoes.com/_Art/news/2025/251107/coupon.png" alt="D+AF 普發加碼紅包！放大你的普發金 更放大你的好運！買 $5000 送 $5000」明自 2026 年 1 月起每月發 NT$ 500 折價券，共 10 張！ D+AF 秋冬女鞋加碼回饋"></div>
+
+            <h3><u>注意事項</u></h3>
+            <ul>
+                <li>本活動限 2025/11/15–2025/11/19 活動期間內符合條件之訂單。</li>
+                <li>活動結束後，系統將於 2025/12/29 確認訂單資格，並自動匯入折價券至會員帳戶。</li>
+                <li>折價券自 2026 年 1 月起 每月發送乙張（面額 $500，共 10 張），使用期限為各月份最後一日。</li>
+                <li>每張折價券使用門檻為單筆消費滿 $2,000 可折抵，限官網使用，不可找零或折現。</li>
+                <li>折價券不得與其他優惠、折扣碼、購物金、滿額折扣合併使用。</li>
+                <li>若訂單取消或退貨，將取消活動資格並收回未發放之折價券。</li>
+            </ul>
+        </article>
+    </section>
+
+    <section id="event3">
+        <h2><span>大撒幣!</span> <span>送你D幣<b>1萬點</b></span></h2>
+    
+        <article class="container-box">
+            <a href="https://www.daf-shoes.com/api/DCoinClickEvent/1aa2108f147706b5157be20d182f2c94">
+                <div class="pic"><img class="d-point" src="https://static.daf-shoes.com/_Art/news/2025/251107/d-point.png" alt="D+AF 大撒幣活動，D 幣送好送滿！領 D 幣 10000 點＝現領現折 $100，使用期限 7 日加碼送點、折上折回饋！"></div>
+            </a>
+
+            <h3><u>注意事項</u></h3>
+            <div style="text-align: center;">此活動為官網限定活動，購物回饋D幣僅限官網與門市消費訂單，其他通路恕無回饋。</div>
+
+            <h2 id="event4"><span>簡單三步驟</span> <span>D幣<b>10倍送</b></span></h2>
+            <div><img class="steps" src="https://static.daf-shoes.com/_Art/news/2025/251107/3-steps.png" alt="D+AF 普發金加碼回饋！D幣10倍送！買越多賺越多 2025/11/15-2025/11/19"></div>
+            <h3 style="margin-bottom: 10px; font-weight: bold;">什麼是D幣？ D幣有多好用？</h3>
+            <div style="text-align: center;">
+                100點抵現金1元，最高可折抵該筆訂單金額的50%<br>
+                <a class="btn" href="https://www.daf-shoes.com/index/faqContent?ft=1&m=1620702535007">一次搞懂D幣››</a>
+            </div>
+
+            <h3><u>活動辦法</u></h3>
+            <div style="text-align: center;">於活動日期登入會員，且完成下單即可享有D幣10倍送回饋優惠。</div>
+            <table class="table01">
+                <tr>
+                    <th>會員等級</th>
+                    <th>Ｄ幣回饋優惠</th>
+                    <th>加碼</th>
+                    <th>最終回饋</th>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="vip-card"><img src="https://static.daf-shoes.com/_Art/app/vip-white.png" alt="D+AF WHITE一般會員"></div>
+                        一般會員
+                    </td>
+                    <td>無</td>
+                    <td class="red">D幣x10倍</td>
+                    <td class="red">D幣10倍回饋</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="vip-card"><img src="https://static.daf-shoes.com/_Art/app/vip-silver.png" alt="D+AF SILVER銀卡會員"></div>
+                        銀卡會員
+                    </td>
+                    <td>D幣2倍回饋</td>
+                    <td class="red">D幣x10倍</td>
+                    <td class="red">D幣12倍回饋</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="vip-card"><img src="https://static.daf-shoes.com/_Art/app/vip-gold.png" alt="D+AF GOLD金卡會員">
+                        </div>
+                        金卡會員
+                    </td>
+                    <td>D幣5倍回饋</td>
+                    <td class="red">D幣x10倍</td>
+                    <td class="red">D幣15倍回饋</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="vip-card"><img src="https://static.daf-shoes.com/_Art/app/vip-black.png" alt="D+AF BLACK黑卡會員">
+                        </div>
+                        黑卡會員
+                    </td>
+                    <td>D幣10倍回饋</td>
+                    <td class="red">D幣x10倍</td>
+                    <td class="red">D幣20倍回饋</td>
+                </tr>
+            </table>
+
+            <h3><u>注意事項</u></h3>
+            <ul>
+                <li>活動期間：2025/11/15 ~ 2025/11/19</li>
+                <li>使用期限：領取日起30天內</li>
+                <li>D幣將於7日鑑賞期後由系統自動匯入，匯入後立即生效，D幣100點可折抵1元。</li>
+                <li>此活動為官網限定活動，購物回饋D幣僅限官網消費訂單，其他通路恕無回饋。</li>
+                <li>D+AF保有最終修改、變更、活動解釋及取消本活動之權利，若有相關異動將會公告於網站， 恕不另行通知。</li>
+            </ul>
+            <div style="text-align: center;">
+                <a class="btn" href="https://www.daf-shoes.com/index/faqContent?ft=1&m=1620702535007">更多D幣說明››</a>
+            </div>
+        </article>
+    </section>
+    <br><br>
+</div><!-- END .daf-container -->
+<!-- 內容結束 -->
+
+
+</body>
+</html>
