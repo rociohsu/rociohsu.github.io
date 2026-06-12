@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta content="text/html;charset=utf-8" http-equiv="content-type">
+    <meta name="MobileOptimized" content="width">
+	<meta name="HandheldFriendly" content="true">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://static.daf-shoes.com/_Art/web/standard/css/component.css">
+    <script type="text/javascript" src="https://www.daf-shoes.com/site/js/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="https://static.daf-shoes.com/_Art/web/standard/js/component.js"></script>
+</head>
+<body>
+
+<!-- 內容開始 -->
+<link rel="stylesheet" href="https://static.daf-shoes.com/_Art/landingpage/swiper-bundle.min.css" />
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Rokkitt:ital,wght@0,100..900;1,100..900&display=swap');
+body { overflow-x: hidden; }
+.main .content { padding: 0; }
+.wrapper .wrapper-content { width: 100% !important; }
+
+.daf-container { color: #000000; font-size: 14px; font-weight: normal; letter-spacing: 0.5px;
+    font-family: 'Jost', 'Microsoft JhengHei', '黑體', sans-serif, serif; background: #FFFFFF; }
+.daf-container * { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+.daf-container section:not(.mainkv) { position: relative; width: 100%; margin: 0 auto; }
+.daf-container img { display: block; width: 100%; height: auto; }
+.daf-container a { color: #000000; text-decoration: none !important; }
+.daf-container a:hover { text-decoration: none !important; }
+.daf-container a > .pic { display: block; overflow: hidden; }
+.daf-container a > .pic img { transition: 0.3s; }
+.daf-container a:hover > .pic img { transform: scale(1.02); }
+.daf-container .mobile { display: none; }
+.daf-container h2 { margin: 0 auto 25px auto; font-size: 20px; font-family: "Fraunces", serif; font-weight: normal; text-align: center; }
+.daf-container .more-btn { display: block; width: fit-content; margin: 5dvh auto 0 auto; padding: 10px 30px;
+    font-size: 18px; text-align: center; border: 1px solid #000000;
+}
+
+.mainkv { position: relative; display: flex; flex-flow: nowrap; width: 100%; z-index: 0; background: }
+.mainkv > a { display: block; }
+.mainkv .mainkv-list { width: 100%; }
+.mainkv .mainkv-list .swiper-slide { display: block; overflow: hidden; }
+.mainkv .swiper-button-prev, .swiper-button-next { display: none; }
+.mainkv .swiper-pagination { bottom: 15px; }
+.mainkv .swiper-pagination-bullet { width: 10px; height: 10px; margin: 0 6px; background: #FFFFFF; }
+
+.bestsellers { width: 100%; max-width: 1680px; padding: 0; }
+.bsl-list { width: 100%; display: grid; grid-template-columns: repeat(2, 1fr); }
+.bsl-list > a { display: block; position: relative; }
+.bsl-list > a h2 { position: absolute; width: fit-content; 
+    height: 40px; top: 0; right: 0; bottom: 0; left: 0; margin: auto;
+    display: flex; flex-flow: column; justify-content: center; align-items: center; 
+    color: #FFFFFF; font-size: 28px; font-weight: 400; letter-spacing: 1px;
+}
+.bsl-list > a:hover > .pic img { transform: scale(1); }
+.bsl-list > a .shop-now { width: fit-content; margin: 10px auto 0 auto; padding: 10px 25px; 
+    font-family: "Rokkitt", serif; font-size: 14px; border: 1px solid #FFFFFF; }
+
+.categories { width: 100%; max-width: 1920px; margin: 0 auto; padding: 10dvh 0 0 0; }
+.ctgr-list { width: 100%; display: grid; grid-template-columns: repeat(6, 1fr); grid-gap: 10px;  }
+.ctgr-list > a { position: relative; display: block; }
+.ctgr-list > a .name { position: absolute; display: block; width: 100%; left: 0; bottom: 10px; padding: 10px; font-size: 20px; text-align: center; }
+
+.collection { width: 100%; max-width: 1920px; margin: 0 auto; padding: 10dvh 5%; }
+.clt-list { width: 100%; display: grid; grid-template-columns: repeat(4, 1fr); grid-gap: 10px; }
+.clt-list > a { display: block; text-align: center; }
+.clt-list > a h2 { margin: 10px 0 5px 0; font-size: 20px; font-weight: 400; }
+.clt-list > a .shop-now { font-family: "Rokkitt", serif; font-size: 14px; }
+
+.fashion-trend { width: 100%; max-width: 1440px; margin: 0 auto; padding: 10dvh 5% 0 5%; }
+.blog-list { width: 100%; display: grid; grid-template-columns: repeat(2, 1fr); grid-gap: 15px; }
+.blog-list > a { display: block; }
+.blog-list > a .title { margin: 15px 0 10px 0; font-size: 18px; font-weight: bold; }
+.blog-list > a .desc { font-size: 12px; line-height: 140%; }
+
+@media (max-width: 1024px) {
+    .ctgr-list { display: grid; grid-template-columns: repeat(3, 1fr); }
+    .clt-list { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 820px) {
+    .daf-container { margin-bottom: 45px; font-size: 14px; -webkit-text-size-adjust: none; }
+    .daf-container .pc { display: none; }
+    .daf-container .mobile { display: block; }
+    .daf-container h2 { margin: 0 auto 15px auto; font-size: 18px; text-align: center; }
+    .daf-container .more-btn { margin: 3dvh auto 0 auto; padding: 7px 25px; font-size: 14px; }
+
+    .bsl-list { grid-template-columns: repeat(1, 1fr); }
+    .bsl-list > a h2 { font-size: 24px; }
+    .bsl-list > a .shop-now { font-size: 12px; }
+
+    .categories { padding: 10px; }
+    .ctgr-list { display: grid; grid-template-columns: repeat(2, 1fr); }
+    .ctgr-list > a .name { bottom: 5px; font-size: 16px; }
+
+    .collection { padding: 6dvh 0; }
+    .clt-list { grid-template-columns: repeat(1, 1fr); grid-gap: 0; }
+    .clt-list > a .shop-now { font-size: 12px; }
+    .collection:not(.stylebook) .clt-list > a { width: 80%; margin: 0 auto 20px auto; }
+
+    .stylebook .clt-list { grid-template-columns: repeat(2, 1fr); }
+
+    .fashion-trend { padding: 6dvh 0; }
+    .blog-list { grid-template-columns: repeat(1, 1fr); }
+    .blog-list > a { margin-bottom: 30px; }
+    .blog-list > a:last-child { margin-bottom: 0; }
+    .blog-list > a .title, .fashion-trend .blog-list > a .desc { padding: 0 20px; }
+}
+</style>
+
+<div class="daf-container">
+
+    <section class="mainkv">
+        <div class="swiper-container mainkv-list">
+			<div class="swiper-wrapper">
+				<a class="swiper-slide" href="https://www.daf-shoes.com/product/pageSet/606">
+                    <!-- 電腦版圖 --><div class="pc"><img src="https://static.daf-shoes.com/_Art/index/2025/250303/mainkv1.jpg" alt="D+AF 春季新品 OL穿搭企劃 經典樂福鞋 好穿一直穿 舒適 時尚 耐穿"></div>
+                    <!-- 手機版圖 --><div class="mobile"><img src="https://static.daf-shoes.com/_Art/index/2025/250303/mainkv1-m.jpg" alt="D+AF 春季新品 OL穿搭企劃 經典樂福鞋 好穿一直穿 舒適 時尚 耐穿"></div>
+                </a>
+
+                <a class="swiper-slide" href="https://www.daf-shoes.com/product/list/130">
+                    <!-- 電腦版圖 --><div class="pc"><img src="https://static.daf-shoes.com/_Art/index/2025/250303/mainkv2.jpg" alt="D+AF 春季新品 樂福鞋 紳士鞋 一年四季都實穿 春季穿搭推薦"></div>
+                    <!-- 手機版圖 --><div class="mobile"><img src="https://static.daf-shoes.com/_Art/index/2025/250303/mainkv2-m.jpg" alt="D+AF 春季新品 樂福鞋 紳士鞋 一年四季都實穿 春季穿搭推薦"></div>
+                </a>
+
+                <a class="swiper-slide" href="https://www.daf-shoes.com/product/pageSet/3234">
+                    <!-- 電腦版圖 --><div class="pc"><img src="https://static.daf-shoes.com/_Art/index/2025/250303/mainkv3.jpg" alt="舒華代言主打 女鞋(女) 舒華穿搭 時髦舒適Q彈好穿 銀色鞋款穿搭推薦 (G)I-DLE SHUHUA"></div>
+                    <!-- 手機版圖 --><div class="mobile"><img src="https://static.daf-shoes.com/_Art/index/2025/250303/mainkv3-m.jpg" alt="舒華代言主打 女鞋(女) 舒華穿搭 時髦舒適Q彈好穿 銀色鞋款穿搭推薦 (G)I-DLE SHUHUA"></div>
+                </a>
+			</div>
+			<div class="swiper-button-next"></div>
+			<div class="swiper-button-prev"></div>
+			<div class="swiper-pagination"></div>
+		</div>
+    </section>
+
+    <section class="categories">
+        <div class="ctgr-list">
+            <a href="https://www.daf-shoes.com/product/list/133">
+                <div class="pic"><img src="https://static.daf-shoes.com/_Art/index/2025/250303/pt1.jpg" alt="D+AF春季女鞋推薦 復刻休閒撞色搭配真皮德訓鞋"></div>
+                <div class="name">德訓鞋</div>
+            </a>
+
+            <a href="https://www.daf-shoes.com/product/list/130">
+                <div class="pic"><img src="https://static.daf-shoes.com/_Art/index/2025/250303/pt2.jpg" alt="D+AF春季女鞋推薦 女主風範．鬆糕厚底馬銜釦樂福鞋"></div>
+                <div class="name">樂福鞋</div>
+            </a>
+
+            <a href="https://www.daf-shoes.com/product/list/325">
+                <div class="pic"><img src="https://static.daf-shoes.com/_Art/index/2025/250303/pt3.jpg" alt="D+AF春季女鞋推薦 老錢假期輕量底綁帶德比鞋"></div>
+                <div class="name">德比鞋</div>
+            </a>
+
+            <a href="https://www.daf-shoes.com/product/list/142">
+                <div class="pic"><img src="https://static.daf-shoes.com/_Art/index/2025/250303/pt4.jpg" alt="D+AF春季女鞋推薦 美腿比例．MIT素面尖頭8cm高跟鞋"></div>
+                <div class="name">高跟鞋</div>
+            </a>
+
+            <a href="https://www.daf-shoes.com/product/pageSet/1922">
+                <div class="pic"><img src="https://static.daf-shoes.com/_Art/index/2025/250303/pt5.jpg" alt="D+AF春季女鞋推薦 水光派對雙釦帶運動風芭蕾鞋"></div>
+                <div class="name">機能芭蕾鞋</div>
+            </a>
+
+            <a href="https://www.daf-shoes.com/product/list/346">
+                <div class="pic"><img src="https://static.daf-shoes.com/_Art/index/2025/250303/pt6.jpg" alt="D+AF春季女鞋推薦 三明治多層兩用包"></div>
+                <div class="name">包款</div>
+            </a>
+        </div>
+    </section>
+
+    <section class="collection">
+        <h2>職 場 推 薦 Collections</h2>
+
+        <div class="clt-list">
+            <a href="https://www.daf-shoes.com/product/pageSet/3250">
+                <div class="pic"><img src="https://static.daf-shoes.com/_Art/index/2025/250303/clt1.jpg" alt="OL通勤包款(女)推薦 OL通勤穿搭 職場穿搭肩背包"></div>
+                <h2>OL通勤包款</h2>
+                <div class="shop-now">SHOP NOW</div>
+            </a>
+
+            <a href="https://www.daf-shoes.com/product/pageSet/2016">
+                <div class="pic"><img src="https://static.daf-shoes.com/_Art/index/2025/250303/clt2.jpg" alt="超．極軟 新柔感小白鞋(女)推薦 超．極軟穿搭 OL通勤穿搭 復刻休閒撞色搭配真皮德訓鞋"></div>
+                <h2>超．極軟 新柔感小白鞋</h2>
+                <div class="shop-now">SHOP NOW</div>
+            </a>
+
+            <a href="https://www.daf-shoes.com/product/pageSet/3331">
+                <div class="pic"><img src="https://static.daf-shoes.com/_Art/index/2025/250303/clt3.jpg" alt="知性氣勢OL跟鞋(女)推薦 知性氣勢穿搭 OL職場穿搭推薦 黑色高跟鞋 台灣製造MIT"></div>
+                <h2>知性氣勢OL跟鞋</h2>
+                <div class="shop-now">SHOP NOW</div>
+            </a>
+
+            <a href="https://www.daf-shoes.com/product/pageSet/145">
+                <div class="pic"><img src="https://static.daf-shoes.com/_Art/index/2025/250303/clt4.jpg" alt="熱銷全球 MIT好感國民鞋 舒適好穿鞋 平價 舒適 百搭 通勤鞋款穿搭推薦(女)"></div>
+                <h2>熱銷全球 MIT好感國民鞋</h2>
+                <div class="shop-now">SHOP NOW</div>
+            </a>
+        </div>
+    </section>
+
+    <section class="bestsellers">
+        <div class="bsl-list">
+            <a href="https://www.daf-shoes.com/product/list/350">
+                <div class="pic"><img src="https://static.daf-shoes.com/_Art/index/2025/250303/nb1.jpg" alt="D+AF春季女鞋推薦 時髦舒適機能芭蕾鞋穿搭　新世代寵兒交叉帶機能瑪莉珍鞋"></div>
+                <h2>時髦舒適 機能芭蕾 <div class="shop-now">SHOP NOW</div></h2>
+            </a>
+
+            <a href="https://www.daf-shoes.com/product/list/139">
+                <div class="pic"><img src="https://static.daf-shoes.com/_Art/index/2025/250303/nb2.jpg" alt="D+AF春季女鞋推薦 氣質蝴蝶結娃娃鞋穿搭 紅色鞋(女)"></div>
+                <h2>氣質蝴蝶結娃娃鞋 <div class="shop-now">SHOP NOW</div></h2>
+            </a>
+        </div>
+    </section>
+
+    <section class="fashion-trend">
+        <h2>流 行 趨 勢 Fashion Trend</h2>
+    
+        <div class="blog-list">
+            <a href="https://www.daf-shoes.com/product/pageSet/2926">
+                <div class="pic"><img src="https://static.daf-shoes.com/_Art/index/2025/250303/blog1.jpg" alt="通勤族必收！舒適百搭的上班通勤鞋推薦"></div>
+                <div class="title">通勤族必收！舒適百搭的上班通勤鞋推薦</div>
+                <div class="desc">每天的通勤路上，當然要選擇好走又百搭的鞋款！多數人偏愛 平底鞋，能輕鬆應付一整天的行程，但如果晚上還有約會或聚餐...</div>
+            </a>
+            
+            <a href="https://www.daf-shoes.com/product/pageSet/3275">
+                <div class="pic"><img src="https://static.daf-shoes.com/_Art/index/2025/250303/blog2.jpg" alt="甜美與舒適並存！芭蕾運動鞋引領時尚新風潮"></div>
+                <div class="title">甜美與舒適並存！芭蕾運動鞋引領時尚新風潮</div>
+                <div class="desc">芭蕾風持續延燒，讓人愛不釋手的芭蕾舞鞋熱潮依舊火紅！不管是日常穿搭還是特別場合，芭蕾舞鞋總能帶來一份優雅與甜美...</div>
+            </a>
+        </div>
+
+        <a class="more-btn" href="https://www.daf-shoes.com/product/pageSet/2774">READ MORE</a>
+    </section>
+
+    <section class="collection stylebook">
+        <h2>穿 搭 靈 感  Style Look</h2>
+
+        <div class="clt-list">
+            <a href="https://www.daf-shoes.com/product/search?searchName=S00008511">
+                <div class="pic"><img src="https://static.daf-shoes.com/_Art/index/2025/250303/look1.jpg" alt="D+AF春季女鞋推薦  上質穿搭馬銜釦方頭低跟樂福鞋穿搭  OL搭配推薦(上班通勤)"></div>
+            </a>
+
+            <a href="https://www.daf-shoes.com/product/search?searchName=S00008387">
+                <div class="pic"><img src="https://static.daf-shoes.com/_Art/index/2025/250303/look2.jpg" alt="D+AF春季女鞋推薦  通勤好穿Q軟可後踩樂福鞋穿搭 OL搭配推薦(上班通勤)"></div>
+            </a>
+
+            <a href="https://www.daf-shoes.com/product/search?searchName=S00008399">
+                <div class="pic"><img src="https://static.daf-shoes.com/_Art/index/2025/250303/look3.jpg" alt="D+AF春季女鞋推薦  完美氣質尖頭扁跟瑪莉珍鞋 OL搭配推薦(上班通勤)"></div>
+            </a>
+
+            <a href="https://www.daf-shoes.com/product/search?searchName=S00008413">
+                <div class="pic"><img src="https://static.daf-shoes.com/_Art/index/2025/250303/look4.jpg" alt="D+AF春季女鞋推薦  自在首選綁帶休閒德訓鞋 OL搭配推薦(上班通勤)"></div>
+            </a>
+        </div>
+
+        <a class="more-btn" href="https://www.daf-shoes.com/product/pageSet/1762">SHOP MORE</a>
+    </section>
+</div><!-- END .daf-container -->
+
+<script src="https://static.daf-shoes.com/_Art/landingpage/swiper-bundle.min.js"></script>
+<script>
+var swiper = new Swiper('.mainkv-list', {
+	autoHeight: true,
+	spaceBetween: 0,
+    allowTouchMove: true,
+    loop: true,
+	autoplay: {
+	  delay: 2500,
+	  disableOnInteraction: false,
+	},
+	navigation: {
+	  nextEl: ".swiper-button-next",
+	  prevEl: ".swiper-button-prev",
+	},
+	pagination: {
+	  el: ".swiper-pagination",
+      clickable: true,
+	},
+});
+</script>
+<!-- 內容結束 -->
+
+</body>
+</html>

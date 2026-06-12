@@ -10,7 +10,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=TASA+Explorer:wght@400..800&display=swap" rel="stylesheet">
+
     <!-- Phosphor Icons -->
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
 
@@ -22,7 +23,8 @@
                 extend: {
                     colors: {
                         primary: '#4C4264',   /* 深紫灰 */
-                        secondary: '#6A5F83', /* 淺紫灰 */
+                        midcolor: '#DDD2F7',   /* 中紫灰 */
+                        secondary: '#F1EFF6', /* 淺紫灰 */
                         dark: '#1C1C1E',      /* 質感黑 */
                         grayLight: '#F5F5F7', /* 質感白灰 */
                         grayMid: '#8E8E93',   /* 中灰 */
@@ -36,6 +38,8 @@
     </script>
 
     <style>
+        body { font-family: 'TASA Explorer', 'Noto Sans TC', 'Microsoft JhengHei', '黑體', sans-serif, serif !important; }
+
         /* 客製化滾動條 */
         ::-webkit-scrollbar {
             width: 8px;
@@ -69,13 +73,19 @@
         .portfolio-card:hover img {
             transform: scale(1.05);
         }
+
+        /* tab切換樣式 */
+        .step-tab.active {
+            background-color: #4C4264;
+            color: #ffffff;
+        }
     </style>
 </head>
 <body class="bg-white text-dark font-sans antialiased selection:bg-primary selection:text-white">
 
     <!-- 導覽列 -->
     <nav class="fixed w-full bg-white/90 backdrop-blur-md z-50 transition-all duration-300 border-b border-gray-100" id="navbar">
-        <div class="max-w-7xl mx-auto px-6 md:px-12">
+        <div class="max-w-8xl mx-auto px-6 md:px-12">
             <div class="flex justify-between items-center h-20">
                 <!-- Logo -->
                 <div class="text-2xl font-bold tracking-wider text-primary">
@@ -84,13 +94,13 @@
 
                 <!-- 桌機版選單 -->
                 <div class="hidden md:flex space-x-8">
-                    <button class="nav-link text-sm font-medium text-grayMid hover:text-primary transition-colors filter-trigger" data-filter="brand">品牌形象網站</button>
-                    <button class="nav-link text-sm font-medium text-grayMid hover:text-primary transition-colors filter-trigger" data-filter="uiux">網頁/APP介面</button>
+                    <a href="#aboutme" class="text-sm font-medium text-grayMid hover:text-primary transition-colors">About Me</a>
+                    <a href="#howiwork" class="text-sm font-medium text-grayMid hover:text-primary transition-colors">How I Work</a>
+                    <button class="nav-link text-sm font-medium text-grayMid hover:text-primary transition-colors filter-trigger" data-filter="brand">形象網站</button>
+                    <button class="nav-link text-sm font-medium text-grayMid hover:text-primary transition-colors filter-trigger" data-filter="uiux">介面設計</button>
                     <button class="nav-link text-sm font-medium text-grayMid hover:text-primary transition-colors filter-trigger" data-filter="campaign">活動頁</button>
-                    <button class="nav-link text-sm font-medium text-grayMid hover:text-primary transition-colors filter-trigger" data-filter="ecommerce">賣場圖</button>
-                    <button class="nav-link text-sm font-medium text-grayMid hover:text-primary transition-colors filter-trigger" data-filter="aiused">AI輔助廣告</button>
-                    <button class="nav-link text-sm font-medium text-grayMid hover:text-primary transition-colors filter-trigger" data-filter="photoedit">人像修圖</button>
-                    <a href="#about" class="text-sm font-medium text-grayMid hover:text-primary transition-colors">關於我</a>
+                    <button class="nav-link text-sm font-medium text-grayMid hover:text-primary transition-colors filter-trigger" data-filter="visuals">廣告素材</button>
+                    <a href="#experience" class="text-sm font-medium text-grayMid hover:text-primary transition-colors">工作經歷/學歷</a>
                 </div>
 
                 <!-- 手機版漢堡按鈕 -->
@@ -103,21 +113,21 @@
         <!-- 手機版選單下拉 -->
         <div class="md:hidden bg-white hidden absolute w-full shadow-lg border-t border-gray-100" id="mobile-menu">
             <div class="flex flex-col px-6 py-4 space-y-4 pb-6">
-                <button class="text-left text-base text-grayMid hover:text-primary filter-trigger mobile-link" data-filter="brand">品牌形象網站</button>
-                <button class="text-left text-base text-grayMid hover:text-primary filter-trigger mobile-link" data-filter="uiux">網頁/APP介面</button>
+                <a href="#aboutme" class="text-base text-grayMid hover:text-primary mobile-link">About Me</a>
+                <a href="#howiwork" class="text-base text-grayMid hover:text-primary mobile-link">How I Work</a>
+                <button class="text-left text-base text-grayMid hover:text-primary filter-trigger mobile-link" data-filter="brand">形象網站</button>
+                <button class="text-left text-base text-grayMid hover:text-primary filter-trigger mobile-link" data-filter="uiux">介面設計</button>
                 <button class="text-left text-base text-grayMid hover:text-primary filter-trigger mobile-link" data-filter="campaign">活動頁</button>
-                <button class="text-left text-base text-grayMid hover:text-primary filter-trigger mobile-link" data-filter="ecommerce">賣場圖</button>
-                <button class="text-left text-base text-grayMid hover:text-primary filter-trigger mobile-link" data-filter="aiused">AI輔助廣告</button>
-                <button class="text-left text-base text-grayMid hover:text-primary filter-trigger mobile-link" data-filter="photoedit">人像修圖</button>
-                <a href="#about" class="text-base text-grayMid hover:text-primary mobile-link">關於我</a>
+                <button class="text-left text-base text-grayMid hover:text-primary filter-trigger mobile-link" data-filter="visuals">廣告素材</button>
+                <a href="#experience" class="text-base text-grayMid hover:text-primary mobile-link">工作經歷/學歷</a>
             </div>
         </div>
     </nav>
 
-    <!-- 首頁 Hero Section -->
+    <!-- 首頁 Hero Section
     <header class="pt-32 pb-20 md:pt-48 md:pb-32 px-6 md:px-12 max-w-7xl mx-auto fade-up">
         <div class="max-w-3xl">
-            <p class="text-secondary font-medium tracking-widest text-sm mb-4">Senior Digital Designer</p>
+            <p class="text-primary font-medium tracking-widest text-sm mb-4">Senior Digital Designer</p>
             <h1 class="text-5xl md:text-7xl font-bold leading-tight mb-8" style="line-height: 120%;">
                 <span class="text-primary">User & Business Thinking</span>
             </h1>
@@ -125,26 +135,182 @@
                 多年設計經驗｜跨領域整合能力
             </p>
         </div>
-    </header>
+    </header> -->
+
+    <!-- 關於我 Section -->
+    <section id="aboutme" class="py-20 pb-0 bg-secondary px-6 md:px-12">
+        <div class="max-w-7xl mx-auto">
+            <!-- Title -->
+            <h2 class="my-8 mb-4 text-4xl font-bold tracking-wide text-primary">
+            About Me
+            </h2>
+
+            <!-- Card -->
+            <div class="overflow-hidden rounded-br-[50px] md:rounded-br-[150px] bg-white p-0 md:p-[30px]">
+                <div class="flex flex-col gap-8 p-8 md:grid md:grid-cols-2">
+                
+                    <!-- Text -->
+                    <div class="text-primary order-2 md:order-1">
+                        <p class="mb-8 text-base leading-loose tracking-[0.08em] md:text-lg">
+                            Hello！我是許智倩 Rocio Hsu，擁有多年網頁與數位設計經驗，從SaaS服務、電商營運、品牌視覺、及數位專案等...皆有涉略，做專案時會先同行銷企劃、產品經理了解需求，理解專案背後的目的，提出更有效的解法，而不僅是依照指令交差，有解決問題的態度與能力，喜歡分享新奇的東西和技術。
+                        </p>
+
+                        <p class="mb-2 text-base leading-loose tracking-[0.08em] md:text-lg"><b>擅長技能和優勢：</b></p>
+
+                        <ol class="mb-8 list-decimal space-y-2 pl-6 text-base leading-relaxed tracking-[0.08em] md:text-lg">
+                            <li>熟悉CSS&html&jQuery網頁RWD切版，會使用Less設定變數及拆成component方便維護。</li>
+                            <li>使用Figma製作使用者介面，會規劃Design system及使用component和variables變數，識別元件在不同行為時的樣式。</li>
+                            <li>熟悉photoshop操作，擅長人像精修、影像處理。</li>
+                            <li>大學及剛出社會有寫過php&mySQL，懂程式邏輯和資料庫關聯概念。</li>
+                            <li>會使用Premiere或APP剪輯簡易影片。</li>
+                            <li>自備單眼，可簡單人像攝影、商品情境擺拍。</li>
+                        </ol>
+
+                        <p class="text-base leading-loose tracking-[0.08em] md:text-lg">
+                            我能為公司快速執行設計任務，讓專案能順利落地；<br>
+                            也很樂意學習新技術，利用AI協助製作更高品質的設計。
+                        </p>
+                    </div>
+
+                    <!-- Image -->
+                    <div class="relative order-1 md:order-2">
+                        <div class="ml-auto w-full max-w-[480px] overflow-hidden rounded-tl-[140px] rounded-br-[140px] md:rounded-tl-[180px] md:rounded-br-[180px]">
+                            <img src="images/rocio_.jpg" class="h-auto w-full object-cover" />
+                        </div>
+
+                        <!-- Mail Button -->
+                        <a href="mailto:shachien@gmail.com" class="absolute bottom-2 right-2 flex h-[72px] w-[72px] items-center justify-center rounded-full bg-primary text-white shadow-lg transition hover:scale-105"
+                            aria-label="Email Rocio Hsu">
+                            <svg class="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <rect x="3" y="5" width="18" height="14" rx="1.5"></rect>
+                                <path d="M3 7l9 6 9-6"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="howiwork" class="py-20 pb-0 bg-secondary px-6 md:px-12">
+        <div class="max-w-7xl mx-auto">
+            <!-- Title -->
+            <h2 class="my-8 mb-4 text-4xl font-bold tracking-wide text-primary">
+            How I Work
+            </h2>
+
+            <div class="overflow-hidden">
+                <!-- Step Navigation -->
+                <div class="flex rounded-full bg-[#ded5fa]">
+                    <button type="button"
+                        class="step-tab active flex-1 rounded-full px-4 py-4 text-center text-lg font-bold tracking-wide text-primary transition md:text-2xl"
+                        data-step="1">
+                        Step 1.
+                    </button>
+
+                    <button type="button"
+                        class="step-tab flex-1 rounded-full px-4 py-4 text-center text-lg font-bold tracking-wide text-primary transition md:text-2xl"
+                        data-step="2">
+                        Step 2.
+                    </button>
+
+                    <button type="button"
+                        class="step-tab flex-1 rounded-full px-4 py-4 text-center text-lg font-bold tracking-wide text-primary transition md:text-2xl"
+                        data-step="3">
+                        Step 3.
+                    </button>
+
+                    <button type="button"
+                        class="step-tab flex-1 rounded-full px-4 py-4 text-center text-lg font-bold tracking-wide text-primary transition md:text-2xl"
+                        data-step="4">
+                        Step 4.
+                    </button>
+
+                    <button type="button"
+                        class="step-tab flex-1 rounded-full px-4 py-4 text-center text-lg font-bold tracking-wide text-primary transition md:text-2xl"
+                        data-step="5">
+                        Step 5.
+                    </button>
+                </div>
+
+                <!-- Step Content -->
+                <div class="px-8 py-10 text-primary md:px-12 md:py-12 bg-white rounded-[25px]">
+                    <div class="step-content" data-content="1">
+                        <p class="mb-4 text-base leading-loose tracking-[0.06em] md:text-lg">
+                            接收需求，了解客戶喜好
+                        </p>
+                        <p class="text-base leading-loose tracking-[0.06em] md:text-lg">   
+                            製作視覺/活動頁時：
+                        </p>
+                        <ol class="list-decimal pl-6 text-base leading-loose tracking-[0.06em] md:text-lg">
+                            <li>抓CIS色彩配置和比例</li>
+                            <li>盡量達到行銷企劃要的商業目的</li>
+                        </ol>
+                        <br>
+                        <p class="text-base leading-loose tracking-[0.06em] md:text-lg">
+                            製作網站/介面時：
+                        </p> 
+                        <ol class="list-decimal pl-6 text-base leading-loose tracking-[0.06em] md:text-lg">
+                            <li>先釐清網站結構、分類與樹狀圖</li>
+                            <li>列出使用者情境，分析各種功能的意義與可行性</li>
+                        </ol>        
+                    </div>
+
+                    <div class="step-content hidden" data-content="2">
+                        <ol class="list-decimal space-y-2 pl-6 text-base leading-loose tracking-[0.06em] md:text-lg">
+                            <li>搜尋Reference，分析競品<br>參考優點，缺點將其優化</li>
+                            <li>使用AI製作素材，蒐集各種可用元素</li>
+                        </ol>
+                    </div>
+
+                    <div class="step-content hidden" data-content="3">
+                        <p class="mb-4 text-base leading-loose tracking-[0.06em] md:text-lg">
+                            製作草稿<br>
+                            主視覺概念擬定<br>
+                            將各種元件分區排版定位
+                        </p>
+                    </div>
+
+                    <div class="step-content hidden" data-content="4">
+                        <ol class="list-decimal space-y-2 pl-6 text-base leading-loose tracking-[0.06em] md:text-lg">
+                            <li>雕琢畫面與元件</li>
+                            <li>一邊建立Design System<br>將視覺和色彩整理一致<br>追求閱讀與使用上的舒適度</li>
+                        </ol>
+                    </div>
+
+                    <div class="step-content hidden" data-content="5">
+                        <p class="mb-4 text-base leading-loose tracking-[0.06em] md:text-lg">
+                            與團隊確認內容，根據回饋調整細節。
+                        </p>
+
+                        <ol class="list-decimal space-y-2 pl-6 text-base leading-loose tracking-[0.06em] md:text-lg">
+                            <li>確認文案、圖片、CTA與活動資訊</li>
+                            <li>調整視覺層次、間距與 RWD 呈現</li>
+                            <li>易用性測試調整</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- 作品集 Section -->
-    <section id="portfolio" class="py-20 bg-grayLight px-6 md:px-12">
+    <section id="portfolio" class="py-20 bg-secondary px-6 md:px-12">
         <div class="max-w-7xl mx-auto">
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 fade-up">
                 <div>
-                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Selected Works</h2>
-                    <p class="text-grayMid">精選專案與設計作品</p>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4 text-primary">Featured Projects</h2>
+                    <p class="text-grayMid">精選專案/設計作品</p>
                 </div>
                 
                 <!-- 篩選按鈕 (桌機版顯示為主) -->
                 <div class="flex flex-wrap gap-3 mt-6 md:mt-0">
                     <button class="filter-btn active px-4 py-2 rounded-full text-sm font-medium bg-primary text-white transition" data-filter="all">全部</button>
-                    <button class="filter-btn px-4 py-2 rounded-full text-sm font-medium bg-white text-grayMid border border-gray-200 hover:border-primary hover:text-secondary transition" data-filter="brand">品牌形象網站</button>
-                    <button class="filter-btn px-4 py-2 rounded-full text-sm font-medium bg-white text-grayMid border border-gray-200 hover:border-primary hover:text-secondary transition" data-filter="uiux">網頁/APP介面</button>
+                    <button class="filter-btn px-4 py-2 rounded-full text-sm font-medium bg-white text-grayMid border border-gray-200 hover:border-primary hover:text-secondary transition" data-filter="brand">形象網站</button>
+                    <button class="filter-btn px-4 py-2 rounded-full text-sm font-medium bg-white text-grayMid border border-gray-200 hover:border-primary hover:text-secondary transition" data-filter="uiux">介面設計</button>
                     <button class="filter-btn px-4 py-2 rounded-full text-sm font-medium bg-white text-grayMid border border-gray-200 hover:border-primary hover:text-secondary transition" data-filter="campaign">活動頁</button>
-                    <button class="filter-btn px-4 py-2 rounded-full text-sm font-medium bg-white text-grayMid border border-gray-200 hover:border-primary hover:text-secondary transition" data-filter="ecommerce">賣場圖</button>
-                    <button class="filter-btn px-4 py-2 rounded-full text-sm font-medium bg-white text-grayMid border border-gray-200 hover:border-primary hover:text-secondary transition" data-filter="aiused">AI輔助廣告</button>
-                    <button class="filter-btn px-4 py-2 rounded-full text-sm font-medium bg-white text-grayMid border border-gray-200 hover:border-primary hover:text-secondary transition" data-filter="photoedit">人像修圖</button>
+                    <button class="filter-btn px-4 py-2 rounded-full text-sm font-medium bg-white text-grayMid border border-gray-200 hover:border-primary hover:text-secondary transition" data-filter="visuals">廣告素材</button>
                 </div>
             </div>
 
@@ -154,13 +320,13 @@
                 <!-- 專案 1 (品牌形象) -->
                 <a class="portfolio-item portfolio-card group relative overflow-hidden rounded-2xl bg-white cursor-pointer fade-up" data-category="brand" href="egao-okusimizu/index.html" target="_blank">
                     <div class="aspect-[16/9] overflow-hidden bg-gray-200 relative">
-                        <img src="images/1-1.jpg" alt="品牌形象網站" class="w-full h-full object-cover transition-transform duration-700">
+                        <img src="images/1-1.jpg" alt="形象網站" class="w-full h-full object-cover transition-transform duration-700">
                         <div class="portfolio-overlay absolute inset-0 bg-primary/80 opacity-0 transition-opacity duration-300 flex items-center justify-center">
                             <span class="text-white border border-white px-6 py-2 rounded-full text-sm tracking-wider">查看網站</span>
                         </div>
                     </div>
                     <div class="p-6 md:p-8">
-                        <p class="text-secondary text-xs font-bold tracking-widest mb-2">品牌形象網站</p>
+                        <p class="text-primary text-xs font-bold tracking-widest mb-2">形象網站</p>
                         <h3 class="text-2xl font-bold mb-2">高橋酒造店</h3>
                         <p class="text-grayMid text-sm">(內容/設計/切版/jQuery/RWD)<br>日本清酒職人釀造一生懸命, 大氣感設計氛圍, 利用滿版圖片+簡短文字引人入勝</p>
                     </div>
@@ -168,13 +334,13 @@
 
                 <a class="portfolio-item portfolio-card group relative overflow-hidden rounded-2xl bg-white cursor-pointer fade-up" data-category="brand" href="omuse/index.html" target="_blank">
                     <div class="aspect-[16/9] overflow-hidden bg-gray-200 relative">
-                        <img src="images/1-2.jpg" alt="品牌形象網站" class="w-full h-full object-cover transition-transform duration-700">
+                        <img src="images/1-2.jpg" alt="形象網站" class="w-full h-full object-cover transition-transform duration-700">
                         <div class="portfolio-overlay absolute inset-0 bg-primary/80 opacity-0 transition-opacity duration-300 flex items-center justify-center">
                             <span class="text-white border border-white px-6 py-2 rounded-full text-sm tracking-wider">查看網站</span>
                         </div>
                     </div>
                     <div class="p-6 md:p-8">
-                        <p class="text-secondary text-xs font-bold tracking-widest mb-2">品牌形象網站</p>
+                        <p class="text-primary text-xs font-bold tracking-widest mb-2">形象網站</p>
                         <h3 class="text-2xl font-bold mb-2">Ô Muse</h3>
                         <p class="text-grayMid text-sm">(內容/設計/切版/jQuery/RWD)<br>貴族尊榮感的配色與設計, 襯出瓶身美學, 再個別介紹品牌及系列產品特色</p>
                     </div>
@@ -182,13 +348,13 @@
 
                 <a class="portfolio-item portfolio-card group relative overflow-hidden rounded-2xl bg-white cursor-pointer fade-up" data-category="brand" href="dotdot_ui/index.html" target="_blank">
                     <div class="aspect-[16/9] overflow-hidden bg-gray-200 relative">
-                        <img src="images/1-3.jpg" alt="品牌形象網站" class="w-full h-full object-cover transition-transform duration-700">
+                        <img src="images/1-3.jpg" alt="形象網站" class="w-full h-full object-cover transition-transform duration-700">
                         <div class="portfolio-overlay absolute inset-0 bg-primary/80 opacity-0 transition-opacity duration-300 flex items-center justify-center">
                             <span class="text-white border border-white px-6 py-2 rounded-full text-sm tracking-wider">查看網站</span>
                         </div>
                     </div>
                     <div class="p-6 md:p-8">
-                        <p class="text-secondary text-xs font-bold tracking-widest mb-2">品牌形象網站</p>
+                        <p class="text-primary text-xs font-bold tracking-widest mb-2">形象網站</p>
                         <h3 class="text-2xl font-bold mb-2">點點全球集團官網</h3>
                         <p class="text-grayMid text-sm">(內容/設計/切版/jQuery/RWD)<br>參考既有的產品官網，集結內容規劃並一條龍完成形象官網建置</p>
                     </div>
@@ -196,15 +362,57 @@
 
                 <a class="portfolio-item portfolio-card group relative overflow-hidden rounded-2xl bg-white cursor-pointer fade-up" data-category="brand" href="brand-story/index.html" target="_blank">
                     <div class="aspect-[16/9] overflow-hidden bg-gray-200 relative">
-                        <img src="images/1-4.jpg" alt="品牌形象網站" class="w-full h-full object-cover transition-transform duration-700">
+                        <img src="images/1-4.jpg" alt="形象網站" class="w-full h-full object-cover transition-transform duration-700">
                         <div class="portfolio-overlay absolute inset-0 bg-primary/80 opacity-0 transition-opacity duration-300 flex items-center justify-center">
                             <span class="text-white border border-white px-6 py-2 rounded-full text-sm tracking-wider">查看網站</span>
                         </div>
                     </div>
                     <div class="p-6 md:p-8">
-                        <p class="text-secondary text-xs font-bold tracking-widest mb-2">品牌形象網站</p>
+                        <p class="text-primary text-xs font-bold tracking-widest mb-2">形象網站</p>
                         <h3 class="text-2xl font-bold mb-2">D+AF 品牌故事</h3>
                         <p class="text-grayMid text-sm">(設計/切版/RWD)<br>形象照拍攝企劃與跟拍指導<br>大品牌感的排版方式，呈現品牌氣質與質感</p>
+                    </div>
+                </a>
+
+                <a class="portfolio-item portfolio-card group relative overflow-hidden rounded-2xl bg-white cursor-pointer fade-up" data-category="brand" href="211129/index.html" target="_blank">
+                    <div class="aspect-[16/9] overflow-hidden bg-gray-200 relative">
+                        <img src="images/1-5.jpg" alt="形象網站" class="w-full h-full object-cover transition-transform duration-700">
+                        <div class="portfolio-overlay absolute inset-0 bg-primary/80 opacity-0 transition-opacity duration-300 flex items-center justify-center">
+                            <span class="text-white border border-white px-6 py-2 rounded-full text-sm tracking-wider">查看網站</span>
+                        </div>
+                    </div>
+                    <div class="p-6 md:p-8">
+                        <p class="text-primary text-xs font-bold tracking-widest mb-2">形象網站</p>
+                        <h3 class="text-2xl font-bold mb-2">D+AF 首頁</h3>
+                        <p class="text-grayMid text-sm">(設計/切版/RWD)<br>外模拍攝<br>歐美大牌感的設計排版，呈現品牌大氣質感</p>
+                    </div>
+                </a>
+
+                <a class="portfolio-item portfolio-card group relative overflow-hidden rounded-2xl bg-white cursor-pointer fade-up" data-category="brand" href="220124/index.html" target="_blank">
+                    <div class="aspect-[16/9] overflow-hidden bg-gray-200 relative">
+                        <img src="images/1-6.jpg" alt="形象網站" class="w-full h-full object-cover transition-transform duration-700">
+                        <div class="portfolio-overlay absolute inset-0 bg-primary/80 opacity-0 transition-opacity duration-300 flex items-center justify-center">
+                            <span class="text-white border border-white px-6 py-2 rounded-full text-sm tracking-wider">查看網站</span>
+                        </div>
+                    </div>
+                    <div class="p-6 md:p-8">
+                        <p class="text-primary text-xs font-bold tracking-widest mb-2">形象網站</p>
+                        <h3 class="text-2xl font-bold mb-2">D+AF 首頁</h3>
+                        <p class="text-grayMid text-sm">(設計/切版/RWD)<br>外模拍攝<br>歐美大牌感的設計排版，呈現品牌大氣質感</p>
+                    </div>
+                </a>
+
+                <a class="portfolio-item portfolio-card group relative overflow-hidden rounded-2xl bg-white cursor-pointer fade-up" data-category="brand" href="ol/index.html" target="_blank">
+                    <div class="aspect-[16/9] overflow-hidden bg-gray-200 relative">
+                        <img src="images/1-7.jpg" alt="形象網站" class="w-full h-full object-cover transition-transform duration-700">
+                        <div class="portfolio-overlay absolute inset-0 bg-primary/80 opacity-0 transition-opacity duration-300 flex items-center justify-center">
+                            <span class="text-white border border-white px-6 py-2 rounded-full text-sm tracking-wider">查看網站</span>
+                        </div>
+                    </div>
+                    <div class="p-6 md:p-8">
+                        <p class="text-primary text-xs font-bold tracking-widest mb-2">形象網站</p>
+                        <h3 class="text-2xl font-bold mb-2">D+AF 首頁</h3>
+                        <p class="text-grayMid text-sm">(設計/切版/RWD)<br>OL拍攝企劃與跟拍指導<br>時髦職場商品企劃登場</p>
                     </div>
                 </a>
 
@@ -217,9 +425,37 @@
                         </div>
                     </div>
                     <div class="p-6 md:p-8">
-                        <p class="text-secondary text-xs font-bold tracking-widest mb-2">APP介面設計</p>
+                        <p class="text-primary text-xs font-bold tracking-widest mb-2">APP介面設計</p>
                         <h3 class="text-2xl font-bold mb-2">台東金幣 TTPush 3.0</h3>
                         <p class="text-grayMid text-sm">(規劃/設計/整理文件/此說明文件為我整理)<br>設計 1人(我) / 後台PM 1-2人 / 工程師2-4人<br>將繁雜的流程和動線轉化為直覺、清晰的操作介面，讓各年齡層使用者都易懂易操作。</p>
+                    </div>
+                </a>
+
+                <a class="portfolio-item portfolio-card group relative overflow-hidden rounded-2xl bg-white cursor-pointer fade-up" data-category="uiux" href="https://rociohsu.github.io/goingkong/" target="_blank">
+                    <div class="aspect-[16/9] overflow-hidden bg-gray-200 relative">
+                        <img src="images/2-3.jpg" alt="形象網站" class="w-full h-full object-cover transition-transform duration-700">
+                        <div class="portfolio-overlay absolute inset-0 bg-primary/80 opacity-0 transition-opacity duration-300 flex items-center justify-center">
+                            <span class="text-white border border-white px-6 py-2 rounded-full text-sm tracking-wider">查看網站</span>
+                        </div>
+                    </div>
+                    <div class="p-6 md:p-8">
+                        <p class="text-primary text-xs font-bold tracking-widest mb-2">線上教學平台設計</p>
+                        <h3 class="text-2xl font-bold mb-2">GoingKong</h3>
+                        <p class="text-grayMid text-sm">(設計/切版/RWD)<br>制定Design System，讓介面元件統一色系和樣式，看起來清爽容易閱讀，功能好找不藏太深</p>
+                    </div>
+                </a>
+
+                <a class="portfolio-item portfolio-card group relative overflow-hidden rounded-2xl bg-white cursor-pointer fade-up" data-category="uiux" href="https://rociohsu.github.io/daf-shoes/" target="_blank">
+                    <div class="aspect-[16/9] overflow-hidden bg-gray-200 relative">
+                        <img src="images/2-4.jpg" alt="形象網站" class="w-full h-full object-cover transition-transform duration-700">
+                        <div class="portfolio-overlay absolute inset-0 bg-primary/80 opacity-0 transition-opacity duration-300 flex items-center justify-center">
+                            <span class="text-white border border-white px-6 py-2 rounded-full text-sm tracking-wider">查看網站</span>
+                        </div>
+                    </div>
+                    <div class="p-6 md:p-8">
+                        <p class="text-primary text-xs font-bold tracking-widest mb-2">品牌電商網站設計</p>
+                        <h3 class="text-2xl font-bold mb-2">D+AF 官網RWD改版</h3>
+                        <p class="text-grayMid text-sm">(設計/切版/RWD)<br>制定Design System，讓介面元件統一色系和樣式，將原本AWD的電腦版手機版整合，改成真正的RWD官網，節省RD更新維護功能的時間</p>
                     </div>
                 </a>
 
@@ -231,23 +467,9 @@
                         </div>
                     </div>
                     <div class="p-6 md:p-8">
-                        <p class="text-secondary text-xs font-bold tracking-widest mb-2">後台介面設計</p>
+                        <p class="text-primary text-xs font-bold tracking-widest mb-2">後台介面設計</p>
                         <h3 class="text-2xl font-bold mb-2">手機菜單管理後台</h3>
                         <p class="text-grayMid text-sm">了解需求與規格後，以AI加速探索方案，以公司的CIS為設計規範，介面以使用者易用性為優先，將AI生成結果轉化為可設計、可溝通的介面方案，加速和客戶/PM/RD溝通與開發，與趨勢並進。</p>
-                    </div>
-                </a>
-
-                <a class="portfolio-item portfolio-card group relative overflow-hidden rounded-2xl bg-white cursor-pointer fade-up" data-category="uiux" href="https://rociohsu.github.io/goingkong/" target="_blank">
-                    <div class="aspect-[16/9] overflow-hidden bg-gray-200 relative">
-                        <img src="images/2-3.jpg" alt="品牌形象網站" class="w-full h-full object-cover transition-transform duration-700">
-                        <div class="portfolio-overlay absolute inset-0 bg-primary/80 opacity-0 transition-opacity duration-300 flex items-center justify-center">
-                            <span class="text-white border border-white px-6 py-2 rounded-full text-sm tracking-wider">查看網站</span>
-                        </div>
-                    </div>
-                    <div class="p-6 md:p-8">
-                        <p class="text-secondary text-xs font-bold tracking-widest mb-2">線上教學平台設計</p>
-                        <h3 class="text-2xl font-bold mb-2">GoingKong</h3>
-                        <p class="text-grayMid text-sm">(設計/切版/RWD)<br>制定Design System，讓介面元件統一色系和樣式，看起來清爽容易閱讀，功能好找不藏太深</p>
                     </div>
                 </a>
 
@@ -260,7 +482,7 @@
                         </div>
                     </div>
                     <div class="p-6 md:p-8">
-                        <p class="text-secondary text-xs font-bold tracking-widest mb-2">活動頁設計</p>
+                        <p class="text-primary text-xs font-bold tracking-widest mb-2">活動頁設計</p>
                         <h3 class="text-2xl font-bold mb-2">PENNYBLACK</h3>
                         <p class="text-grayMid text-sm">(設計/切版/jQuery/RWD)<br>高轉換率導向的一頁式設計，運用動態視覺與強烈CTA引導使用者了解產品。</p>
                     </div>
@@ -274,7 +496,7 @@
                         </div>
                     </div>
                     <div class="p-6 md:p-8">
-                        <p class="text-secondary text-xs font-bold tracking-widest mb-2">活動頁設計</p>
+                        <p class="text-primary text-xs font-bold tracking-widest mb-2">活動頁設計</p>
                         <h3 class="text-2xl font-bold mb-2">BIODERMA貝膚黛瑪 募集活動</h3>
                         <p class="text-grayMid text-sm">(設計/切版/jQuery/RWD)<br>高轉換率導向的一頁式設計，運用動態視覺與強烈CTA引導使用者了解產品。</p>
                     </div>
@@ -288,7 +510,7 @@
                         </div>
                     </div>
                     <div class="p-6 md:p-8">
-                        <p class="text-secondary text-xs font-bold tracking-widest mb-2">活動頁設計</p>
+                        <p class="text-primary text-xs font-bold tracking-widest mb-2">活動頁設計</p>
                         <h3 class="text-2xl font-bold mb-2">D+AF x freezia 宋智雅代言 春夏</h3>
                         <p class="text-grayMid text-sm">(設計/切版/RWD)<br>高轉換率導向的一頁式設計，運用動態視覺與強烈CTA引導使用者了解產品。</p>
                     </div>
@@ -302,7 +524,7 @@
                         </div>
                     </div>
                     <div class="p-6 md:p-8">
-                        <p class="text-secondary text-xs font-bold tracking-widest mb-2">活動頁設計</p>
+                        <p class="text-primary text-xs font-bold tracking-widest mb-2">活動頁設計</p>
                         <h3 class="text-2xl font-bold mb-2">D+AF x freezia 宋智雅代言 秋冬</h3>
                         <p class="text-grayMid text-sm">(設計/切版/RWD)<br>高轉換率導向的一頁式設計，運用動態視覺與強烈CTA引導使用者了解產品。</p>
                     </div>
@@ -316,7 +538,7 @@
                         </div>
                     </div>
                     <div class="p-6 md:p-8">
-                        <p class="text-secondary text-xs font-bold tracking-widest mb-2">活動頁設計</p>
+                        <p class="text-primary text-xs font-bold tracking-widest mb-2">活動頁設計</p>
                         <h3 class="text-2xl font-bold mb-2">D+AF x PONY EFFECT 聯名商品</h3>
                         <p class="text-grayMid text-sm">(設計/切版/RWD)<br>形象照拍攝企劃與跟拍指導<br>高轉換率導向的一頁式設計，運用動態視覺與強烈CTA引導使用者了解產品。</p>
                     </div>
@@ -330,7 +552,7 @@
                         </div>
                     </div>
                     <div class="p-6 md:p-8">
-                        <p class="text-secondary text-xs font-bold tracking-widest mb-2">活動頁設計</p>
+                        <p class="text-primary text-xs font-bold tracking-widest mb-2">活動頁設計</p>
                         <h3 class="text-2xl font-bold mb-2">D+AF x DISNEY 聯名商品</h3>
                         <p class="text-grayMid text-sm">(設計/切版/RWD)<br>高轉換率導向的一頁式設計，運用動態視覺與強烈CTA引導使用者了解產品。</p>
                     </div>
@@ -344,7 +566,7 @@
                         </div>
                     </div>
                     <div class="p-6 md:p-8">
-                        <p class="text-secondary text-xs font-bold tracking-widest mb-2">活動頁設計</p>
+                        <p class="text-primary text-xs font-bold tracking-widest mb-2">活動頁設計</p>
                         <h3 class="text-2xl font-bold mb-2">Dr. Wu 杏仁酸</h3>
                         <p class="text-grayMid text-sm">(設計/切版/RWD)<br>高轉換率導向的一頁式設計，運用動態視覺與強烈CTA引導使用者了解產品。</p>
                     </div>
@@ -358,7 +580,7 @@
                         </div>
                     </div>
                     <div class="p-6 md:p-8">
-                        <p class="text-secondary text-xs font-bold tracking-widest mb-2">活動頁設計</p>
+                        <p class="text-primary text-xs font-bold tracking-widest mb-2">活動頁設計</p>
                         <h3 class="text-2xl font-bold mb-2">618購物節</h3>
                         <p class="text-grayMid text-sm">(設計/切版/RWD)<br>高轉換率導向的一頁式設計，運用動態視覺與強烈CTA引導使用者了解產品。</p>
                     </div>
@@ -372,14 +594,14 @@
                         </div>
                     </div>
                     <div class="p-6 md:p-8">
-                        <p class="text-secondary text-xs font-bold tracking-widest mb-2">活動頁設計</p>
+                        <p class="text-primary text-xs font-bold tracking-widest mb-2">活動頁設計</p>
                         <h3 class="text-2xl font-bold mb-2">普發一萬加碼</h3>
                         <p class="text-grayMid text-sm">(設計/切版/RWD)<br>高轉換率導向的一頁式設計，運用動態視覺與強烈CTA引導使用者了解產品。</p>
                     </div>
                 </a>
 
                 <!-- 專案 4 (賣場圖) -->
-                <a class="portfolio-item portfolio-card group relative overflow-hidden rounded-2xl bg-white cursor-pointer fade-up" data-category="ecommerce" href="images/4-1_full.jpg" target="_blank">
+                <a class="portfolio-item portfolio-card group relative overflow-hidden rounded-2xl bg-white cursor-pointer fade-up" data-category="visuals" href="images/4-1_full.jpg" target="_blank">
                     <div class="aspect-[3/4] overflow-hidden bg-gray-200 relative">
                         <img src="images/4-1.jpg" alt="賣場圖" class="w-full h-full object-cover transition-transform duration-700">
                         <div class="portfolio-overlay absolute inset-0 bg-primary/80 opacity-0 transition-opacity duration-300 flex items-center justify-center">
@@ -387,12 +609,12 @@
                         </div>
                     </div>
                     <div class="p-6 md:p-8">
-                        <p class="text-secondary text-xs font-bold tracking-widest mb-2">賣場圖設計</p>
+                        <p class="text-primary text-xs font-bold tracking-widest mb-2">賣場圖設計</p>
                         <h3 class="text-2xl font-bold mb-2">真皮高跟鞋</h3>
                     </div>
                 </a>
 
-                <a class="portfolio-item portfolio-card group relative overflow-hidden rounded-2xl bg-white cursor-pointer fade-up" data-category="ecommerce" href="images/4-2_full.jpg" target="_blank">
+                <a class="portfolio-item portfolio-card group relative overflow-hidden rounded-2xl bg-white cursor-pointer fade-up" data-category="visuals" href="images/4-2_full.jpg" target="_blank">
                     <div class="aspect-[3/4] overflow-hidden bg-gray-200 relative">
                         <img src="images/4-2.jpg" alt="賣場圖" class="w-full h-full object-cover transition-transform duration-700">
                         <div class="portfolio-overlay absolute inset-0 bg-primary/80 opacity-0 transition-opacity duration-300 flex items-center justify-center">
@@ -400,12 +622,12 @@
                         </div>
                     </div>
                     <div class="p-6 md:p-8">
-                        <p class="text-secondary text-xs font-bold tracking-widest mb-2">賣場圖設計</p>
+                        <p class="text-primary text-xs font-bold tracking-widest mb-2">賣場圖設計</p>
                         <h3 class="text-2xl font-bold mb-2">真皮樂福鞋</h3>
                     </div>
                 </a>
 
-                <a class="portfolio-item portfolio-card group relative overflow-hidden rounded-2xl bg-white cursor-pointer fade-up" data-category="ecommerce" href="images/4-3_full.jpg" target="_blank">
+                <a class="portfolio-item portfolio-card group relative overflow-hidden rounded-2xl bg-white cursor-pointer fade-up" data-category="visuals" href="images/4-3_full.jpg" target="_blank">
                     <div class="aspect-[3/4] overflow-hidden bg-gray-200 relative">
                         <img src="images/4-3.jpg" alt="賣場圖" class="w-full h-full object-cover transition-transform duration-700">
                         <div class="portfolio-overlay absolute inset-0 bg-primary/80 opacity-0 transition-opacity duration-300 flex items-center justify-center">
@@ -413,12 +635,12 @@
                         </div>
                     </div>
                     <div class="p-6 md:p-8">
-                        <p class="text-secondary text-xs font-bold tracking-widest mb-2">賣場圖設計</p>
+                        <p class="text-primary text-xs font-bold tracking-widest mb-2">賣場圖設計</p>
                         <h3 class="text-2xl font-bold mb-2">3D零感雲織鞋</h3>
                     </div>
                 </a>
 
-                <a class="portfolio-item portfolio-card group relative overflow-hidden rounded-2xl bg-white cursor-pointer fade-up" data-category="ecommerce" href="images/4-4_full.jpg" target="_blank">
+                <a class="portfolio-item portfolio-card group relative overflow-hidden rounded-2xl bg-white cursor-pointer fade-up" data-category="visuals" href="images/4-4_full.jpg" target="_blank">
                     <div class="aspect-[3/4] overflow-hidden bg-gray-200 relative">
                         <img src="images/4-4.jpg" alt="賣場圖" class="w-full h-full object-cover transition-transform duration-700">
                         <div class="portfolio-overlay absolute inset-0 bg-primary/80 opacity-0 transition-opacity duration-300 flex items-center justify-center">
@@ -426,12 +648,12 @@
                         </div>
                     </div>
                     <div class="p-6 md:p-8">
-                        <p class="text-secondary text-xs font-bold tracking-widest mb-2">賣場圖設計</p>
+                        <p class="text-primary text-xs font-bold tracking-widest mb-2">賣場圖設計</p>
                         <h3 class="text-2xl font-bold mb-2">小刺蝟奶油棉T</h3>
                     </div>
                 </a>
 
-                <a class="portfolio-item portfolio-card group relative overflow-hidden rounded-2xl bg-white cursor-pointer fade-up" data-category="ecommerce" href="images/4-5_full.jpg" target="_blank">
+                <a class="portfolio-item portfolio-card group relative overflow-hidden rounded-2xl bg-white cursor-pointer fade-up" data-category="visuals" href="images/4-5_full.jpg" target="_blank">
                     <div class="aspect-[3/4] overflow-hidden bg-gray-200 relative">
                         <img src="images/4-5.jpg" alt="賣場圖" class="w-full h-full object-cover transition-transform duration-700">
                         <div class="portfolio-overlay absolute inset-0 bg-primary/80 opacity-0 transition-opacity duration-300 flex items-center justify-center">
@@ -439,12 +661,12 @@
                         </div>
                     </div>
                     <div class="p-6 md:p-8">
-                        <p class="text-secondary text-xs font-bold tracking-widest mb-2">賣場圖設計</p>
+                        <p class="text-primary text-xs font-bold tracking-widest mb-2">賣場圖設計</p>
                         <h3 class="text-2xl font-bold mb-2">小刺蝟火星探險公事包</h3>
                     </div>
                 </a>
 
-                <a class="portfolio-item portfolio-card group relative overflow-hidden rounded-2xl bg-white cursor-pointer fade-up" data-category="ecommerce" href="images/4-6_full.mp4" target="_blank">
+                <a class="portfolio-item portfolio-card group relative overflow-hidden rounded-2xl bg-white cursor-pointer fade-up" data-category="visuals" href="images/4-6_full.mp4" target="_blank">
                     <div class="aspect-[3/4] overflow-hidden bg-gray-200 relative">
                         <img src="images/4-6.jpg" alt="賣場圖" class="w-full h-full object-cover transition-transform duration-700">
                         <div class="portfolio-overlay absolute inset-0 bg-primary/80 opacity-0 transition-opacity duration-300 flex items-center justify-center">
@@ -452,13 +674,13 @@
                         </div>
                     </div>
                     <div class="p-6 md:p-8">
-                        <p class="text-secondary text-xs font-bold tracking-widest mb-2">賣場圖設計</p>
+                        <p class="text-primary text-xs font-bold tracking-widest mb-2">賣場圖設計</p>
                         <h3 class="text-2xl font-bold mb-2">D+AF x IM' MEME 聯名商品</h3>
                     </div>
                 </a>
 
                 <!-- 專案 5 (AI輔助廣告) -->
-                <a class="portfolio-item portfolio-card group relative overflow-hidden rounded-2xl bg-white cursor-pointer fade-up" data-category="aiused" href="images/5-1_full.jpg" target="_blank">
+                <a class="portfolio-item portfolio-card group relative overflow-hidden rounded-2xl bg-white cursor-pointer fade-up" data-category="visuals" href="images/5-1_full.jpg" target="_blank">
                     <div class="aspect-[3/4] overflow-hidden bg-gray-200 relative">
                         <img src="images/5-1.jpg" alt="AI輔助廣告" class="w-full h-full object-cover transition-transform duration-700">
                         <div class="portfolio-overlay absolute inset-0 bg-primary/80 opacity-0 transition-opacity duration-300 flex items-center justify-center">
@@ -466,14 +688,14 @@
                         </div>
                     </div>
                     <div class="p-6 md:p-8">
-                        <p class="text-secondary text-xs font-bold tracking-widest mb-2">AI輔助廣告</p>
+                        <p class="text-primary text-xs font-bold tracking-widest mb-2">AI輔助廣告</p>
                         <h3 class="text-2xl font-bold mb-2">夏日感度假涼鞋</h3>
                         <p class="text-grayMid text-sm">(設計/切版/RWD)<br>用Google Labs產生風格統一的情境照，再自行拼成氛圍滿滿的九宮格廣告素材，公司投廣成效不錯</p>
                     </div>
                 </a>
 
                 <!-- 專案 6 (人像修圖) -->
-                <a class="portfolio-item portfolio-card group relative overflow-hidden rounded-2xl bg-white cursor-pointer fade-up" data-category="photoedit" href="images/6-1.jpg" target="_blank">
+                <a class="portfolio-item portfolio-card group relative overflow-hidden rounded-2xl bg-white cursor-pointer fade-up" data-category="visuals" href="images/6-1.jpg" target="_blank">
                     <div class="aspect-[3/4] overflow-hidden bg-gray-200 relative">
                         <img src="images/6-1.jpg" alt="人像修圖" class="w-full h-full object-cover transition-transform duration-700">
                         <div class="portfolio-overlay absolute inset-0 bg-primary/80 opacity-0 transition-opacity duration-300 flex items-center justify-center">
@@ -481,9 +703,37 @@
                         </div>
                     </div>
                     <div class="p-6 md:p-8">
-                        <p class="text-secondary text-xs font-bold tracking-widest mb-2">人像修圖</p>
+                        <p class="text-primary text-xs font-bold tracking-widest mb-2">人像修圖</p>
                         <h3 class="text-2xl font-bold mb-2">注重膚況/髮型/身形比例</h3>
                         <p class="text-grayMid text-sm">使用photoshop精修，自然不失真</p>
+                    </div>
+                </a>
+
+                <a class="portfolio-item portfolio-card group relative overflow-hidden rounded-2xl bg-white cursor-pointer fade-up" data-category="visuals" href="event45/index.htm" target="_blank">
+                    <div class="aspect-[3/4] overflow-hidden bg-gray-200 relative">
+                        <img src="images/6-2.jpg" alt="電商EDM" class="w-full h-full object-cover transition-transform duration-700">
+                        <div class="portfolio-overlay absolute inset-0 bg-primary/80 opacity-0 transition-opacity duration-300 flex items-center justify-center">
+                            <span class="text-white border border-white px-6 py-2 rounded-full text-sm tracking-wider">查看完整圖片</span>
+                        </div>
+                    </div>
+                    <div class="p-6 md:p-8">
+                        <p class="text-primary text-xs font-bold tracking-widest mb-2">電商EDM</p>
+                        <h3 class="text-2xl font-bold mb-2">彩妝店家/商品特企</h3>
+                        <p class="text-grayMid text-sm">(設計/切版)<br>高轉換率導向的一頁式設計，運用動態視覺與強烈CTA引導使用者了解產品。</p>
+                    </div>
+                </a>
+
+                <a class="portfolio-item portfolio-card group relative overflow-hidden rounded-2xl bg-white cursor-pointer fade-up" data-category="visuals" href="event28/index.htm" target="_blank">
+                    <div class="aspect-[3/4] overflow-hidden bg-gray-200 relative">
+                        <img src="images/6-3.jpg" alt="電商EDM" class="w-full h-full object-cover transition-transform duration-700">
+                        <div class="portfolio-overlay absolute inset-0 bg-primary/80 opacity-0 transition-opacity duration-300 flex items-center justify-center">
+                            <span class="text-white border border-white px-6 py-2 rounded-full text-sm tracking-wider">查看完整圖片</span>
+                        </div>
+                    </div>
+                    <div class="p-6 md:p-8">
+                        <p class="text-primary text-xs font-bold tracking-widest mb-2">電商EDM</p>
+                        <h3 class="text-2xl font-bold mb-2">美食店家/商品特企</h3>
+                        <p class="text-grayMid text-sm">(設計/切版)<br>高轉換率導向的一頁式設計，運用動態視覺與強烈CTA引導使用者了解產品。</p>
                     </div>
                 </a>
             </div>
@@ -491,21 +741,19 @@
     </section>
 
     <!-- 關於我 Section -->
-    <section id="about" class="py-24 px-6 md:px-12 max-w-7xl mx-auto">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center fade-up">
-            <!-- 照片/抽象圖佔位 -->
+    <section id="experience" class="md:px-12 max-w-7xl mx-auto">
+        <!-- <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center fade-up">
             <div class="relative w-full aspect-square md:aspect-auto md:h-[600px] rounded-3xl overflow-hidden bg-grayLight flex items-center justify-center">
                 <div class="absolute inset-0 bg-gradient-to-tr from-secondary/20 to-transparent"></div>
                 <img src="images/rocio.jpg" alt="Profile of Rocio Hsu" class="w-full h-full object-cover">
             </div>
-            
-            <!-- 文字內容 -->
+        
             <div>
                 <h2 class="text-3xl md:text-4xl font-bold mb-6">
                     About Me
                 </h2>
              
-                <!-- 💡 這裡預留了從網頁擷取的自介內容替換區域 -->
+
                     <p class="text-grayMid leading-relaxed mb-6">Hello！我是許智倩 Rocio Hsu，擁有多年網頁與數位設計經驗，從SaaS服務、電商營運、品牌視覺、及數位專案等...皆有涉略，做專案時會先同行銷企劃、產品經理了解需求，理解專案背後的目的，提出更有效的解法，而不僅是依照指令交差，有解決問題的態度與能力，喜歡分享新奇的東西和技術。</p>
                     <ol class="list-decimal list-inside mb-6"><b>擅長技能和優勢：</b>
                         <li class="text-grayMid leading-relaxed">熟悉CSS&html&jQuery網頁RWD切版，會使用Less設定變數及拆成component方便維護。</li>
@@ -518,7 +766,7 @@
                     <p class="text-grayMid leading-relaxed mb-6">我能為公司快速執行設計任務，讓專案能順利落地；<br>
                     也很樂意學習新技術，利用AI協助製作更高品質的設計。</p>
                 
-                <!-- <div class="mb-10">
+                <div class="mb-10">
                     <h4 class="font-bold mb-4">專業技能</h4>
                     <div class="flex flex-wrap gap-2">
                         <span class="px-4 py-1.5 bg-grayLight text-sm rounded-full text-dark">UI/UX Design</span>
@@ -531,17 +779,17 @@
                         <span class="px-4 py-1.5 bg-grayLight text-sm rounded-full text-dark">Photoshop修圖/合成/編排</span>
                         <span class="px-4 py-1.5 bg-grayLight text-sm rounded-full text-dark">人像攝影/精修</span>
                     </div>
-                </div>-->
+                </div>
 
                 <a href="mailto:shachien@gmail.com" class="inline-flex items-center space-x-2 bg-dark text-white px-8 py-4 rounded-full hover:bg-primary transition duration-300">
                     <span>聯繫我</span>
                     <i class="ph ph-arrow-right"></i>
                 </a>
             </div>
-        </div>
+        </div> -->
 
         <!-- 學經歷時間軸 (新增) -->
-        <div class="mt-24 grid grid-cols-1 md:grid-cols-2 gap-16 border-t border-gray-100 pt-16 fade-up">
+        <div class="py-24 px-6 grid grid-cols-1 md:grid-cols-2 gap-16 fade-up">
             <!-- 工作經歷 -->
             <div>
                 <h3 class="text-2xl font-bold mb-8 flex items-center text-primary">
@@ -551,7 +799,7 @@
                 <div class="space-y-10 border-l-2 border-gray-100 ml-4 pl-8 pb-5">
                     <div class="relative">
                         <span class="absolute -left-[43px] top-1 w-5 h-5 rounded-full bg-white border-4 border-primary shadow-sm"></span>
-                        <p class="text-secondary text-sm font-bold tracking-widest mb-1">2021/06/01 - 迄今</p>
+                        <p class="text-primary text-sm font-bold tracking-widest mb-1">2021/06/01 - 迄今</p>
                         <h4 class="text-lg font-bold text-dark">資深網頁設計師</h4>
                         <p class="text-grayMid font-medium mb-3">D+AF SHOES</p>
                         <p class="text-sm text-grayMid leading-relaxed">
@@ -563,7 +811,7 @@
                 <div class="space-y-10 border-l-2 border-gray-100 ml-4 pl-8 pb-5">
                     <div class="relative">
                         <span class="absolute -left-[43px] top-1 w-5 h-5 rounded-full bg-white border-4 border-primary shadow-sm"></span>
-                        <p class="text-secondary text-sm font-bold tracking-widest mb-1">2020/04/06 - 2021/03/31</p>
+                        <p class="text-primary text-sm font-bold tracking-widest mb-1">2020/04/06 - 2021/03/31</p>
                         <h4 class="text-lg font-bold text-dark">UI/UX設計</h4>
                         <p class="text-grayMid font-medium mb-3">愛物聯股份有限公司</p>
                         <p class="text-sm text-grayMid leading-relaxed">
@@ -575,7 +823,7 @@
                 <div class="space-y-10 border-l-2 border-gray-100 ml-4 pl-8 pb-5">
                     <div class="relative">
                         <span class="absolute -left-[43px] top-1 w-5 h-5 rounded-full bg-white border-4 border-primary shadow-sm"></span>
-                        <p class="text-secondary text-sm font-bold tracking-widest mb-1">2019/05/06 - 2020/03/31</p>
+                        <p class="text-primary text-sm font-bold tracking-widest mb-1">2019/05/06 - 2020/03/31</p>
                         <h4 class="text-lg font-bold text-dark">設計主管</h4>
                         <p class="text-grayMid font-medium mb-3">COCORO心出發國際股份有限公司</p>
                         <p class="text-sm text-grayMid leading-relaxed">
@@ -587,7 +835,7 @@
                 <div class="space-y-10 border-l-2 border-gray-100 ml-4 pl-8 pb-5">
                     <div class="relative">
                         <span class="absolute -left-[43px] top-1 w-5 h-5 rounded-full bg-white border-4 border-primary shadow-sm"></span>
-                        <p class="text-secondary text-sm font-bold tracking-widest mb-1">2018/04/16 - 2019/02/27</p>
+                        <p class="text-primary text-sm font-bold tracking-widest mb-1">2018/04/16 - 2019/02/27</p>
                         <h4 class="text-lg font-bold text-dark">資深前端設計</h4>
                         <p class="text-grayMid font-medium mb-3">beauty美人圈</p>
                         <p class="text-sm text-grayMid leading-relaxed">
@@ -599,7 +847,7 @@
                 <div class="space-y-10 border-l-2 border-gray-100 ml-4 pl-8 pb-5">
                     <div class="relative">
                         <span class="absolute -left-[43px] top-1 w-5 h-5 rounded-full bg-white border-4 border-primary shadow-sm"></span>
-                        <p class="text-secondary text-sm font-bold tracking-widest mb-1">2017/01/03 - 2018/03/23</p>
+                        <p class="text-primary text-sm font-bold tracking-widest mb-1">2017/01/03 - 2018/03/23</p>
                         <h4 class="text-lg font-bold text-dark">資深網頁設計師</h4>
                         <p class="text-grayMid font-medium mb-3">D+AF SHOES</p>
                         <p class="text-sm text-grayMid leading-relaxed">
@@ -611,7 +859,7 @@
                 <div class="space-y-10 border-l-2 border-gray-100 ml-4 pl-8 pb-5">
                     <div class="relative">
                         <span class="absolute -left-[43px] top-1 w-5 h-5 rounded-full bg-white border-4 border-primary shadow-sm"></span>
-                        <p class="text-secondary text-sm font-bold tracking-widest mb-1">2013/03/11 - 2016/12/31</p>
+                        <p class="text-primary text-sm font-bold tracking-widest mb-1">2013/03/11 - 2016/12/31</p>
                         <h4 class="text-lg font-bold text-dark">資深設計</h4>
                         <p class="text-grayMid font-medium mb-3">PChome商店街</p>
                         <p class="text-sm text-grayMid leading-relaxed">
@@ -623,7 +871,7 @@
                 <div class="space-y-10 border-l-2 border-gray-100 ml-4 pl-8 pb-5">
                     <div class="relative">
                         <span class="absolute -left-[43px] top-1 w-5 h-5 rounded-full bg-white border-4 border-primary shadow-sm"></span>
-                        <p class="text-secondary text-sm font-bold tracking-widest mb-1">2011/04/01 - 2013/02/28</p>
+                        <p class="text-primary text-sm font-bold tracking-widest mb-1">2011/04/01 - 2013/02/28</p>
                         <h4 class="text-lg font-bold text-dark">前端網頁設計</h4>
                         <p class="text-grayMid font-medium mb-3">亞惿設計</p>
                         <p class="text-sm text-grayMid leading-relaxed">
@@ -635,7 +883,7 @@
                 <div class="space-y-10 border-l-2 border-gray-100 ml-4 pl-8 pb-5">
                     <div class="relative">
                         <span class="absolute -left-[43px] top-1 w-5 h-5 rounded-full bg-white border-4 border-primary shadow-sm"></span>
-                        <p class="text-secondary text-sm font-bold tracking-widest mb-1">2010/09/27 - 2011/03/31</p>
+                        <p class="text-primary text-sm font-bold tracking-widest mb-1">2010/09/27 - 2011/03/31</p>
                         <h4 class="text-lg font-bold text-dark">新北市政府資訊中心駐府人員</h4>
                         <p class="text-grayMid font-medium mb-3">精誠資訊</p>
                         <p class="text-sm text-grayMid leading-relaxed">
@@ -647,7 +895,7 @@
                 <div class="space-y-10 border-l-2 border-gray-100 ml-4 pl-8 pb-5">
                     <div class="relative">
                         <span class="absolute -left-[43px] top-1 w-5 h-5 rounded-full bg-white border-4 border-primary shadow-sm"></span>
-                        <p class="text-secondary text-sm font-bold tracking-widest mb-1">2010/04/16 - 2011/03/31</p>
+                        <p class="text-primary text-sm font-bold tracking-widest mb-1">2010/04/16 - 2011/03/31</p>
                         <h4 class="text-lg font-bold text-dark">網頁及視覺設計</h4>
                         <p class="text-grayMid font-medium mb-3">窩們資訊</p>
                         <p class="text-sm text-grayMid leading-relaxed">
@@ -659,7 +907,7 @@
                 <div class="space-y-10 border-l-2 border-gray-100 ml-4 pl-8 pb-5">
                     <div class="relative">
                         <span class="absolute -left-[43px] top-1 w-5 h-5 rounded-full bg-white border-4 border-primary shadow-sm"></span>
-                        <p class="text-secondary text-sm font-bold tracking-widest mb-1">2009/07/01 - 2010/04/15</p>
+                        <p class="text-primary text-sm font-bold tracking-widest mb-1">2009/07/01 - 2010/04/15</p>
                         <h4 class="text-lg font-bold text-dark">網頁設計</h4>
                         <p class="text-grayMid font-medium mb-3">軒眾電腦</p>
                         <p class="text-sm text-grayMid leading-relaxed">
@@ -678,7 +926,7 @@
                 <div class="space-y-10 border-l-2 border-gray-100 ml-4 pl-8 pb-5">
                     <div class="relative">
                         <span class="absolute -left-[43px] top-1 w-5 h-5 rounded-full bg-white border-4 border-secondary shadow-sm"></span>
-                        <p class="text-secondary text-sm font-bold tracking-widest mb-1">2006 - 2009</p>
+                        <p class="text-primary text-sm font-bold tracking-widest mb-1">2006 - 2009</p>
                         <h4 class="text-lg font-bold text-dark">資訊傳播系數位多媒體組 學士</h4>
                         <p class="text-grayMid font-medium">轉至元智大學</p>
                     </div>
@@ -687,7 +935,7 @@
                 <div class="space-y-10 border-l-2 border-gray-100 ml-4 pl-8 pb-5">
                     <div class="relative">
                         <span class="absolute -left-[43px] top-1 w-5 h-5 rounded-full bg-white border-4 border-secondary shadow-sm"></span>
-                        <p class="text-secondary text-sm font-bold tracking-widest mb-1">2005 - 2006</p>
+                        <p class="text-primary text-sm font-bold tracking-widest mb-1">2005 - 2006</p>
                         <h4 class="text-lg font-bold text-dark">室內設計系</h4>
                         <p class="text-grayMid font-medium">轉至中原大學</p>
                     </div>
@@ -696,7 +944,7 @@
                 <div class="space-y-10 border-l-2 border-gray-100 ml-4 pl-8 pb-5">
                     <div class="relative">
                         <span class="absolute -left-[43px] top-1 w-5 h-5 rounded-full bg-white border-4 border-secondary shadow-sm"></span>
-                        <p class="text-secondary text-sm font-bold tracking-widest mb-1">2004 - 2005</p>
+                        <p class="text-primary text-sm font-bold tracking-widest mb-1">2004 - 2005</p>
                         <h4 class="text-lg font-bold text-dark">空間設計系</h4>
                         <p class="text-grayMid font-medium">大葉大學</p>
                     </div>
@@ -705,7 +953,7 @@
                 <div class="space-y-10 border-l-2 border-gray-100 ml-4 pl-8">
                     <div class="relative">
                         <span class="absolute -left-[43px] top-1 w-5 h-5 rounded-full bg-white border-4 border-secondary shadow-sm"></span>
-                        <p class="text-secondary text-sm font-bold tracking-widest mb-1">2001 - 2004</p>
+                        <p class="text-primary text-sm font-bold tracking-widest mb-1">2001 - 2004</p>
                         <h4 class="text-lg font-bold text-dark">美術班</h4>
                         <p class="text-grayMid font-medium">師大附中</p>
                     </div>
@@ -841,6 +1089,31 @@
 
             fadeUpElements.forEach(el => {
                 observer.observe(el);
+            });
+
+
+            //tab切換控制
+            const tabs = document.querySelectorAll('.step-tab');
+            const contents = document.querySelectorAll('.step-content');
+
+            tabs.forEach((tab) => {
+                tab.addEventListener('click', () => {
+                    const step = tab.dataset.step;
+
+                    tabs.forEach((item) => {
+                        item.classList.remove('active');
+                    });
+
+                    contents.forEach((content) => {
+                        content.classList.add('hidden');
+                    });
+
+                    tab.classList.add('active');
+
+                    document
+                        .querySelector(`[data-content="${step}"]`)
+                        .classList.remove('hidden');
+                });
             });
 
         });

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta content="text/html;charset=utf-8" http-equiv="content-type">
+    <meta name="MobileOptimized" content="width">
+	<meta name="HandheldFriendly" content="true">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://static.daf-shoes.com/_Art/web/standard/css/component.css">
+    <script type="text/javascript" src="https://www.daf-shoes.com/site/js/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="https://static.daf-shoes.com/_Art/web/standard/js/component.js"></script>
+</head>
+<body>
+
+<!-- 內容開始 -->
+<link rel="stylesheet" href="https://static.daf-shoes.com/_Art/landingpage/animate.min.css" />
+<link rel="stylesheet" href="https://static.daf-shoes.com/_Art/landingpage/aos.css">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;500;700&display=swap');
+body { overflow-x: hidden; }
+.main .content { padding: 0; }
+.wrapper .wrapper-content { width: 100%; padding: 0; }
+
+.daf-container { color: #545B55; font-family: 'Frank Ruhl Libre', serif; font-size: 18px;
+    background: #F6F2EC; overflow: hidden; }
+.daf-container * { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+.daf-container img { display: block; width: 100%; height: auto; }
+.daf-container a { color: #545B55; }
+.daf-container a:hover { text-decoration: none !important; }
+.daf-container a > .pic { overflow: hidden; }
+.daf-container a > .pic img { transition: 0.3s; }
+.daf-container a:hover > .pic img { transform: scale(1.05); }
+.daf-container section:not(.mainkv) { padding: 9vw 0; }
+
+.mainkv { position: relative; overflow: hidden; }
+.mainkv .pc { display: block; }
+.mainkv .mobile { display: none; }
+.mainkv .subject { position: absolute; left: 5%; top: 30%; }
+.mainkv .h1 { font-size: 120px; font-weight: bold; line-height: 100%; }
+.mainkv .h2 { font-size: 18px; line-height: 140%; }
+.mainkv .btn { max-width: 217px; padding: 15px 5%; margin-top: 5%; border: 1px solid #545B55; }
+.mainkv .btn > img { width: 60px; margin: 0 auto; }
+.mainkv .h3 { position: absolute; width: 94%; left: 3%; bottom: 8%; padding: 15px 3%; display: flex; flex-flow: nowrap; justify-content: space-between;
+    font-size: 24px; font-weight: 500; border-top: 1px solid #545B55; border-bottom: 1px solid #545B55; }
+
+.collection { background: #F6F2EC; }
+.clt-list { width: 100%; max-width: 1560px; margin: 0 auto; padding: 0 5%; display: flex; flex-flow: nowrap; align-items: center; justify-content: space-around; }
+.clt-list > * { position: relative; width: 26%; z-index: 0; }
+.clt-list .h1 { margin-top: -5%; font-size: 260px; font-weight: bold; letter-spacing: -0.1em; line-height: 100%; }
+.clt-list .h2 { margin: 20% 0 0 4%; font-size: 30px; font-weight: 500; line-height: 100%; }
+.clt-list .clt1 { margin-left: -11%; z-index: 1; }
+.clt-list .clt3 { background: #DFDCD8; }
+.clt-list .clt3 .more { position: absolute; left: 0; right: 0; bottom: 10%; margin: 0 auto; font-size: 32px; text-align: center; text-decoration: underline !important; }
+
+.lookbook { background: #DFDCD8; }
+.lookbook .h1 { width: 100%; max-width: 1600px; margin: 3% auto; padding: 20px 5%; display: flex; flex-flow: nowrap; justify-content: center; align-items: center; 
+    font-size: 96px; font-weight: bold; line-height: 100%; border-top: 1px solid #545B55; border-bottom: 1px solid #545B55; }
+.lookbook .h1 > div:first-child { margin-right: 20px; }
+.lb-list { width: 100%; max-width: 1600px; margin: 0 auto; padding: 0 5%; display: flex; flex-flow: nowrap; justify-content: space-between; }
+.lb-list > a { width: 23.1%; }
+
+.subscription { width: 100%; max-width: 1120px; margin: 0 auto; padding: 8vw 5% 30px 5% !important;
+    display: flex; flex-flow: nowrap; justify-content: space-between; align-items: flex-end; }
+.subscription > * { position: relative; z-index: 0; }
+.subscription > div:first-child { width: 25%; padding-bottom: 7%; }
+.subscription .sbsp { width: 42%; z-index: 1; }
+.subscription .subject { width: 33%; margin-left: -15%; text-align: right; }
+.subscription .h1 { font-size: 48px; font-weight: bold; }
+.subscription .h2 { margin-top: 10px; }
+.subscription .h3 { margin-bottom: 5%; font-size: 30px; font-weight: 500; line-height: 100%; }
+.subscription .h4 { font-size: 240px; font-weight: bold; line-height: 80%; letter-spacing: -0.05em; }
+.subscription a { display: inline-block; margin: 15px 0; }
+.subscription a.dafshoes { font-size: 24px; font-weight: bold; text-decoration: none !important; }
+.subscription a.icon { display: inline-flex; flex-flow: nowrap; align-items: center; text-decoration: underline !important; }
+.subscription a.icon > img { margin-right: 10px; }
+.subscription a.icon > img.ig { width: 48px; }
+.subscription a.icon > img.yt { width: 55px; }
+
+@media (max-width: 1280px) {
+    .clt-list .h1 { font-size: 200px; }
+}
+
+@media (max-width: 768px) {
+    .daf-container section:not(.mainkv) { padding: 7vh 0; }
+
+    .mainkv .mobile { display: block; }
+    .mainkv .pc { display: none; }
+    .mainkv .subject { left: 7%; top: 5%; }
+    .mainkv .h1 { margin-bottom: 5px; font-size: 48px; }
+    .mainkv .h2 { font-size: 12px; }
+    .mainkv .btn { max-width: 80px; padding: 10px 5%; }
+    .mainkv .btn > img { width: 30px; }
+    .mainkv .h3 { bottom: 5%; padding: 10px 2%; font-size: 12px; }
+
+    .clt-list { flex-flow: wrap; justify-content: space-between; }
+    .clt-list > * { width: 48%; margin-bottom: 15px; }
+    .clt-list .subject { width: 30%; }
+    .clt-list .h1 { font-size: 110px; }
+    .clt-list .h2 { font-size: 18px; }
+    .clt-list .clt1 { width: 70%; }
+    .clt-list .clt3 .more { bottom: 7%; font-size: 18px; }
+
+    .lookbook .h1 { font-size: 48px; }
+    .lookbook .h1 > div:first-child { width: 50px; margin-right: 15px; }
+    .lb-list { flex-flow: wrap; }
+    .lb-list > a { width: 48%; margin: 7px 0; }
+
+    .subscription { padding: 7vh 10% 30px 10% !important; flex-flow: wrap-reverse; justify-content: center; align-items: flex-start; }
+    .subscription > div:first-child { width: 100%; padding-bottom: 0; }
+    .subscription .sbsp { width: 60%; }
+    .subscription .subject { width: 50%; margin-left: -10%; }
+    .subscription .h1 { font-size: 36px; }
+    .subscription .h2 { font-size: 14px; }
+    .subscription .h3 { font-size: 18px; }
+    .subscription .h4 { font-size: 100px; line-height: 100%; }
+    .subscription > div:first-child > div:last-child { display: flex; align-items: center; }
+    .subscription > div:first-child > div:last-child a.icon { margin: 10px 30px 10px 0; font-size: 14px; }
+    .subscription a.icon > img.ig { width: 38px; }
+    .subscription a.icon > img.yt { width: 45px; }
+    .subscription a.dafshoes { font-size: 20px; }
+}
+</style>
+
+<div class="daf-container">
+	<section class="mainkv">
+        <a href="https://www.daf-shoes.com/product/pageSet/280">
+            <div class="pc" data-aos="zoom-out" data-aos-duration="1000"><img src="https://static.daf-shoes.com/_Art/index/2022/220124/mainkv.jpg" alt="2022秋冬流行趨勢 女鞋/女靴 經典馬銜釦樂福鞋"></div>
+            <div class="mobile" data-aos="zoom-out" data-aos-duration="1000"><img src="https://static.daf-shoes.com/_Art/index/2022/220124/mainkv-m.jpg" alt="2022秋冬流行趨勢 女鞋/女靴 經典馬銜釦樂福鞋"></div>
+            <div class="subject">
+                <div class="h1" data-aos="fade-in" data-aos-duration="1000">Classic</div>
+                <div class="h2" data-aos="fade-in" data-aos-duration="1000" data-aos-delay="500">When Classic Sophistication<br>meets Modern Sensibility.</div>
+                <div class="btn"><img src="https://static.daf-shoes.com/_Art/index/2022/220124/arrow.svg"></div>
+            </div>
+            <div class="h3 animate__animated animate__flash animate__slower animate__infinite">
+                <div>Keep smiling</div>
+                <div>Keep walking</div>
+                <div>Everyday</div>
+                <div>Boutique 01.</div>
+            </div>
+        </a>
+    </section>
+
+    <section class="collection">
+        <div class="clt-list">
+            <div class="subject">
+                <div class="h2" data-aos="fade-left" data-aos-duration="1000">Boutique</div>
+                <div class="h1" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="500">02.</div>
+            </div>
+
+            <a class="clt1" href="https://www.daf-shoes.com/product/search?searchName=S00007620">
+                <div class="pic"><img src="https://static.daf-shoes.com/_Art/index/2022/220124/clt1.jpg" alt="中車線超厚底軍風長靴"></div>
+            </a>
+
+            <a href="https://www.daf-shoes.com/product/pageSet/2843">
+                <div class="pic"><img src="https://static.daf-shoes.com/_Art/index/2022/220124/clt2.jpg" alt="時髦單品質感包包 黑色金釦包"></div>
+            </a>
+
+            <a class="clt3" href="https://www.daf-shoes.com/product/pageSet/1762">
+                <div class="pic"><img data-aos="zoom-out" data-aos-duration="1000" src="https://static.daf-shoes.com/_Art/index/2022/220124/clt3.svg" alt="探索更多女士配件 鞋包(靴)款"></div>
+                <div class="more">more</div>
+            </a>
+        </div>
+    </section>
+
+    <section class="lookbook">
+        <div class="lb-list">
+            <a href="https://www.daf-shoes.com/product/search?searchName=S00007638">
+                <div class="pic"><img src="https://static.daf-shoes.com/_Art/index/2022/220124/lb1.jpg" alt="復古方頭加厚底牛津鞋穿搭"></div>
+            </a>
+
+            <a href="https://www.daf-shoes.com/product/search?searchName=S00007638">
+                <div class="pic"><img src="https://static.daf-shoes.com/_Art/index/2022/220124/lb2.jpg" alt="復古方頭加厚底牛津鞋穿搭"></div>
+            </a>
+
+            <a href="https://www.daf-shoes.com/product/search?searchName=S00007509">
+                <div class="pic"><img src="https://static.daf-shoes.com/_Art/index/2022/220124/lb3.jpg" alt="素面後拉鍊鬆糕底短靴穿搭"></div>
+            </a>
+
+            <a href="https://www.daf-shoes.com/product/search?searchName=S00007580">
+                <div class="pic"><img src="https://static.daf-shoes.com/_Art/index/2022/220124/lb4.jpg" alt="中車線方頭低跟襪靴穿搭"></div>
+            </a>
+        </div>
+
+        <div class="h1">
+            <div data-aos="fade-in" data-aos-duration="1000"><img src="https://static.daf-shoes.com/_Art/index/2022/220124/bt3.svg" alt="Boutique 03."></div>
+            <div data-aos="fade-in" data-aos-duration="1000" data-aos-delay="500">Lookbook</div>
+        </div>
+
+        <div class="lb-list">
+            <a href="https://www.daf-shoes.com/product/search?searchName=S00007602">
+                <div class="pic"><img src="https://static.daf-shoes.com/_Art/index/2022/220124/lb5.jpg" alt="加厚水台綁帶膝下長靴穿搭"></div>
+            </a>
+
+            <a href="https://www.daf-shoes.com/product/search?searchName=S00007636">
+                <div class="pic"><img src="https://static.daf-shoes.com/_Art/index/2022/220124/lb6.jpg" alt="雙摺線設計膝下長靴穿搭"></div>
+            </a>
+
+            <a href="https://www.daf-shoes.com/product/search?searchName=S00007615">
+                <div class="pic"><img src="https://static.daf-shoes.com/_Art/index/2022/220124/lb7.jpg" alt="超輕量增高厚底樂福鞋穿搭"></div>
+            </a>
+
+            <a href="https://www.daf-shoes.com/product/search?searchName=S00007620">
+                <div class="pic"><img src="https://static.daf-shoes.com/_Art/index/2022/220124/lb8.jpg" alt="中車線超厚底軍風長靴穿搭"></div>
+            </a>
+        </div>
+    </section>
+
+    <section class="subscription">
+        <div>
+            <div class="h1">Subscription</div>
+            <div class="h2">Discover more fashion trends.<br>Find out more styling tips.</div>
+            <div><a class="dafshoes" target="_blank" href="https://www.instagram.com/dafshoes">@dafshoes</a></div>
+            <div>
+                <a class="icon" target="_blank" href="https://www.instagram.com/dafshoes">
+                    <img class="ig" src="https://static.daf-shoes.com/_Art/index/2022/220124/ig.svg"> Instagram
+                </a>
+                <a class="icon" target="_blank" href="https://www.youtube.com/channel/UCL4cTDraDFus1pGQSO_lIiQ">
+                    <img class="yt" src="https://static.daf-shoes.com/_Art/index/2022/220124/yt.svg"> YouTube
+                </a>
+            </div>
+        </div>
+
+        <a class="sbsp" href="https://www.daf-shoes.com/product/list/130">
+            <div class="pic"><img src="https://static.daf-shoes.com/_Art/index/2022/220124/sbsp.jpg" alt="立體縫線木紋跟牛津鞋"></div>
+        </a>
+
+        <div class="subject">
+            <div class="h3" data-aos="fade-right" data-aos-duration="1000">Boutique</div>
+            <div class="h4" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="500">04.</div>
+        </div>
+    </section>
+
+    <!-- 防詐騙提醒 -->
+    <style>
+    .notice-box { margin: 0 auto; padding: 60px 15px; text-align: center; }
+    .notice-box > h2 { margin: 0 0 20px 0; font-size: 48px; letter-spacing: 0.2em; }
+    .notice-box > h3 { margin: 0 0 10px 0; font-size: 24px; font-weight: bold; letter-spacing: 0.2em; }
+    .notice-box > p { width: 100%; max-width: 330px; margin: 0 auto; font-size: 16px; line-height: 160%; letter-spacing: 0.1em; }
+    @media (max-width: 768px) {
+        .notice-box > h2 { font-size: 32px; }
+        .notice-box > h3 { font-size: 18px; }
+        .notice-box > p { max-width: 290px; font-size: 14px; }
+    }
+    </style>
+    <div class="notice-box">
+        <h2>(Notice!)</h2>
+        <h3>【防詐騙提醒】</h3>
+        <p>近期詐騙猖獗，D+AF絕不會以任何名義，
+            電話要求顧客進行轉帳扣款或其他行為，
+            如接到請立即掛斷並撥打165反詐騙專線。</p>
+    </div>
+</div><!-- END .daf-container -->
+
+<script src="https://static.daf-shoes.com/_Art/landingpage/aos.js"></script>
+<script>
+$(function() {
+    AOS.init({
+    	delay: 0, //延遲時間，範圍：0~ 3000
+		duration: 400, //動畫時間，範圍：0~ 3000
+		easing: 'ease', // 動畫速率效果
+		once: false, // 是否重複觸發動畫
+		mirror: true, // 是否超過滾動範圍時，做移出的動畫效果
+    });
+});
+</script>
+<!-- 內容結束 -->
+
+</body>
+</html>
